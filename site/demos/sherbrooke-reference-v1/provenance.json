@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "sherbrooke-reference-v1",
+  "title": "Sherbrooke reference-built block",
+  "status": "prototype",
+  "capture": {
+    "camera": "Insta360 X4 Air",
+    "date": "2026-10-18",
+    "sourceFile": "VID_20261018_073202_00_001.insv",
+    "originalPreserved": true,
+    "references": "Selected existing 2048x960 perspective JPEGs from a stitched 7680x3840 export. Original pixels copied unchanged. Source times refer to that trimmed export; original INSV offset unverified."
+  },
+  "geography": {
+    "crs": "EPSG:4326",
+    "projection": "Documented local east/north tangent approximation rotated along Sherbrooke; see block.json coordinates.",
+    "extent": "Both sides of Sherbrooke Street between Aylmer and George, containing 210 Sherbrooke.",
+    "mapDerivedLengthMetres": 264.46498000797726,
+    "surveyAccuracy": null,
+    "verticalDatum": null,
+    "elevation": "Flattened for visual comparison. Building heights estimated from footage.",
+    "sources": [
+      {
+        "title": "Peterborough Map Game source snapshot",
+        "url": "https://github.com/edmondsonedits/Peterborough-Map-Game/tree/40c958fc106f0cfb61cd0e7c5d339d7622c00145/city-explorer",
+        "files": [
+          "data/survey/station-one-district-inventory.geojson",
+          "data/survey/station-one-survey.geojson",
+          "data/peterborough-road-surfaces.geojson"
+        ]
+      },
+      {
+        "title": "OpenStreetMap contributors",
+        "url": "https://www.openstreetmap.org/copyright",
+        "licence": "ODbL 1.0",
+        "note": "Building-footprint extract and modifications remain available in block.json under ODbL. No warranty of survey accuracy."
+      },
+      {
+        "title": "City of Peterborough Basedata",
+        "url": "https://citymaps.peterborough.ca/arcgis/rest/services/Basedata/MapServer",
+        "licence": "City of Peterborough Open Data Licence as recorded in source inventory."
+      }
+    ]
+  },
+  "method": {
+    "representation": "Conventional polygon buildings, modeled facade details, optional selected planar photo patches. This is not a Gaussian splat or an automatic full reconstruction.",
+    "sourceOfTruth": "Original footage and geographic footprint IDs retained; visual guesses are separate appearance records.",
+    "productionIntegration": "Separate experiment. No production map, routing, collision, dispatch or training systems modified.",
+    "visibility": "Both opposing frontages and corner approaches represented. Hidden/rear geometry and partially occluded facade details are approximate.",
+    "measurement": "Map length is not accepted useful reconstruction coverage. No numerical recognizability score is claimed.",
+    "comparisonBaseline": "Plain footprint massing in this viewer; not an exact copy or measured benchmark of the production simulator."
+  },
+  "privacy": {
+    "publication": "Repository owner supplied footage and requested playable public tests.",
+    "mediaSelection": "Avoid person/plate-focused crops; inspect selected references before publication.",
+    "syntheticDetail": "No generative image fill or invented photographic detail."
+  },
+  "rights": {
+    "ownerMedia": "No blanket reuse licence granted for owner footage.",
+    "renderer": "Three.js existing pinned vendor; MIT notice retained in street-alternatives-v1/vendor/THREE-LICENSE.txt"
+  },
+  "limits": [
+    "Dimensions, roofs and heights have not been surveyed.",
+    "The reference-built scene can improve stable lateral viewing but does not reproduce all visual detail of video.",
+    "No measured original camera mounting height; default viewpoint is illustrative.",
+    "No physical phone certification or city-scale performance claim.",
+    "Production editor import remains a later integration step."
+  ],
+  "sourceConflicts": [
+    {
+      "featureId": "way/1009651229",
+      "field": "apparatus bay count",
+      "legacyMapValue": 4,
+      "observedValue": 5,
+      "evidence": "Original 0158_LEFT_SIDE.jpg shows all five doors. Override in buildings.json; original survey metadata preserved."
+    }
+  ]
+}

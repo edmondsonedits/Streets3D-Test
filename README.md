@@ -6,6 +6,8 @@ The shared destination for Peterborough street experiments and future playable t
 
 ## Current tests
 
+- [Sherbrooke reference-built block](https://edmondsonedits.github.io/Streets3D-Test/demos/sherbrooke-reference-v1/): both sides of the Aylmer–George block, with 19 map-derived building footprints, footage-informed 3D details, a baseline toggle and source-photo inspector. See [method and limitations](docs/SHERBROOKE-REFERENCE-BLOCK.md).
+
 - [Photo-wall drive](https://edmondsonedits.github.io/Streets3D-Test/demos/street-alternatives-v1/?mode=road): real footage on flat facades, with lateral movement on an illustrative road.
 - [360° video drive](https://edmondsonedits.github.io/Streets3D-Test/demos/street-alternatives-v1/?mode=video): adjustable speed, look-around, cab overlay and a separately recorded return journey.
 

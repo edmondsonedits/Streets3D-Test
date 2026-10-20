@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d9e4e6">
+  <meta name="description" content="A playable, map-shaped 3D reference block on Sherbrooke Street in Peterborough, Ontario.">
+  <title>Sherbrooke Street · Reference Block</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="experience" aria-label="Sherbrooke Street driving reference demo">
+    <div id="stage" class="stage">
+      <canvas id="view" aria-label="Three-dimensional Sherbrooke Street scene"></canvas>
+      <div class="topbar">
+        <a class="brand" href="../../" aria-label="Back to Streets3D tests"><span class="brand-mark">S3</span><span><b>STREET STUDY</b><small>Peterborough · Ontario</small></span></a>
+        <div class="status-chip"><i></i><span id="loadStatus">Building the block</span></div>
+        <button id="inspectToggle" class="icon-button" type="button" aria-expanded="false" aria-controls="inspector">Inspect facades</button>
+      </div>
+      <div class="scene-label"><span class="eyebrow">AYLMER → GEORGE · 264 M</span><strong>Sherbrooke Street</strong><span id="locationLabel">Station reference · x 60 m</span></div>
+      <div class="bottom-left">
+        <div class="controls-hint"><kbd>WASD</kbd> drive <span>·</span> drag to look <span>·</span> <kbd>Q/E</kbd> height</div>
+        <div class="mode-switch" role="group" aria-label="Building detail view"><button id="enhancedMode" type="button" class="active">Enhanced</button><button id="baselineMode" type="button" aria-description="Plain footprint massing; not an exact copy of the production simulator.">Simple buildings</button></div>
+      </div>
+      <div class="drive-panel" aria-label="Drive controls">
+        <button id="autorun" class="run-button" type="button" aria-pressed="false"><span class="play-icon">▶</span><span>Auto drive</span></button>
+        <label class="speed-control"><span>PACE</span><input id="speed" type="range" min="2" max="16" step="1" value="7" aria-label="Driving speed"><output id="speedValue" for="speed">7 m/s</output></label>
+        <div class="quick-views" role="group" aria-label="Viewpoint"><button type="button" data-jump="aylmer">Aylmer</button><button type="button" data-jump="station" class="selected">Station</button><button type="button" data-jump="george">George</button></div>
+        <button id="turnaround" class="turn-button" type="button" title="Turn around">↶ <span>Turn around</span></button>
+        <button id="reset" class="reset-button" type="button" title="Reset view">Reset view</button>
+      </div>
+      <div class="touch-drive" aria-label="Touch driving controls">
+        <button type="button" data-move="forward" aria-label="Drive forward">▲</button>
+        <div><button type="button" data-move="left" aria-label="Move left">◀</button><button type="button" data-move="back" aria-label="Reverse">▼</button><button type="button" data-move="right" aria-label="Move right">▶</button></div>
+      </div>
+      <button id="heightToggle" class="height-toggle" type="button" aria-pressed="true" title="Toggle fixed camera height"><span>H</span> Fixed 2.6 m</button>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <aside id="inspector" class="inspector" aria-label="Facade reference inspector" inert>
+        <div class="inspector-head"><div><span class="eyebrow">REFERENCE INDEX</span><h2>Facade notes</h2></div><button id="closeInspector" class="close-button" type="button" aria-label="Close inspector">×</button></div>
+        <label class="building-select"><span>BUILDING</span><select id="buildingSelect" aria-label="Select a building"></select></label>
+        <div class="profile-title"><h3 id="profileName">Loading building profile…</h3><span id="confidence" class="confidence">—</span></div>
+        <p id="profileSummary" class="profile-summary">Appearance estimates and original source references.</p>
+        <figure id="referenceFigure" class="reference-figure"><div class="photo-frame"><img id="referenceImage" alt="Original facade reference photograph" hidden><div id="noPhoto" class="no-photo">No source photograph for this building.</div></div><figcaption id="referenceCaption">Original photograph, when supplied</figcaption></figure>
+        <div class="inspector-meta"><span id="buildingId"></span><span id="buildingHeight"></span></div>
+        <p class="disclaimer">Footprints follow source map polygons. Heights are estimates; confidence describes visual reference matching.</p>
+      </aside>
+      <div id="errorPanel" class="error-panel" hidden><strong>The street scene could not load.</strong><span id="errorText">Try refreshing the page.</span></div>
+    </div>
+    <footer class="footer-note"><span>Map-derived block · illustrative movement · camera height 2.6 m · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a> · <a href="https://citymaps.peterborough.ca/arcgis/rest/services/Basedata/MapServer" target="_blank" rel="noopener">City of Peterborough Basedata</a> · <a href="./provenance.json">Provenance</a></span><span>Heights are estimates; confidence describes visual reference matching.</span></footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+

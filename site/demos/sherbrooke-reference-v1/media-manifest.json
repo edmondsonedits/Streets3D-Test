@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "demo": "sherbrooke-reference-v1",
+  "artifacts": [
+    {
+      "path": "app.js",
+      "bytes": 32036,
+      "sha256": "f3f49e2c62567624ab66950fd297f716ea434ffcbf8c170397543e6405fb7c93"
+    },
+    {
+      "path": "block.json",
+      "bytes": 51810,
+      "sha256": "63a8473408afb5a8798ac5067333eac4f1c025e826b7fd6959cb227f90620581"
+    },
+    {
+      "path": "buildings.json",
+      "bytes": 19845,
+      "sha256": "8a715f922d53f4454cb7e1b3a3c4307e2661fb69ca29bf99bd3525bc03189bc0"
+    },
+    {
+      "path": "index.html",
+      "bytes": 5433,
+      "sha256": "064262c0febfdf73fdd147a9688b973b642471b9a21154b9997979cff9bfc246"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 4075,
+      "sha256": "acec73ee901f4f6b0d966b1010a954d6827ba58a7a249d76115128289a52dce7"
+    },
+    {
+      "path": "quality-report.json",
+      "bytes": 2141,
+      "sha256": "25f273e0780a7e5b915f0967ec29b1d3184a68347962439064a723e8bcaaf1f1"
+    },
+    {
+      "path": "references/0098_RIGHT_SIDE.jpg",
+      "bytes": 265404,
+      "sha256": "ad14a3e5ef5ae4f94d7ac4f8a6982049516ae33f36272b975752ea7fda572198"
+    },
+    {
+      "path": "references/0108_RIGHT_SIDE.jpg",
+      "bytes": 254451,
+      "sha256": "88db6f33bc527e90faa521726cef704809b26a48466cc34495430bf4c43a32ab"
+    },
+    {
+      "path": "references/0149_LEFT_SIDE.jpg",
+      "bytes": 174402,
+      "sha256": "a6752e9be628bd60524f4a32701ece852c44e63f61ddddc03df1779a5e5acd8f"
+    },
+    {
+      "path": "references/0150_RIGHT_SIDE.jpg",
+      "bytes": 282847,
+      "sha256": "ee1d90e4803dfe34a9e7f58e2f972823a75c3682ea7e7ad08e02c280b7da73fe"
+    },
+    {
+      "path": "references/0158_LEFT_SIDE.jpg",
+      "bytes": 190504,
+      "sha256": "ce4ce7085b801ee1e44690276c31b982c768dceff6fa4de000b02d940b896759"
+    },
+    {
+      "path": "references/0170_LEFT_SIDE.jpg",
+      "bytes": 175274,
+      "sha256": "9160af9abe66a6630f1dd2038bcc5a434e03c1ed4c0c8c55572e9bb2c893c4ab"
+    },
+    {
+      "path": "references/0170_RIGHT_SIDE.jpg",
+      "bytes": 355482,
+      "sha256": "a4cc5469f106a14cc302ce8597fc4387e6d7082d8b1bd5c7b6b013a5f1cfd58d"
+    },
+    {
+      "path": "references/0180_RIGHT_SIDE.jpg",
+      "bytes": 306228,
+      "sha256": "f02e1ebdc134cc81a379a15d41cb00e682d0d2b19ef43e14312409b25f78f9f7"
+    },
+    {
+      "path": "references/0190_LEFT_SIDE.jpg",
+      "bytes": 197717,
+      "sha256": "d76cd1301a4861600ff9af24fbd1fba6672da65f7261d9e4190e53da5cbfcf3b"
+    },
+    {
+      "path": "references/0190_RIGHT_SIDE.jpg",
+      "bytes": 242851,
+      "sha256": "dbbd43cb9a3490ecfb4d6529212e74b51ae952c9e44b94395ccd3dff814ac9f1"
+    },
+    {
+      "path": "references/0200_LEFT_SIDE.jpg",
+      "bytes": 266069,
+      "sha256": "a34545923c0fc277a880a7930226f2e6a37208d734be43de788ba07a1b46cd92"
+    },
+    {
+      "path": "references/0200_RIGHT_SIDE.jpg",
+      "bytes": 268248,
+      "sha256": "8a822832b88565c23f7cf0161c14bfa723197a77fe3a5a2a7de205262cd0343c"
+    },
+    {
+      "path": "scene-geometry.mjs",
+      "bytes": 2658,
+      "sha256": "e43e314826c7cd872520c6852c3b498e2b59218f5e9eb52cdf4270be950efa84"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 11526,
+      "sha256": "3673ebc8a724b66cd58d82019a94cda68f9daca36fe10815bd607f3f793a518f"
+    }
+  ]
+}

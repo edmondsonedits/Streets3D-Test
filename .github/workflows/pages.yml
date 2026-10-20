@@ -28,6 +28,10 @@ jobs:
         run: |
           node scripts/test-ratings.mjs
           node scripts/test-rating-efficiency.mjs
+      - name: Check reference block data and geometry
+        run: |
+          python3 scripts/check-reference-data.py
+          node scripts/test-reference-block.mjs
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload site only

@@ -3,6 +3,19 @@
   "title": "Streets3D Test Lab",
   "tests": [
     {
+      "id": "sherbrooke-reference-v1",
+      "title": "Sherbrooke · reference-built block",
+      "category": "Reference-built 3D",
+      "date": "2026-10-20",
+      "version": "1",
+      "status": "prototype",
+      "url": "demos/sherbrooke-reference-v1/",
+      "preview": "previews/sherbrooke-reference.png",
+      "description": "Explore both sides of the Aylmer–George block. Map-shaped buildings, station bays, porches and storefronts are modeled from the original footage.",
+      "controls": "WASD / arrows · drag to look · auto drive · baseline comparison · source photos",
+      "limitation": "Stable 3D surfaces; estimated heights and hidden details. A recognizable approximation, not a photorealistic or surveyed reconstruction."
+    },
+    {
       "id": "photo-walls-v1",
       "title": "Photo-wall drive",
       "category": "2.5D experiment",
