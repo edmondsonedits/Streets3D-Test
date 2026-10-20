@@ -12,3 +12,5 @@ The user designated https://github.com/edmondsonedits/Streets3D-Test as the home
 - Run python scripts/validate_site.py, relevant browser controls and responsive checks before pushing. After deployment, test the actual live URL and record the result accurately.
 - Publication is part of a requested demo delivery unless the user explicitly requests local-only work. Preserve visibility and never silently use a different site.
 - Prefer small web previews. No file may reach 100 MiB; total site must stay below GitHub Pages limits. Do not silently accumulate large media or use paid hosting. Escalate storage design only when actual usage requires it.
+
+- Gaussian publications must include the actual 3D model, saved native render videos when available, and the shared capture-height/free-flight controls. Read docs/SPLAT-PUBLICATION.md. Keep failed experiments labelled and deduplicate coordinate-only exports. Verify a visible scene, not just a successful asset download.

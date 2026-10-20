@@ -1,0 +1,218 @@
+{
+  "id": "construction-gut-selfcal",
+  "title": "Construction · self-calibration",
+  "description": "5,000-iteration off-path diagnostic using the newer recording.",
+  "limitation": "Experimental snapshot from an ongoing study. Geometry plausibility and off-path quality have not passed acceptance.",
+  "asset": "../../splats/construction-gut-selfcal/scene.compressed.ply",
+  "format": "compressed-ply",
+  "count": 500000,
+  "sourceKind": "native Gaussian PLY",
+  "modelMatrix": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "up": [
+    -0.0018489305428901006,
+    0.9999688011694888,
+    0.007679722879290451
+  ],
+  "initial": {
+    "position": [
+      0.4567183689178039,
+      -0.0025936588753520274,
+      0.23544645836561282
+    ],
+    "target": [
+      1.0123218620443803,
+      -0.11742993250022676,
+      -0.5880323748083183
+    ],
+    "up": [
+      0.07675947936603844,
+      0.9932707920179168,
+      -0.08672436826841078
+    ],
+    "label": "front_left_pass1_f003540"
+  },
+  "poses": [
+    {
+      "position": [
+        0.4571037834475471,
+        -0.0033112117139068413,
+        0.2604331863139484
+      ],
+      "target": [
+        -0.0981343525509043,
+        -0.16670603529609804,
+        1.0759163216144345
+      ],
+      "up": [
+        -0.0793591304133573,
+        0.9864463328749778,
+        0.14361671482645832
+      ],
+      "label": "back_left_pass1_f003540"
+    },
+    {
+      "position": [
+        0.3659322790180858,
+        0.0002871285073179305,
+        -0.21103003908429716
+      ],
+      "target": [
+        0.9354631190853342,
+        -0.1483808228526059,
+        -1.0194435857612052
+      ],
+      "up": [
+        0.07597319840180108,
+        0.9888183688057987,
+        -0.1283211075265488
+      ],
+      "label": "back_left_pass2_f011250"
+    },
+    {
+      "position": [
+        0.4571037834475475,
+        -0.0033112117139068586,
+        0.2604331863139485
+      ],
+      "target": [
+        1.0377185247142868,
+        -0.16471265274624672,
+        1.0584532969981604
+      ],
+      "up": [
+        0.08027458105660558,
+        0.9867264845224151,
+        0.14116244677045878
+      ],
+      "label": "back_right_pass1_f003540"
+    },
+    {
+      "position": [
+        0.3659322790180859,
+        0.0002871285073179075,
+        -0.21103003908429704
+      ],
+      "target": [
+        -0.20051568794964292,
+        -0.15297784678656215,
+        -1.0207500821030513
+      ],
+      "up": [
+        -0.08367821134312146,
+        0.9881722992249736,
+        -0.12850472361296744
+      ],
+      "label": "back_right_pass2_f011250"
+    },
+    {
+      "position": [
+        0.4567183689178039,
+        -0.0025936588753520274,
+        0.23544645836561282
+      ],
+      "target": [
+        1.0123218620443803,
+        -0.11742993250022676,
+        -0.5880323748083183
+      ],
+      "up": [
+        0.07675947936603844,
+        0.9932707920179168,
+        -0.08672436826841078
+      ],
+      "label": "front_left_pass1_f003540"
+    },
+    {
+      "position": [
+        0.3659020566030248,
+        0.0006510813060425433,
+        -0.18603270672730465
+      ],
+      "target": [
+        -0.20250717612962732,
+        -0.12899539219895023,
+        0.6264343609449785
+      ],
+      "up": [
+        -0.08395384927079702,
+        0.9914916631808037,
+        0.09947880696701152
+      ],
+      "label": "front_left_pass2_f011250"
+    },
+    {
+      "position": [
+        0.456718368917804,
+        -0.0025936588753520213,
+        0.2354464583656127
+      ],
+      "target": [
+        -0.12353101522081017,
+        -0.1194233150500781,
+        -0.5705693501920447
+      ],
+      "up": [
+        -0.08287423210392442,
+        0.9929906403704796,
+        -0.08427010021241127
+      ],
+      "label": "front_right_pass1_f003540"
+    },
+    {
+      "position": [
+        0.36590205660302433,
+        0.0006510813060425502,
+        -0.18603270672730488
+      ],
+      "target": [
+        0.9334716309053505,
+        -0.12439836826499401,
+        0.6277408572868248
+      ],
+      "up": [
+        0.07569756047412567,
+        0.9921377327616289,
+        0.09966242305343022
+      ],
+      "label": "front_right_pass2_f011250"
+    }
+  ],
+  "fov": 75,
+  "speed": 0.026678876119756636,
+  "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
+  "renders": [],
+  "state": "prototype",
+  "source": {
+    "file": "Experiments/offpath-ten-tests-20261020-112451/arms/native/construction-gut-selfcal/construction-gut-selfcal.ply",
+    "sha256": "6255ee61d37e1a4388f34f3a4a0d98000d343a66c8cb0de09ad2dfd033749caa",
+    "bytes": 124001758
+  },
+  "webConversion": "SplatTransform 3.10.1 compressed PLY; all Gaussians and SH3 bands retained, attributes quantized for browser delivery.",
+  "trainingSteps": 5000,
+  "assetBytes": 30642481,
+  "assetSha256": "23f50bd8c5f5d07c32493b033b601118c6cccee6275941a58dc9f67b8762fdd9",
+  "cameraProvenance": {
+    "records": [
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/construction-gut-selfcal/native-comparison/render-manifest.json",
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/construction-gut-selfcal/native-comparison/model-transform.json"
+    ],
+    "note": "Recorded raw source poses receive the saved model-world transform once. Scene up is the normalized median of saved pose-up vectors, followed by a shared up-to-Y rotation for model and cameras."
+  }
+}

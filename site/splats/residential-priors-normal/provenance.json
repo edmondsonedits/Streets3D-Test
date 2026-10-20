@@ -1,0 +1,239 @@
+{
+  "id": "residential-priors-normal",
+  "title": "Residential · normal prior",
+  "description": "5,000-iteration off-path diagnostic using the newer recording.",
+  "limitation": "Experimental snapshot from an ongoing study. Geometry plausibility and off-path quality have not passed acceptance.",
+  "asset": "../../splats/residential-priors-normal/scene.compressed.ply",
+  "format": "compressed-ply",
+  "count": 500000,
+  "sourceKind": "native Gaussian PLY",
+  "modelMatrix": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "up": [
+    0.06368359307439724,
+    0.9967087527980406,
+    0.05016036352449047
+  ],
+  "initial": {
+    "position": [
+      -0.022662413772483618,
+      0.0009048574765778417,
+      0.014249147713647908
+    ],
+    "target": [
+      0.5716260576530128,
+      -0.11300394125829268,
+      -0.7818953104731348
+    ],
+    "up": [
+      0.15081371456093404,
+      0.9881425079883803,
+      -0.028802906220845817
+    ],
+    "label": "front_left_pass1_f002250"
+  },
+  "poses": [
+    {
+      "position": [
+        -0.023816201649620623,
+        -0.0010777068289238812,
+        0.039143689531265694
+      ],
+      "target": [
+        -0.6366528390712,
+        -0.16395052984704075,
+        0.8123860185303459
+      ],
+      "up": [
+        -0.018836655826649167,
+        0.9812610631452248,
+        0.1917600228211596
+      ],
+      "label": "back_left_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09133467895687979,
+        0.007989144126691595,
+        -0.05206407515817928
+      ],
+      "target": [
+        0.5362494175417387,
+        -0.1549537817036168,
+        -0.8133707182028013
+      ],
+      "up": [
+        0.15247044418353234,
+        0.9846413305725955,
+        -0.08505418142986851
+      ],
+      "label": "back_left_pass2_f012570"
+    },
+    {
+      "position": [
+        -0.023816201649620575,
+        -0.0010777068289238834,
+        0.039143689531265694
+      ],
+      "target": [
+        0.4955978873404359,
+        -0.24364384453786428,
+        0.8585158107287093
+      ],
+      "up": [
+        0.1402908063556312,
+        0.970060898178376,
+        0.19824314232136545
+      ],
+      "label": "back_right_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09133467895687977,
+        0.007989144126691597,
+        -0.052064075158179304
+      ],
+      "target": [
+        -0.592964266134411,
+        -0.08076283119742869,
+        -0.9125818519322366
+      ],
+      "up": [
+        -0.006230189477675924,
+        0.9950681886840991,
+        -0.09899739697597391
+      ],
+      "label": "back_right_pass2_f012570"
+    },
+    {
+      "position": [
+        -0.022662413772483618,
+        0.0009048574765778417,
+        0.014249147713647908
+      ],
+      "target": [
+        0.5716260576530128,
+        -0.11300394125829268,
+        -0.7818953104731348
+      ],
+      "up": [
+        0.15081371456093404,
+        0.9881425079883803,
+        -0.028802906220845817
+      ],
+      "label": "front_left_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09354857562354216,
+        0.007588167145372667,
+        -0.027165523412951365
+      ],
+      "target": [
+        -0.7388476786427142,
+        -0.10718497241699544,
+        0.7280935010797389
+      ],
+      "up": [
+        -0.026421623155348566,
+        0.9914111525421276,
+        0.1280852233668148
+      ],
+      "label": "front_left_pass2_f012570"
+    },
+    {
+      "position": [
+        -0.022662413772483608,
+        0.0009048574765778414,
+        0.014249147713647915
+      ],
+      "target": [
+        -0.5606246687586228,
+        -0.03331062656746909,
+        -0.8280251026714981
+      ],
+      "up": [
+        -0.008313747621346243,
+        0.999342672955229,
+        -0.03528602572105167
+      ],
+      "label": "front_right_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09354857562354213,
+        0.0075881671453726564,
+        -0.027165523412951267
+      ],
+      "target": [
+        0.3903660050334361,
+        -0.18137592292318352,
+        0.8273046348091746
+      ],
+      "up": [
+        0.13227901050585977,
+        0.9809842944306242,
+        0.14202843891292022
+      ],
+      "label": "front_right_pass2_f012570"
+    }
+  ],
+  "fov": 75,
+  "speed": 0.015,
+  "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
+  "renders": [
+    {
+      "title": "residential priors normal lateral",
+      "url": "../../renders/residential-priors-normal-lateral.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "residential priors normal route",
+      "url": "../../renders/residential-priors-normal-route.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "residential priors off versus residential priors normal lateral",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "residential priors off versus residential priors normal route",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-normal-route.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    }
+  ],
+  "state": "prototype",
+  "source": {
+    "file": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-priors-normal/residential-priors-normal.ply",
+    "sha256": "262b94dce606a9f8f599fc6b9502ae761bcd63a0e14f0ebd52f83df01943fe53",
+    "bytes": 124001758
+  },
+  "webConversion": "SplatTransform 3.10.1 compressed PLY; all Gaussians and SH3 bands retained, attributes quantized for browser delivery.",
+  "trainingSteps": 5000,
+  "assetBytes": 30642481,
+  "assetSha256": "be2c65fcbcf4b080f424da77f73e6b6f45039ef3f7fcea0300ab4548afeb1f57",
+  "cameraProvenance": {
+    "records": [
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-priors-normal/native-comparison/render-manifest.json",
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-priors-normal/native-comparison/model-transform.json"
+    ],
+    "note": "Recorded raw source poses receive the saved model-world transform once. Scene up is the normalized median of saved pose-up vectors, followed by a shared up-to-Y rotation for model and cameras."
+  }
+}

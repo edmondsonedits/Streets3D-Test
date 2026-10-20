@@ -1,0 +1,239 @@
+{
+  "id": "residential-gut-selfcal",
+  "title": "Residential · self-calibration",
+  "description": "5,000-iteration off-path diagnostic using the newer recording.",
+  "limitation": "Experimental snapshot from an ongoing study. Geometry plausibility and off-path quality have not passed acceptance.",
+  "asset": "../../splats/residential-gut-selfcal/scene.compressed.ply",
+  "format": "compressed-ply",
+  "count": 500000,
+  "sourceKind": "native Gaussian PLY",
+  "modelMatrix": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "up": [
+    0.061819991606007936,
+    0.996833676118394,
+    0.05000910711182263
+  ],
+  "initial": {
+    "position": [
+      -0.021600133754268513,
+      0.0014290660025621173,
+      0.015908854280650454
+    ],
+    "target": [
+      0.575406529685795,
+      -0.10999533028603313,
+      -0.778551747461113
+    ],
+    "up": [
+      0.14785450107360742,
+      0.9886253490172019,
+      -0.027549333801209816
+    ],
+    "label": "front_left_pass1_f002250"
+  },
+  "poses": [
+    {
+      "position": [
+        -0.022821998805132707,
+        -0.000577512601221521,
+        0.04079822325827447
+      ],
+      "target": [
+        -0.6374558603115763,
+        -0.16597158555270258,
+        0.812076394168225
+      ],
+      "up": [
+        -0.02243046966161842,
+        0.9810404056103816,
+        0.1925009002331599
+      ],
+      "label": "back_left_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09081024152082297,
+        0.008313881082391793,
+        -0.05055567324915836
+      ],
+      "target": [
+        0.538205494128291,
+        -0.15462898641060532,
+        -0.8106798908866202
+      ],
+      "up": [
+        0.15080301935754087,
+        0.9847887676618942,
+        -0.08631067396108633
+      ],
+      "label": "back_left_pass2_f012570"
+    },
+    {
+      "position": [
+        -0.022821998805132693,
+        -0.0005775126012215232,
+        0.040798223258274494
+      ],
+      "target": [
+        0.4948924542418762,
+        -0.24221764155921693,
+        0.861518512506323
+      ],
+      "up": [
+        0.13671070763956988,
+        0.9703247212564609,
+        0.19944953681385064
+      ],
+      "label": "back_right_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09081024152082295,
+        0.008313881082391788,
+        -0.05055567324915834
+      ],
+      "target": [
+        -0.5909921238986463,
+        -0.08264740118350589,
+        -0.9116852393828041
+      ],
+      "up": [
+        -0.007895356423917064,
+        0.9949051197329121,
+        -0.10050604994814596
+      ],
+      "label": "back_right_pass2_f012570"
+    },
+    {
+      "position": [
+        -0.021600133754268513,
+        0.0014290660025621173,
+        0.015908854280650454
+      ],
+      "target": [
+        0.575406529685795,
+        -0.10999533028603313,
+        -0.778551747461113
+      ],
+      "up": [
+        0.14785450107360742,
+        0.9886253490172019,
+        -0.027549333801209816
+      ],
+      "label": "front_left_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09306057091170104,
+        0.007946321643928236,
+        -0.02565987204309668
+      ],
+      "target": [
+        -0.7392762492385911,
+        -0.10686751316530635,
+        0.7288088684762963
+      ],
+      "up": [
+        -0.028419068001357545,
+        0.9915528620886889,
+        0.12655148461264218
+      ],
+      "label": "front_left_pass2_f012570"
+    },
+    {
+      "position": [
+        -0.02160013375426851,
+        0.001429066002562117,
+        0.01590885428065046
+      ],
+      "target": [
+        -0.5569417848676573,
+        -0.03374927427951878,
+        -0.8279938657992109
+      ],
+      "up": [
+        -0.011286676227580856,
+        0.9993410333711227,
+        -0.03449797038190052
+      ],
+      "label": "front_right_pass1_f002250"
+    },
+    {
+      "position": [
+        -0.09306057091170104,
+        0.007946321643928219,
+        -0.025659872043096416
+      ],
+      "target": [
+        0.38992136878834854,
+        -0.17884909839240595,
+        0.8298142169724804
+      ],
+      "up": [
+        0.13027930778010074,
+        0.981436510017671,
+        0.1407468605997018
+      ],
+      "label": "front_right_pass2_f012570"
+    }
+  ],
+  "fov": 75,
+  "speed": 0.015,
+  "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
+  "renders": [
+    {
+      "title": "residential gut k0 vs selfcal lateral",
+      "url": "../../renders/residential-gut-k0-vs-selfcal-lateral.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "residential gut k0 vs selfcal route",
+      "url": "../../renders/residential-gut-k0-vs-selfcal-route.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "residential gut selfcal lateral",
+      "url": "../../renders/residential-gut-selfcal-lateral.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "residential gut selfcal route",
+      "url": "../../renders/residential-gut-selfcal-route.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    }
+  ],
+  "state": "prototype",
+  "source": {
+    "file": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/residential-gut-selfcal.ply",
+    "sha256": "4d272c133a38fd336af12277124bd1b900e1cc764ca5221f24a1f5fcbccae806",
+    "bytes": 124001758
+  },
+  "webConversion": "SplatTransform 3.10.1 compressed PLY; all Gaussians and SH3 bands retained, attributes quantized for browser delivery.",
+  "trainingSteps": 5000,
+  "assetBytes": 30642481,
+  "assetSha256": "84b0ab982478feedde57bcbd75734bfdea227fb46c2b6430480b44f7cab5054d",
+  "cameraProvenance": {
+    "records": [
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/native-comparison/render-manifest.json",
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/native-comparison/model-transform.json"
+    ],
+    "note": "Recorded raw source poses receive the saved model-world transform once. Scene up is the normalized median of saved pose-up vectors, followed by a shared up-to-Y rotation for model and cameras."
+  }
+}

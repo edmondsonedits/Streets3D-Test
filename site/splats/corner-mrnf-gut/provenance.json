@@ -1,0 +1,132 @@
+{
+  "id": "corner-mrnf-gut",
+  "title": "20-second corner · MRNF + GUT",
+  "description": "The sharper-frame, 20-second corner test with MRNF + GUT.",
+  "limitation": "One trained scene; headless/native and aligned exports are coordinate variants, not separate tests.",
+  "asset": "../../splats/corner-mrnf-gut/scene.sog",
+  "format": "sog",
+  "count": 1000000,
+  "sourceKind": "existing browser export",
+  "modelMatrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "initial": {
+    "position": [
+      0.060699833177371765,
+      -0.08844237156963505,
+      -1.2755042778789547
+    ],
+    "target": [
+      0.3887107022571045,
+      -0.013467501744030129,
+      7.262066817342876
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "label": "Saved capture view"
+  },
+  "poses": [
+    {
+      "position": [
+        0.060699833177371765,
+        -0.08844237156963505,
+        -1.2755042778789547
+      ],
+      "target": [
+        0.3887107022571045,
+        -0.013467501744030129,
+        7.262066817342876
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Saved capture view"
+    }
+  ],
+  "fov": 75,
+  "speed": 0.65,
+  "heightReference": "Recorded front/000051.jpg center, with this corner dataset's own visual-upright and browser transforms. Fixed capture-level plane in arbitrary units; not a road-following or surveyed height.",
+  "renders": [
+    {
+      "title": "Peterborough corner motion check",
+      "url": "../../renders/peterborough-corner-motion-check.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    }
+  ],
+  "state": "prototype",
+  "source": {
+    "file": "LichtFeld-360-test-2026-10-18/trained-turn-test/Viewer/Peterborough-corner-20s-MRNFGUT.html",
+    "sha256": "402688288a715dd38351079a0a9477eec2f2ee41e94cfca6747a0f85dffb8d0f",
+    "bytes": 23059818
+  },
+  "webConversion": "Extracted original embedded SOG without recompression; Rz(180deg) matches original PlayCanvas loader.",
+  "assetBytes": 14582468,
+  "assetSha256": "5a100455103b32e82f8b75e15aa6e549ee12b860ee332a537a9404c4979023d6",
+  "cameraProvenance": {
+    "sourceCamera": "front/000051.jpg",
+    "uprightRotation": [
+      [
+        -0.09464873263825924,
+        0.9920239869248968,
+        0.08324678237387613
+      ],
+      [
+        -0.9920239869248968,
+        -0.10097955509205336,
+        0.0754422880024403
+      ],
+      [
+        0.08324678237387613,
+        -0.0754422880024403,
+        0.993669177546206
+      ]
+    ],
+    "nativeUprightToBrowser": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "records": [
+      "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/previews/views.json",
+      "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/upright-export-plan.json"
+    ],
+    "note": "The native export uses a shared visual sky-up rather than the original sensor roll. Export transforms are already baked into the asset."
+  }
+}

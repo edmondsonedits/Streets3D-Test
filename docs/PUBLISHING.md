@@ -37,3 +37,11 @@ Rollback is a reviewed Git revert followed by a new successful Pages deployment.
 
 - https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
 - https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+
+## Gaussian models and saved native renders
+
+Use `site/demos/splat-explorer-v1/?scene=<id>` for an additional compatible model. Add its model and provenance under `site/splats/<id>/`, its record to `site/splats/scenes.json`, and its gallery entry to `site/tests.json`. See [the delivery contract](SPLAT-PUBLICATION.md). Keep each distinct trained model accessible; do not count duplicate exports or source point clouds as new reconstructions. Store recorded motion comparisons separately under `site/renders/` and associate them with their interactive model(s). A saved render does not replace the model.
+
+Every splat model must provide a verified initial camera and auditable height reference, or explicitly label the reference as estimated. Preserve the capture-height toggle and its free-flight alternative. Run `node scripts/test-splat-navigation.mjs`, the validator, and browser checks for each model: actual visible scene, translation, look-around, height lock, free-flight height change, pose reset, and render playback. Draw-call counts alone do not prove that geometry is visible.
+
+The current publication is approximately 0.84 GB. It fits the free-site budget but leaves limited space. Check the validator before adding more models; do not silently remove earlier tests or introduce paid storage.

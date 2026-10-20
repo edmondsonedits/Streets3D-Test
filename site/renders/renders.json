@@ -1,0 +1,2013 @@
+{
+  "schemaVersion": 1,
+  "snapshotAt": "2026-10-20T16:33:03.253010+00:00",
+  "renders": [
+    {
+      "id": "lichtfeld-half-block-route",
+      "title": "LichtFeld half block route",
+      "url": "../../renders/lichtfeld-half-block-route.mp4",
+      "sceneIds": [
+        "half-block"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 12179565,
+      "sha256": "e06673d7dd247d62ed8c3ef7619deb5fc1ad30cd6a29c2d4452154c78bcaeca3",
+      "durationSeconds": 60.0,
+      "width": 1600,
+      "height": 900,
+      "source": {
+        "file": "Experiments/block-lichtfeld-postshot-20261019-222743-6h/delivery/motion/LichtFeld-half-block-route.mp4",
+        "bytes": 224613908,
+        "sha256": "bbd90a236885b5a67b54c3dd5bbbbf587a3f97522fd8603eefed8f440111cc7f"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "lichtfeld-lateral",
+      "title": "LichtFeld lateral",
+      "url": "../../renders/lichtfeld-lateral.mp4",
+      "sceneIds": [
+        "half-block"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 3716232,
+      "sha256": "2250936185747a648d88c5372ef3a3ee803f5644c18401368a6283fc1baff248",
+      "durationSeconds": 18.0,
+      "width": 1600,
+      "height": 900,
+      "source": {
+        "file": "Experiments/block-lichtfeld-postshot-20261019-222743-6h/delivery/motion/LichtFeld-lateral.mp4",
+        "bytes": 24531338,
+        "sha256": "d19b77e945339667f29eca206a75b159a7b021c6c8e4f317e60ba03ed3f53d53"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "a-back-route",
+      "title": "A back route",
+      "url": "../../renders/a-back-route.mp4",
+      "sceneIds": [
+        "corner-a"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4152483,
+      "sha256": "f480d1ec89a3bb3ad4d62f8e7a3e6262f0cc3f868b07448e0a986a4aa4340548",
+      "durationSeconds": 20.0,
+      "width": 1200,
+      "height": 800,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/A/exports/A-back-route.mp4",
+        "bytes": 18674610,
+        "sha256": "cd0611865a1d85445d8f01fa717ad96a603dddbe5956c237e3c3f717b1b248dc"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "a-front-route",
+      "title": "A front route",
+      "url": "../../renders/a-front-route.mp4",
+      "sceneIds": [
+        "corner-a"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4085688,
+      "sha256": "1f282ae04a99259be3127bfb7450f405b645286dc9ff114c465a6e51bb870404",
+      "durationSeconds": 20.0,
+      "width": 1200,
+      "height": 800,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/A/exports/A-front-route.mp4",
+        "bytes": 16107513,
+        "sha256": "6f818a433ab59fbf076015393958a8401471bb5dcb2f97ed0c4ed652f16ce8b2"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "a-lateral",
+      "title": "A lateral",
+      "url": "../../renders/a-lateral.mp4",
+      "sceneIds": [
+        "corner-a"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 781139,
+      "sha256": "6b7cc15ae67eec2525d9961fb144835d8aa91f4eeb945e220c14cb87479132b7",
+      "durationSeconds": 6.0,
+      "width": 1200,
+      "height": 800,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/A/exports/A-lateral.mp4",
+        "bytes": 2174826,
+        "sha256": "c53ba7d6018672e8603c1e9b30a9e4c9d5c77483a1fd1f48fae11dd7113cc6e0"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "b-back-route",
+      "title": "B back route",
+      "url": "../../renders/b-back-route.mp4",
+      "sceneIds": [
+        "corner-b"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4152853,
+      "sha256": "1a189e3460285516cc89171b9d4c172f73518627bd0e3737896c8eb4803baca1",
+      "durationSeconds": 20.0,
+      "width": 1200,
+      "height": 800,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/B/exports/B-back-route.mp4",
+        "bytes": 22189560,
+        "sha256": "ac19f017a8067c415e514fa6f1aa2e377f4c011a23a3436dc854cff0f3e51bf9"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "b-front-route",
+      "title": "B front route",
+      "url": "../../renders/b-front-route.mp4",
+      "sceneIds": [
+        "corner-b"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4154672,
+      "sha256": "b29708d21812e6288d1d0a28646e8cc094ac8710aad7532bc3ec2d572d527c0d",
+      "durationSeconds": 20.0,
+      "width": 1200,
+      "height": 800,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/B/exports/B-front-route.mp4",
+        "bytes": 20459589,
+        "sha256": "f11a92436a6d7e7b6903ebe0badd6769f397fb358455b9648e5a0f1a361ea495"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "b-lateral",
+      "title": "B lateral",
+      "url": "../../renders/b-lateral.mp4",
+      "sceneIds": [
+        "corner-b"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 996003,
+      "sha256": "535f61928f5a1dd2095368a5d4eb3e94fd9dd2c6dd32c5b590406b69e1f93d42",
+      "durationSeconds": 6.0,
+      "width": 1200,
+      "height": 800,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/B/exports/B-lateral.mp4",
+        "bytes": 2935903,
+        "sha256": "dd3a8e9b3484a36f76cf18716f426bd138609fe75715ee71574025e96661d7c8"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "a-b-back-route-slow",
+      "title": "A B back route slow",
+      "url": "../../renders/a-b-back-route-slow.mp4",
+      "sceneIds": [
+        "corner-a",
+        "corner-b"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 8149235,
+      "sha256": "67e80588f2ab51894a8d58556c649e4ce5d193563f28312e2d0f7920d95371de",
+      "durationSeconds": 40.0,
+      "width": 1600,
+      "height": 568,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/viewers/motion/A-B-back-route-slow.mp4",
+        "bytes": 43355855,
+        "sha256": "335857f21205dd11bd4d55af8ab83e586ba4fee990fe4c73150a939f2c49cade"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "a-b-front-route-slow",
+      "title": "A B front route slow",
+      "url": "../../renders/a-b-front-route-slow.mp4",
+      "sceneIds": [
+        "corner-a",
+        "corner-b"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 7585739,
+      "sha256": "803f4427ee403eae72ecbb5813253fd0df0b530b98c96a665a609ef706e0ccf7",
+      "durationSeconds": 40.0,
+      "width": 1600,
+      "height": 568,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/viewers/motion/A-B-front-route-slow.mp4",
+        "bytes": 38914505,
+        "sha256": "2f7ae5ebb1394e8a5f6b4e7b75aedfcf151b1c06c98ccb01ffc91c4f22ffd1f3"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "a-b-lateral-slow",
+      "title": "A B lateral slow",
+      "url": "../../renders/a-b-lateral-slow.mp4",
+      "sceneIds": [
+        "corner-a",
+        "corner-b"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 1048050,
+      "sha256": "1cfe80facf51ab8c4f0265fa5082450474b57290052d878dc7e0dc208ea283e8",
+      "durationSeconds": 12.0,
+      "width": 1600,
+      "height": 568,
+      "source": {
+        "file": "Experiments/corner-ab-20261019-120505-0eecdf/viewers/motion/A-B-lateral-slow.mp4",
+        "bytes": 5235745,
+        "sha256": "9e48f3c927168fd9f79d2fbdbcebc8a0b059f79e7d39e2d34b705489098ac0dd"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "peterborough-corner-motion-check",
+      "title": "Peterborough corner motion check",
+      "url": "../../renders/peterborough-corner-motion-check.mp4",
+      "sceneIds": [
+        "corner-mrnf-gut"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 626903,
+      "sha256": "830dbd5e9e1d902602300be221e2bcf2be6354425b976e6918c387ee1de2acb4",
+      "durationSeconds": 3.0,
+      "width": 1200,
+      "height": 800,
+      "source": {
+        "file": "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/Peterborough-corner-motion-check.mp4",
+        "bytes": 1959562,
+        "sha256": "d101243cac992f6849befa24760c3e5ee4ed197a54929bec7bf3b7dcfaf8eb3a"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0-lateral",
+      "title": "residential gut k0 lateral",
+      "url": "../../renders/residential-gut-k0-lateral.mp4",
+      "sceneIds": [
+        "residential-gut-k0"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 3940634,
+      "sha256": "faacaf4166f0fb8476fdf54819e56eee6619b0b8c5bd9ba879d076b29e030190",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-k0-lateral.mp4",
+        "bytes": 14824205,
+        "sha256": "4f6be83a995117dc59c85f9f909f1c193863c712579926f21f15a73d030dca58"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0-route",
+      "title": "residential gut k0 route",
+      "url": "../../renders/residential-gut-k0-route.mp4",
+      "sceneIds": [
+        "residential-gut-k0"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4492064,
+      "sha256": "344d026022717096a84c73db0dd1847dfcda886c0b570920451a7e7743648f64",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-k0-route.mp4",
+        "bytes": 15904370,
+        "sha256": "7e2608c664771c40a334f84d9b2c83b3d8f1f1e6e47eb5ad6d1adfba26a0a170"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0-vs-selfcal-lateral",
+      "title": "residential gut k0 vs selfcal lateral",
+      "url": "../../renders/residential-gut-k0-vs-selfcal-lateral.mp4",
+      "sceneIds": [
+        "residential-gut-k0",
+        "residential-gut-selfcal"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4082295,
+      "sha256": "7c8259b48e1c49ff85c47029129509989e14222296a28432a3ae5ba0518ab372",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-k0-vs-selfcal-lateral.mp4",
+        "bytes": 30931957,
+        "sha256": "9d98bd588e36a779ddd71c470203c029b36c7aa272b20f0e15abc86ae04e78cf"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0-vs-selfcal-route",
+      "title": "residential gut k0 vs selfcal route",
+      "url": "../../renders/residential-gut-k0-vs-selfcal-route.mp4",
+      "sceneIds": [
+        "residential-gut-k0",
+        "residential-gut-selfcal"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4607050,
+      "sha256": "bd618ee75e0149111cdf05c6107802b90a17e52bf2b9a13c12fb016472455813",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-k0-vs-selfcal-route.mp4",
+        "bytes": 33117388,
+        "sha256": "103024d0b2f4bb7c138cb2591b1183fc9cc7572f5c9c86626ba6a1affc21be9b"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-selfcal-lateral",
+      "title": "residential gut selfcal lateral",
+      "url": "../../renders/residential-gut-selfcal-lateral.mp4",
+      "sceneIds": [
+        "residential-gut-selfcal"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4087068,
+      "sha256": "214fed2aaee7eb7949522d9e70a3ad4a90682ab948e8e820f0786eabb91308f1",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-selfcal-lateral.mp4",
+        "bytes": 15976221,
+        "sha256": "78903d119560b10ece0c3c17d56b880c5d6dbcf17b7974fbc415643263bd09d4"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-selfcal-route",
+      "title": "residential gut selfcal route",
+      "url": "../../renders/residential-gut-selfcal-route.mp4",
+      "sceneIds": [
+        "residential-gut-selfcal"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4642554,
+      "sha256": "54f1d519d080399b316e7403241d0cd9d95537d87583d231a8c0826fac272274",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-selfcal-route.mp4",
+        "bytes": 17108841,
+        "sha256": "4361fa8145c054e5b70c7d92dcfd804f7647aeb12296d22133adf4c60364d419"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-fastgs-erank-lateral",
+      "title": "residential fastgs erank lateral",
+      "url": "../../renders/residential-fastgs-erank-lateral.mp4",
+      "sceneIds": [
+        "residential-fastgs-erank"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4208350,
+      "sha256": "b7042ca4927acdc58b89498a3c4e63a701bed5ac06639904eae4daab03cef319",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-fastgs-erank-lateral.mp4",
+        "bytes": 16208280,
+        "sha256": "fccca25bf56238e53dc53bb83be597d153c5a3681e28f89970ab9c6575090d37"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-fastgs-erank-route",
+      "title": "residential fastgs erank route",
+      "url": "../../renders/residential-fastgs-erank-route.mp4",
+      "sceneIds": [
+        "residential-fastgs-erank"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4780642,
+      "sha256": "6c8d63b298a5cde7be62c451cad63c04d82832984b6051b000822c406f15a776",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-fastgs-erank-route.mp4",
+        "bytes": 17894379,
+        "sha256": "a4da012b5c594eb00265fc93e22dd3aad06659c79f7a642a1e79dc22297b9a55"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-fastgs-zero-lateral",
+      "title": "residential fastgs zero lateral",
+      "url": "../../renders/residential-fastgs-zero-lateral.mp4",
+      "sceneIds": [
+        "residential-fastgs-zero"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4270257,
+      "sha256": "8cf04f2d5cc50b0bb31b71732a7c40db019f2e005ed33bd6786ad10e64c23cf7",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-fastgs-zero-lateral.mp4",
+        "bytes": 17277774,
+        "sha256": "f1e11e1ac68498aec81500617e9de86590ecc8b52226a5a2cd6ab8d7a758d6eb"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-fastgs-zero-route",
+      "title": "residential fastgs zero route",
+      "url": "../../renders/residential-fastgs-zero-route.mp4",
+      "sceneIds": [
+        "residential-fastgs-zero"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4787096,
+      "sha256": "ae43811c62f052f41a738b6ece2ea7a78469b718f09c0682a99672f7eb0f0615",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-fastgs-zero-route.mp4",
+        "bytes": 18818775,
+        "sha256": "f068a883d1ef8e16b6f91f93079ba8bc2914bbfa4e545962d4f54979ff11a732"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-fastgs-zero__vs__residential-fastgs-erank-lateral",
+      "title": "residential fastgs zero versus residential fastgs erank lateral",
+      "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-lateral.mp4",
+      "sceneIds": [
+        "residential-fastgs-erank",
+        "residential-fastgs-zero"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4241858,
+      "sha256": "a3998446738dc480f9e76a47b7b4118d34793eaf5a755de8b83b85b27b823ceb",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-fastgs-zero__vs__residential-fastgs-erank-lateral.mp4",
+        "bytes": 33437276,
+        "sha256": "2549677fc160a764d1260bc8e2490a9482484062c3652624e970d81d6ed0e819"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-fastgs-zero__vs__residential-fastgs-erank-route",
+      "title": "residential fastgs zero versus residential fastgs erank route",
+      "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-route.mp4",
+      "sceneIds": [
+        "residential-fastgs-erank",
+        "residential-fastgs-zero"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4816357,
+      "sha256": "83ffbd6112ab108b9dafb70563793b2f2731c8fba204e7b1ae5c2285ca407919",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-fastgs-zero__vs__residential-fastgs-erank-route.mp4",
+        "bytes": 36780051,
+        "sha256": "b26fa33b7579f3852a53e42aa353065fd2429a5386280c278e508b12debcd6b1"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0__vs__residential-fastgs-zero-lateral",
+      "title": "residential gut k0 versus residential fastgs zero lateral",
+      "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-lateral.mp4",
+      "sceneIds": [
+        "residential-fastgs-zero",
+        "residential-gut-k0"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4145671,
+      "sha256": "96e2af77020aaf9737d5db42a6fd80994b801d9cb033421d69b7021c4bf0ce06",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-k0__vs__residential-fastgs-zero-lateral.mp4",
+        "bytes": 32051822,
+        "sha256": "d467b055257ab44b3324d8409aca1cdc5faa4870ca845c5797dada82ed550a5a"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0__vs__residential-fastgs-zero-route",
+      "title": "residential gut k0 versus residential fastgs zero route",
+      "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-route.mp4",
+      "sceneIds": [
+        "residential-fastgs-zero",
+        "residential-gut-k0"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4685765,
+      "sha256": "9fdcc8ba1ba22b351f2b0129208db3da65bc39e95382c136ef3973103ebf717f",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-k0__vs__residential-fastgs-zero-route.mp4",
+        "bytes": 34756968,
+        "sha256": "85cf5f9846481693cf6e413162fe6b58ce334adce8c39a9dc177ca0e50f11349"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0__vs__residential-gut-shadow-lateral",
+      "title": "residential gut k0 versus residential gut shadow lateral",
+      "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-lateral.mp4",
+      "sceneIds": [
+        "residential-gut-k0",
+        "residential-gut-shadow"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4014867,
+      "sha256": "9cec73b04f1fb48a98df6799355d8053cbf7d1f46a2d0eec2b9985dee7349d63",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-k0__vs__residential-gut-shadow-lateral.mp4",
+        "bytes": 29650856,
+        "sha256": "4c8650004ea1b83da5e59e8d876b0ef9388e31525021189e00283b9f502c1105"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-k0__vs__residential-gut-shadow-route",
+      "title": "residential gut k0 versus residential gut shadow route",
+      "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-route.mp4",
+      "sceneIds": [
+        "residential-gut-k0",
+        "residential-gut-shadow"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4524702,
+      "sha256": "1d60052afeecb2537edd8063142551bdcd4dec4a1e77e93cec5149d26a8edbde",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-k0__vs__residential-gut-shadow-route.mp4",
+        "bytes": 31871660,
+        "sha256": "ede342ad8632b9b3e53156b24813a4b06bee6e76083afb8d57a5e2a4b976fdad"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-shadow-lateral",
+      "title": "residential gut shadow lateral",
+      "url": "../../renders/residential-gut-shadow-lateral.mp4",
+      "sceneIds": [
+        "residential-gut-shadow"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 3948463,
+      "sha256": "9d3487303d0734a6f704d1d972c19113438c3e7e62090a535c7f271eb81c8539",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-shadow-lateral.mp4",
+        "bytes": 14875944,
+        "sha256": "22dcfc8a49db0465850faffc679ac7e5a84a9a7e093f3003ac0e861d8d7362c2"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-shadow-route",
+      "title": "residential gut shadow route",
+      "url": "../../renders/residential-gut-shadow-route.mp4",
+      "sceneIds": [
+        "residential-gut-shadow"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4503704,
+      "sha256": "b1958951de617c3fab29473a9d9d206a2587234ebcd24eb0ed483cc5ea365cf4",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-shadow-route.mp4",
+        "bytes": 15978716,
+        "sha256": "702b8f1dafb7bca9e76acb22a37f64ff14f7f4cd45c83235b11a99fa5de343da"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-both-lateral",
+      "title": "residential priors both lateral",
+      "url": "../../renders/residential-priors-both-lateral.mp4",
+      "sceneIds": [
+        "residential-priors-both"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4103570,
+      "sha256": "1c45067c28e36308e3758ae390eaf45aaf09dd3fa7fac20445ad49a0eebe28c6",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-both-lateral.mp4",
+        "bytes": 16317284,
+        "sha256": "edd0d5387bfbacf7b2dc03ec8f6f5fb1e08437b2c1c09f6794197a9ce1c3167f"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-both-route",
+      "title": "residential priors both route",
+      "url": "../../renders/residential-priors-both-route.mp4",
+      "sceneIds": [
+        "residential-priors-both"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4668416,
+      "sha256": "32c4a03ba993eb7451d1853fe9e268235decaf0b4dfa5ddca469810a52933e84",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-both-route.mp4",
+        "bytes": 17866540,
+        "sha256": "9c6e2796c08c0a134f5817b625f5757f1bfb9df3fdf4d38861dc8f7db2b0b9c1"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-depth-lateral",
+      "title": "residential priors depth lateral",
+      "url": "../../renders/residential-priors-depth-lateral.mp4",
+      "sceneIds": [
+        "residential-priors-depth"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4196300,
+      "sha256": "7590bcc4adf3f6add255722e385b456ecd074de6f9105169cf8c48dbf84a3f31",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-depth-lateral.mp4",
+        "bytes": 16950590,
+        "sha256": "a1fd68046ac1cee469fb649e2416869a31c78cb9787d41dc5be5b820c52b05e9"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-depth-route",
+      "title": "residential priors depth route",
+      "url": "../../renders/residential-priors-depth-route.mp4",
+      "sceneIds": [
+        "residential-priors-depth"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4798642,
+      "sha256": "42feeff91812dfa2c4bf2ed1df3ca09019810d7c4cd504e55ce9d30ac4384c00",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-depth-route.mp4",
+        "bytes": 18441780,
+        "sha256": "92ed9128d604e3be2f78646a3a14c03680d77c33711f69d680f5014756a7b68b"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-normal-lateral",
+      "title": "residential priors normal lateral",
+      "url": "../../renders/residential-priors-normal-lateral.mp4",
+      "sceneIds": [
+        "residential-priors-normal"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4185306,
+      "sha256": "872129e34c0f941ec32c52c74d351b89d6be037756dc73fcce0f86969198cb9c",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-normal-lateral.mp4",
+        "bytes": 16543403,
+        "sha256": "a0b2a2ea619953e8c3a1b1cef36388419045acb242e077da97d8a7ec404eea81"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-normal-route",
+      "title": "residential priors normal route",
+      "url": "../../renders/residential-priors-normal-route.mp4",
+      "sceneIds": [
+        "residential-priors-normal"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4765071,
+      "sha256": "d332a633925ee01115a962a6fd99a8180d1df7b5553b8572fb08d4c416636b67",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-normal-route.mp4",
+        "bytes": 18239916,
+        "sha256": "03e29f7e66201915d295bb7c03418b294d800da4c9c9eac013ac9bb17662e28e"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off-lateral",
+      "title": "residential priors off lateral",
+      "url": "../../renders/residential-priors-off-lateral.mp4",
+      "sceneIds": [
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4258756,
+      "sha256": "720daf9b315296f1bccb31c37f029d1e6bdcde79e3e94b3e01eec02b63d8d842",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off-lateral.mp4",
+        "bytes": 17237352,
+        "sha256": "b737a410781b60cb499936bc110c890da920c7d6726982ec46b66c5f09d4b23b"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off-route",
+      "title": "residential priors off route",
+      "url": "../../renders/residential-priors-off-route.mp4",
+      "sceneIds": [
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4791918,
+      "sha256": "2c96c1e9a5db3670279befe9dedf18da167b8604c4ae4c6f1f5807e53b5ad682",
+      "durationSeconds": 24.0,
+      "width": 1152,
+      "height": 648,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off-route.mp4",
+        "bytes": 18708459,
+        "sha256": "235c2aa4726b42b158d3cc08bfd68add37e5711f1549ea3d241862e387b49bee"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off__vs__residential-priors-both-lateral",
+      "title": "residential priors off versus residential priors both lateral",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-both-lateral.mp4",
+      "sceneIds": [
+        "residential-priors-both",
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4192985,
+      "sha256": "d55023b0f9434e1fb239cdefaf45c9307aefab76a2ea7f5297280417c39f54a7",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off__vs__residential-priors-both-lateral.mp4",
+        "bytes": 33478793,
+        "sha256": "048cc5d6d8f6f38a9db1434f266db9604889c345f112acfec6000c9374494803"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off__vs__residential-priors-both-route",
+      "title": "residential priors off versus residential priors both route",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-both-route.mp4",
+      "sceneIds": [
+        "residential-priors-both",
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4770733,
+      "sha256": "ce514f7654d516c99a85a0678b2b11ff7784e4c7dcdc3e62c71f7587c545f514",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off__vs__residential-priors-both-route.mp4",
+        "bytes": 36603934,
+        "sha256": "183be98a9f15c0358468a65b464065d27ed1787c881ff96468ab9951cb51dc37"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off__vs__residential-priors-depth-lateral",
+      "title": "residential priors off versus residential priors depth lateral",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-depth-lateral.mp4",
+      "sceneIds": [
+        "residential-priors-depth",
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4217991,
+      "sha256": "c99bb44899dca8204aa0b968822d3a6a910b123de56a496bffb7314b3f82232b",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off__vs__residential-priors-depth-lateral.mp4",
+        "bytes": 34095623,
+        "sha256": "4bf68a59425d45906d3c8917ed4c0caa605ad8a71615af5f9c387967216ebe7d"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off__vs__residential-priors-depth-route",
+      "title": "residential priors off versus residential priors depth route",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-depth-route.mp4",
+      "sceneIds": [
+        "residential-priors-depth",
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4818050,
+      "sha256": "4b60811dd8b66bd364715cd9ec9e1d097bba615c139269f80dd40a34f2af81f3",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off__vs__residential-priors-depth-route.mp4",
+        "bytes": 37184667,
+        "sha256": "d77bfb32ce0de4218b55797dbeb696b77803e4a2dd219e18e028d03e30987f93"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off__vs__residential-priors-normal-lateral",
+      "title": "residential priors off versus residential priors normal lateral",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
+      "sceneIds": [
+        "residential-priors-normal",
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4231810,
+      "sha256": "6d468cc3dcbb85d12d137a2ee51b81b5efb99cb4d48e0e534ba80a82357a43a0",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
+        "bytes": 33679914,
+        "sha256": "25e16de3db417c01f8c9f4602be40ce31ebd221aac0c6878c246a64f4adfbb82"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-priors-off__vs__residential-priors-normal-route",
+      "title": "residential priors off versus residential priors normal route",
+      "url": "../../renders/residential-priors-off__vs__residential-priors-normal-route.mp4",
+      "sceneIds": [
+        "residential-priors-normal",
+        "residential-priors-off"
+      ],
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view.",
+      "bytes": 4802602,
+      "sha256": "100b26844c097256585efac51ba14de7a3c7cc52a9d19817298aab7edbe1588b",
+      "durationSeconds": 24.0,
+      "width": 1600,
+      "height": 450,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-priors-off__vs__residential-priors-normal-route.mp4",
+        "bytes": 36979693,
+        "sha256": "855b039fdc1b9a713d07c3d76c8799b989c838b782dc75461a7a855616f92e44"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(1600,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "24",
+          "-maxrate",
+          "1600k",
+          "-bufsize",
+          "3200k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "4",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    }
+  ],
+  "duplicates": [
+    {
+      "source": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-k0-lateral.mp4",
+      "sameAs": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-k0-lateral.mp4"
+    },
+    {
+      "source": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/surface-motion/residential-gut-k0-route.mp4",
+      "sameAs": "Experiments/offpath-ten-tests-20261020-112451/delivery/movies/residential-gut-k0-route.mp4"
+    }
+  ]
+}

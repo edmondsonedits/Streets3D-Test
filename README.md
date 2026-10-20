@@ -11,6 +11,16 @@ The shared destination for Peterborough street experiments and future playable t
 
 Both use the same Insta360 X4 Air recording, captured October 19, 2026. The hosted videos are 3072 × 1536, 24 fps H.264 web previews. Original footage and higher-bitrate local previews are preserved outside this repository. These are visual experiments, not surveyed geometry or physically accurate driving simulations.
 
+## Gaussian tests and saved renders
+
+The gallery also contains **21 distinct Gaussian models** and **44 saved native render videos**. Each model opens in a shared 3D explorer with drag-to-look, WASD/arrow movement, touch controls, reset, saved capture views, and a capture-height toggle. Open **Recorded renders** inside a model to play its saved native motion comparisons.
+
+The models include the baseline/improved/cleanup turn tests, the 20-second MRNF + GUT corner, the corner A/B comparison, the newer half-block, and 14 completed off-path diagnostic snapshots. The rejected cleanup and unfinished study quality remain clearly labelled. No Postshot model or completed 2DGS model was available. Duplicate coordinate exports are represented once.
+
+Height lock preserves the selected source camera's level in the reconstruction coordinate system (or the documented mean capture level for the half-block). It is a fixed plane, not measured metres above the road or terrain following. The original reconstructions still have their existing blur and off-path artifacts.
+
+See [splat delivery and provenance](docs/SPLAT-PUBLICATION.md).
+
 ## Adding future tests
 
 1. Read [the publishing guide](docs/PUBLISHING.md).
@@ -38,4 +48,4 @@ Use an HTTP server; do not open the demo as a file URL. `python scripts/serve.py
 
 ## Rights
 
-Third-party code retains its own license, including the bundled Three.js MIT notice. The recordings are supplied by the repository owner; publication does not imply an open license for reusing the footage. No blanket license is granted to the owner's media or project code by the vendor notice.
+Third-party code retains its own license, including the bundled Three.js and Spark MIT notices. The recordings are supplied by the repository owner; publication does not imply an open license for reusing the footage. No blanket license is granted to the owner's media or project code by the vendor notice.

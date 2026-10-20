@@ -1,0 +1,190 @@
+{
+  "id": "half-block",
+  "title": "New footage · half-block",
+  "description": "1.5-million-splat reconstruction from opposing passes on the newer recording.",
+  "limitation": "Open half-block, not a closed full-block reconstruction. Postshot was not run; quality target not passed.",
+  "asset": "../../splats/half-block/scene.sog",
+  "format": "sog",
+  "count": 1500000,
+  "sourceKind": "existing browser export",
+  "modelMatrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "initial": {
+    "position": [
+      0.3718506015342452,
+      -0.007123979195831239,
+      8.486109871231418
+    ],
+    "target": [
+      -0.051129384583795456,
+      -0.007123979195831239,
+      7.173205069871081
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "label": "Saved capture view"
+  },
+  "poses": [
+    {
+      "position": [
+        2.56221373741441,
+        -0.071620768040619,
+        2.9385453347518204
+      ],
+      "target": [
+        2.1776009800299363,
+        -0.071620768040619,
+        4.263197784622562
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 0%"
+    },
+    {
+      "position": [
+        1.3549044985410696,
+        -0.027052294493611274,
+        7.627027967459803
+      ],
+      "target": [
+        1.0187323721576422,
+        -0.027052294493611274,
+        8.96479453436686
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 25%"
+    },
+    {
+      "position": [
+        -2.666329566625094,
+        0.010535372249015901,
+        7.399873510774125
+      ],
+      "target": [
+        -3.9687070443003254,
+        0.010535372249015901,
+        6.945512429985124
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 50%"
+    },
+    {
+      "position": [
+        -5.543102370946174,
+        0.1479894932783459,
+        3.8263059534255315
+      ],
+      "target": [
+        -5.444791467526203,
+        0.1479894932783459,
+        2.4504549250215852
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 75%"
+    },
+    {
+      "position": [
+        -5.555364332974525,
+        0.13076408499611097,
+        -0.8954412476642453
+      ],
+      "target": [
+        -5.5537544064219695,
+        0.13076408499611097,
+        -2.274799248412398
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 100%"
+    }
+  ],
+  "fov": 75,
+  "speed": 0.65,
+  "heightReference": "Smoothed mean capture-camera level from both passes. Fixed plane at the selected view; no surveyed metres or road-following claim.",
+  "renders": [
+    {
+      "title": "LichtFeld half block route",
+      "url": "../../renders/lichtfeld-half-block-route.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "LichtFeld lateral",
+      "url": "../../renders/lichtfeld-lateral.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    }
+  ],
+  "state": "prototype",
+  "source": {
+    "file": "Experiments/block-lichtfeld-postshot-20261019-222743-6h/delivery/Peterborough-new-half-block-LichtFeld.html",
+    "sha256": "f87714c6f2912d4d292e1ccebea03785c58ae23aa6f0c248a28796a1d2e39967",
+    "bytes": 32676058
+  },
+  "webConversion": "Extracted original embedded SOG without recompression; Rz(180deg) matches original PlayCanvas loader.",
+  "assetBytes": 21794447,
+  "assetSha256": "426ebbb6ecebfdcda2dc99a157f6ad9f56d57cb8e5483958cc1f23e64647cfd0",
+  "cameraProvenance": {
+    "records": [
+      "Experiments/block-lichtfeld-postshot-20261019-222743-6h/delivery/records/shared-camera-path.json"
+    ],
+    "nativeUprightToBrowser": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "note": "Smoothed mean camera level from both passes; not an independently measured rig height."
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "id": "corner-a",
+  "title": "Corner A · box masks",
+  "description": "20-second controlled corner comparison using box masks.",
+  "limitation": "One stochastic run per arm. Alignment is relative, with no surveyed scale.",
+  "asset": "../../splats/corner-a/scene.sog",
+  "format": "sog",
+  "count": 1000000,
+  "sourceKind": "existing browser export",
+  "modelMatrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "initial": {
+    "position": [
+      0.15906051817300693,
+      -0.08547688216125687,
+      -1.0771248834062501
+    ],
+    "target": [
+      0.05879404586307266,
+      -0.09047830550219309,
+      -0.08217683436294154
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "label": "Saved capture view"
+  },
+  "poses": [
+    {
+      "position": [
+        2.676405631037506,
+        0.5457999553501951,
+        3.0786306115942654
+      ],
+      "target": [
+        1.8510552862349667,
+        0.3887054369238284,
+        3.6209571927376913
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 0%"
+    },
+    {
+      "position": [
+        1.2023088589086006,
+        0.13238294937363765,
+        0.2813578567421396
+      ],
+      "target": [
+        0.4137224149579195,
+        -0.024781192273879815,
+        0.8758583638886166
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 25%"
+    },
+    {
+      "position": [
+        0.15906051817300693,
+        -0.08547688216125687,
+        -1.0771248834062501
+      ],
+      "target": [
+        0.05879404586307266,
+        -0.09047830550219309,
+        -0.08217683436294154
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 50%"
+    },
+    {
+      "position": [
+        -1.3083822763649429,
+        -0.18679881690329134,
+        -0.3658881376004832
+      ],
+      "target": [
+        -0.7236124942423395,
+        -0.13626352535691574,
+        0.44373553190566817
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 75%"
+    },
+    {
+      "position": [
+        -3.2553262947588673,
+        -0.3145899024657055,
+        0.7397069032320434
+      ],
+      "target": [
+        -2.6697579195898253,
+        -0.26750138208760815,
+        1.5489610964559586
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Capture route 100%"
+    }
+  ],
+  "fov": 75,
+  "speed": 0.65,
+  "heightReference": "Recorded-route camera centers transformed with the original export basis. Lock fixes the selected camera-level plane; local units, not metres.",
+  "renders": [
+    {
+      "title": "A back route",
+      "url": "../../renders/a-back-route.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "A front route",
+      "url": "../../renders/a-front-route.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "A lateral",
+      "url": "../../renders/a-lateral.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "A B back route slow",
+      "url": "../../renders/a-b-back-route-slow.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "A B front route slow",
+      "url": "../../renders/a-b-front-route-slow.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    },
+    {
+      "title": "A B lateral slow",
+      "url": "../../renders/a-b-lateral-slow.mp4",
+      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+    }
+  ],
+  "state": "prototype",
+  "source": {
+    "file": "Experiments/corner-ab-20261019-120505-0eecdf/viewers/Peterborough-corner-A.html",
+    "sha256": "c8e3f6e4ba6abd2065d6b53a87664961c7761f71a4bf088b4f208a6862133f69",
+    "bytes": 23090944
+  },
+  "webConversion": "Extracted original embedded SOG without recompression; Rz(180deg) matches original PlayCanvas loader.",
+  "assetBytes": 14605653,
+  "assetSha256": "bcf9e455880082da20ff361297372541663adfe92f4a0900e056131440a24476",
+  "cameraProvenance": {
+    "records": [
+      "Experiments/corner-ab-20261019-120505-0eecdf/common/matched-camera-path.json"
+    ],
+    "nativeUprightToBrowser": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "note": "Saved matched route, with the same export basis as the original HTML; height can vary between selected route positions."
+  }
+}

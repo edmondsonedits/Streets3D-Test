@@ -1,0 +1,127 @@
+{
+  "id": "quality-cleaned",
+  "title": "Turn & street · cleanup comparison",
+  "description": "Conservative cleanup of the improved model, removing 340 splats.",
+  "limitation": "Rejected cleanup comparison: tested but not selected as the preferred result.",
+  "asset": "../../splats/quality-cleaned/scene.compressed.ply",
+  "format": "compressed-ply",
+  "count": 749660,
+  "sourceKind": "native Gaussian PLY",
+  "modelMatrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "initial": {
+    "position": [
+      0.6686354673932734,
+      -0.08803069663880556,
+      0.09501857956356277
+    ],
+    "target": [
+      0.48404571053995227,
+      -0.08803068420243174,
+      -8.447194891029445
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "label": "Saved capture view"
+  },
+  "poses": [
+    {
+      "position": [
+        0.6686354673932734,
+        -0.08803069663880556,
+        0.09501857956356277
+      ],
+      "target": [
+        0.48404571053995227,
+        -0.08803068420243174,
+        -8.447194891029445
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Saved capture view"
+    }
+  ],
+  "fov": 80,
+  "speed": 0.65,
+  "heightReference": "Recorded front/000051.jpg camera center, transformed using the saved visual-upright correction and browser basis. Fixed plane through that capture position. Scene units are not surveyed metres; elevation along the street can vary.",
+  "renders": [],
+  "state": "prototype",
+  "source": {
+    "file": "LichtFeld-360-test-2026-10-18/quality-v2/trained/Peterborough-quality-cleaned.ply",
+    "sha256": "ea6bb3e4b6f34a96a1c1e6ca7c6225b5ec8d27dbb3fc36f770ae0ac564301458",
+    "bytes": 185917530
+  },
+  "webConversion": "SplatTransform 3.10.1 compressed PLY; all 749660 Gaussians and SH3 bands retained, attributes quantized for browser delivery. Model uses Rz(180deg), verified against the matching improved SOG viewpoint.",
+  "assetBytes": 45941941,
+  "assetSha256": "34fcca434c81655b40b1b176c954a856d1a96adc35377a20498d90ab931ddbbb",
+  "cameraProvenance": {
+    "sourceCamera": "front/000051.jpg",
+    "uprightRotation": [
+      [
+        0.07460205563107525,
+        -0.9930998888523065,
+        -0.09048283846760331
+      ],
+      [
+        0.9930998888523065,
+        0.06575489522081779,
+        0.09710254639315961
+      ],
+      [
+        -0.09048283846760331,
+        -0.09710254639315961,
+        0.9911528395897425
+      ]
+    ],
+    "nativeUprightToBrowser": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "records": [
+      "LichtFeld-360-test-2026-10-18/previews/front-000051-view.json",
+      "LichtFeld-360-test-2026-10-18/upright-export-plan.json",
+      "LichtFeld-360-test-2026-10-18/viewer-start-camera.json"
+    ],
+    "note": "Quality-v2 reused the same COLMAP cameras; cleanup only removed rows. Export upright is visual, not surveyed gravity. Model asset already includes export-space transforms; do not apply this provenance chain again."
+  }
+}

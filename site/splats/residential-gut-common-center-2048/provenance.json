@@ -1,0 +1,218 @@
+{
+  "id": "residential-gut-common-center-2048",
+  "title": "Residential · common-center 2K",
+  "description": "5,000-iteration off-path diagnostic using the newer recording.",
+  "limitation": "Experimental snapshot from an ongoing study. Geometry plausibility and off-path quality have not passed acceptance.",
+  "asset": "../../splats/residential-gut-common-center-2048/scene.compressed.ply",
+  "format": "compressed-ply",
+  "count": 500000,
+  "sourceKind": "native Gaussian PLY",
+  "modelMatrix": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "up": [
+    -0.007101099764790308,
+    0.9984595350768115,
+    0.05502845805878913
+  ],
+  "initial": {
+    "position": [
+      0.30687202191510915,
+      0.02414645186508993,
+      -0.41511790030647555
+    ],
+    "target": [
+      -0.2605296521091431,
+      -0.13873898250095826,
+      0.3920522648915823
+    ],
+    "up": [
+      -0.09238719346861615,
+      0.9866437720796399,
+      0.1341591349832434
+    ],
+    "label": "front_left_pass1_f002250"
+  },
+  "poses": [
+    {
+      "position": [
+        0.306872021915109,
+        0.02414645186508997,
+        -0.41511790030647555
+      ],
+      "target": [
+        0.8777588790849459,
+        -0.09123389972189475,
+        -1.2279989314410507
+      ],
+      "up": [
+        0.06758882683756023,
+        0.9933201760660156,
+        -0.09352421240995269
+      ],
+      "label": "back_left_pass1_f002250"
+    },
+    {
+      "position": [
+        1.3919913115139457,
+        -0.01795862153155542,
+        0.5479992242402765
+      ],
+      "target": [
+        0.7848853789519104,
+        -0.22750665119436747,
+        1.3144925444410573
+      ],
+      "up": [
+        -0.0925030494841449,
+        0.9766815850344165,
+        0.19374278642260145
+      ],
+      "label": "back_left_pass2_f012570"
+    },
+    {
+      "position": [
+        0.3068720219151091,
+        0.02414645186508993,
+        -0.4151179003064755
+      ],
+      "target": [
+        -0.258139696403196,
+        -0.10542030841184488,
+        -1.229964028599625
+      ],
+      "up": [
+        -0.09205130709880059,
+        0.9913264063473008,
+        -0.09380038880489
+      ],
+      "label": "back_right_pass1_f002250"
+    },
+    {
+      "position": [
+        1.3919913115139475,
+        -0.017958621531555446,
+        0.547999224240276
+      ],
+      "target": [
+        1.9194051586232668,
+        -0.22434086058469296,
+        1.3721600127280333
+      ],
+      "up": [
+        0.06694330733724055,
+        0.9771265078891931,
+        0.20184742055082688
+      ],
+      "label": "back_right_pass2_f012570"
+    },
+    {
+      "position": [
+        0.30687202191510915,
+        0.02414645186508993,
+        -0.41511790030647555
+      ],
+      "target": [
+        -0.2605296521091431,
+        -0.13873898250095826,
+        0.3920522648915823
+      ],
+      "up": [
+        -0.09238719346861615,
+        0.9866437720796399,
+        0.1341591349832434
+      ],
+      "label": "front_left_pass1_f002250"
+    },
+    {
+      "position": [
+        1.3919913115139482,
+        -0.017958621531555433,
+        0.5479992242402764
+      ],
+      "target": [
+        2.0010762858275633,
+        -0.08573805673138987,
+        -0.24220419401946158
+      ],
+      "up": [
+        0.07842143572561742,
+        0.9966058616348282,
+        -0.02503667257913016
+      ],
+      "label": "front_left_pass2_f012570"
+    },
+    {
+      "position": [
+        0.3068720219151091,
+        0.024146451865089943,
+        -0.41511790030647544
+      ],
+      "target": [
+        0.8753689233789986,
+        -0.12455257381100816,
+        0.39401736205015647
+      ],
+      "up": [
+        0.06725294046774469,
+        0.9886375417983547,
+        0.1344353113781807
+      ],
+      "label": "front_right_pass1_f002250"
+    },
+    {
+      "position": [
+        1.3919913115139477,
+        -0.017958621531555523,
+        0.5479992242402768
+      ],
+      "target": [
+        0.8665565061562089,
+        -0.08890384734106443,
+        -0.29987166230643847
+      ],
+      "up": [
+        -0.08102492109576785,
+        0.9961609387800515,
+        -0.033141306707355635
+      ],
+      "label": "front_right_pass2_f012570"
+    }
+  ],
+  "fov": 75,
+  "speed": 0.08063887081295834,
+  "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
+  "renders": [],
+  "state": "prototype",
+  "source": {
+    "file": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/residential-gut-common-center-2048.ply",
+    "sha256": "6b7984cc71d4c87048052ec15c0ab4e83862dbafc8c0badf316c5455911253db",
+    "bytes": 124001758
+  },
+  "webConversion": "SplatTransform 3.10.1 compressed PLY; all Gaussians and SH3 bands retained, attributes quantized for browser delivery.",
+  "trainingSteps": 5000,
+  "assetBytes": 30642481,
+  "assetSha256": "02e4accc144b70a7b3c86b9839df1362150e34e99420249431efbae860c65616",
+  "cameraProvenance": {
+    "records": [
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/native-comparison/render-manifest.json",
+      "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/native-comparison/model-transform.json"
+    ],
+    "note": "Recorded raw source poses receive the saved model-world transform once. Scene up is the normalized median of saved pose-up vectors, followed by a shared up-to-Y rotation for model and cameras."
+  }
+}

@@ -22,6 +22,8 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Validate playable site
         run: python3 scripts/validate_site.py
+      - name: Check capture-height navigation
+        run: node scripts/test-splat-navigation.mjs
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload site only

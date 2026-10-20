@@ -1,0 +1,127 @@
+{
+  "id": "quality-improved",
+  "title": "Turn & street · improved",
+  "description": "750,000-splat retraining of the same turn and street.",
+  "limitation": "Improved source-view fit is not proof of accurate off-path geometry.",
+  "asset": "../../splats/quality-improved/scene.sog",
+  "format": "sog",
+  "count": 750000,
+  "sourceKind": "existing browser export",
+  "modelMatrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "up": [
+    0,
+    1,
+    0
+  ],
+  "initial": {
+    "position": [
+      0.6686354673932734,
+      -0.08803069663880556,
+      0.09501857956356277
+    ],
+    "target": [
+      0.48404571053995227,
+      -0.08803068420243174,
+      -8.447194891029445
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "label": "Saved capture view"
+  },
+  "poses": [
+    {
+      "position": [
+        0.6686354673932734,
+        -0.08803069663880556,
+        0.09501857956356277
+      ],
+      "target": [
+        0.48404571053995227,
+        -0.08803068420243174,
+        -8.447194891029445
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "label": "Saved capture view"
+    }
+  ],
+  "fov": 80,
+  "speed": 0.65,
+  "heightReference": "Recorded front/000051.jpg camera center, transformed using the saved visual-upright correction and browser basis. Fixed plane through that capture position. Scene units are not surveyed metres; elevation along the street can vary.",
+  "renders": [],
+  "state": "prototype",
+  "source": {
+    "file": "LichtFeld-360-test-2026-10-18/trained-turn-test/Viewer/Peterborough-quality-improved.html",
+    "sha256": "e2fde25b67762a4542896dbd67ae9f90b9beb4b8fc3f392c50a1924d695b5abf",
+    "bytes": 17620635
+  },
+  "webConversion": "Extracted original embedded SOG without recompression; Rz(180deg) matches original PlayCanvas loader.",
+  "assetBytes": 10503068,
+  "assetSha256": "c57a0220a3918c352e0886e11f611f6605e47e057d0f99bc3253eea0a2b6fe07",
+  "cameraProvenance": {
+    "sourceCamera": "front/000051.jpg",
+    "uprightRotation": [
+      [
+        0.07460205563107525,
+        -0.9930998888523065,
+        -0.09048283846760331
+      ],
+      [
+        0.9930998888523065,
+        0.06575489522081779,
+        0.09710254639315961
+      ],
+      [
+        -0.09048283846760331,
+        -0.09710254639315961,
+        0.9911528395897425
+      ]
+    ],
+    "nativeUprightToBrowser": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "records": [
+      "LichtFeld-360-test-2026-10-18/previews/front-000051-view.json",
+      "LichtFeld-360-test-2026-10-18/upright-export-plan.json",
+      "LichtFeld-360-test-2026-10-18/viewer-start-camera.json"
+    ],
+    "note": "Quality-v2 reused the same COLMAP cameras; cleanup only removed rows. Export upright is visual, not surveyed gravity. Model asset already includes export-space transforms; do not apply this provenance chain again."
+  }
+}
