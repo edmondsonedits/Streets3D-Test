@@ -1,0 +1,46 @@
+import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { resolve, dirname } from 'node:path';
+import { calculateTotal, rankRatings } from '../site/ratings-core.mjs';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+const read=(name)=>JSON.parse(readFileSync(resolve(root,name),'utf8').replace(/^\uFEFF/,''));
+const data=read('site/ratings/ratings.json');
+const scenes=read('site/splats/scenes.json').scenes;
+assert.equal(data.rubric.length,10);
+assert.equal(data.rubric.reduce((n,x)=>n+x.weight,0),100);
+assert.equal(data.rubric.slice(0,5).reduce((n,x)=>n+x.weight,0),65);
+const scores=data.rubric.map(x=>({category:x.id,score:10}));
+assert.equal(calculateTotal(scores,data.rubric),100,'perfect scores use a ten-point category scale');
+assert.equal(calculateTotal(scores.map(x=>({...x,score:0})),data.rubric),0);
+assert.equal(calculateTotal(scores.map(x=>({...x,score:5})),data.rubric),50);
+assert.throws(()=>calculateTotal(scores.slice(1),data.rubric),/Missing/i);
+assert.throws(()=>calculateTotal([...scores,scores[0]],data.rubric),/Duplicate/i);
+assert.throws(()=>calculateTotal(scores.map((x,i)=>i?x:{...x,score:10.5}),data.rubric));
+assert.throws(()=>calculateTotal(scores.map((x,i)=>i?x:{...x,score:NaN}),data.rubric));
+const tied=rankRatings([{id:'b',total:60},{id:'c',total:50},{id:'a',total:60}]);
+assert.deepEqual(tied.map(x=>[x.id,x.rank]),[['a',1],['b',1],['c',3]]);
+assert.equal(new Set(data.ratings.map(x=>x.id)).size,scenes.length);
+assert.deepEqual([...data.ratings.map(x=>x.id)].sort(),scenes.map(x=>x.id).sort());
+const ranks=rankRatings(data.ratings);
+for(const r of data.ratings){
+ assert.equal(r.total,calculateTotal(r.scores,data.rubric),r.id+' calculated total');
+ assert.equal(r.rank,ranks.find(x=>x.id===r.id).rank,r.id+' published rank');
+ assert.equal(r.scores.length,10);
+ const scene=scenes.find(x=>x.id===r.id);
+ assert.equal(r.facts.assetBytes,scene.assetBytes);
+ assert.equal(r.facts.splats,scene.count);
+ assert.equal(r.facts.humanHours,null,'unknown labor must not be invented');
+ assert.equal(r.scores.find(x=>x.category==='effort').basis,'unknown-neutral');
+ const ev=new Set(r.evidence.map(x=>x.id));
+ assert.equal(ev.size,r.evidence.length,'unique evidence ids');
+ for(const score of r.scores){assert.ok(score.reason.length>15);assert.ok(score.evidenceIds.length);for(const id of score.evidenceIds)assert.ok(ev.has(id),r.id+' '+id);}
+ for(const e of r.evidence)assert.ok(existsSync(resolve(root,'site',e.url)),r.id+' '+e.url);
+ const record=read('site/ratings/records/'+r.id+'.json');
+ assert.equal(record.publishedModel.sha256,scene.assetSha256,'rating must describe exact delivered model');
+ assert.equal(record.observations.length,5);
+ assert.equal(record.reviewArtifacts.length,2);
+ assert.ok(record.sourceFileHashes.every(x=>x.sha256),'all evidence sources hashed');
+}
+assert.equal(data.ratings.find(x=>x.id==='corner-a').visualTotal,data.ratings.find(x=>x.id==='corner-b').visualTotal,'A/B visual tie is deliberate');
+console.log(JSON.stringify({passed:true,models:data.ratings.length,categories:data.rubric.length,checks:'weighted scale, invalid input, ties, complete registry, unknown effort, artifact/evidence contracts'}));

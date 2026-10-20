@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "id": "corner-mrnf-gut",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 14582468,
+    "sha256": "5a100455103b32e82f8b75e15aa6e549ee12b860ee332a537a9404c4979023d6",
+    "splats": 1000000,
+    "format": "sog"
+  },
+  "sourceEvidence": {
+    "id": "corner-mrnf-gut",
+    "published_count": 1000000,
+    "published_asset": "../../splats/corner-mrnf-gut/scene.sog",
+    "source_path": "LichtFeld-360-test-2026-10-18/trained-turn-test/Viewer/Peterborough-corner-20s-MRNFGUT.html",
+    "source_kind": "existing browser export",
+    "state": "prototype",
+    "primary_evidence_path": "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/headless-trained/headless-training.log",
+    "training": {
+      "steps": 30000,
+      "wall_seconds": 13441.42,
+      "gaussians": 1000000,
+      "training_image_count": 180,
+      "heldout_image_count": 20,
+      "max_width_configured": 3840,
+      "timing_source": "headless-training.log; training completed in 13441.420s"
+    },
+    "metrics": {
+      "step": 30000,
+      "images": 20,
+      "PSNR": 24.3728,
+      "SSIM": 0.8111,
+      "LPIPS": 0.2923,
+      "timeSecondsPerImage": 6.829,
+      "depthAbsRel": 0.0875,
+      "metric_source": "corner-20s-mrnf/headless-trained/metrics_report.txt"
+    },
+    "quality": {
+      "native_pan_samples_inspected": 6,
+      "browser_verified": true,
+      "motion_check_complete": true,
+      "limitations": [
+        "fine wires and foliage smeared/doubled",
+        "soft road",
+        "streaks and holes at recording-car occlusions"
+      ]
+    },
+    "qualityEvidencePath": "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/experiment-status.json"
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/headless-trained/headless-training.log",
+      "bytes": 54199,
+      "sha256": "0de020b97b49dc7a959bd65c37d0f190ef51ea360b0fe569332cb8622620c6d8"
+    },
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/experiment-status.json",
+      "bytes": 2651,
+      "sha256": "373647642f0f728313cd1431d6b7c0a272600196ca67916c5248357753992a90"
+    },
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/headless-trained/metrics_report.txt",
+      "bytes": 978,
+      "sha256": "9cd94eeca1c6c51de9334d53e55a2bcc707ef55de0823ca9274002f76bea01ac"
+    },
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/corner-20s-mrnf/training-profile.json",
+      "bytes": 1133,
+      "sha256": "6150d2916e56f185e8b7c963a3dfaf5384ed0f71808c654ab850e0c9314ba856"
+    }
+  ],
+  "reviewProtocol": "Interpolated saved source-camera positions; lateral +/-4% of endpoint baseline. Different reconstruction from A/B; no matched-method claim.",
+  "alignmentResiduals": null,
+  "observations": [
+    {
+      "category": "along",
+      "score": 7,
+      "observation": "4.00–5.88s: houses, sidewalks and shop frontage are comparatively well defined."
+    },
+    {
+      "category": "lateral",
+      "score": 6,
+      "observation": "6–9.88s: house windows/fences remain identifiable, with stretching in road and porch regions."
+    },
+    {
+      "category": "detail",
+      "score": 7,
+      "observation": "5.88s: the Dominion Lending Centres sign is relatively readable; window/roof lines are stronger."
+    },
+    {
+      "category": "artifacts",
+      "score": 5,
+      "observation": "2.00s: close barrels and grass ghost; thin wires and foliage retain doubled/hazy edges."
+    },
+    {
+      "category": "coverage",
+      "score": 6,
+      "observation": "The reviewed corner is connected, but occluded foreground and road detail remain incomplete. This is only a short segment."
+    }
+  ],
+  "comparisons": [
+    "Highest visual subtotal in this review, but different camera-path coverage from the A/B experiment; not a controlled MRNF-versus-other-trainer victory.",
+    "Native source-view PSNR 24.37, SSIM .811, LPIPS .292 on 20 images does not certify lateral geometry or metres."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/corner-mrnf-gut.mp4",
+      "bytes": 1374439,
+      "sha256": "a3dabca3b66bcda29760c2e3b88548c4f21b09d9e43c4bfefccddd29552fb8a1"
+    },
+    {
+      "url": "ratings/evidence/corner-mrnf-gut.jpg",
+      "bytes": 371187,
+      "sha256": "f14bc8e503c2c81631c2ea8fbb859d8dde9a12ea30fd182f9eedb069935f8efc"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}

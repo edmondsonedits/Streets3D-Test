@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "id": "residential-gut-selfcal",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 30642481,
+    "sha256": "84b0ab982478feedde57bcbd75734bfdea227fb46c2b6430480b44f7cab5054d",
+    "splats": 500000,
+    "format": "compressed-ply"
+  },
+  "sourceEvidence": {
+    "id": "residential-gut-selfcal",
+    "published_count": 500000,
+    "published_asset": "../../splats/residential-gut-selfcal/scene.compressed.ply",
+    "source_path": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/residential-gut-selfcal.ply",
+    "source_kind": "native Gaussian PLY",
+    "state": "prototype",
+    "primary_evidence_path": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/completion.json",
+    "training": {
+      "steps": 5000,
+      "wall_seconds": 290.32689785957336,
+      "gaussians": 500000,
+      "timing_scope": "training plus internal evaluation",
+      "native_training_seconds": 286.865,
+      "training_image_count": 240,
+      "max_width_configured": 1024,
+      "train_only": true,
+      "training_dataset_path": "Experiments\\offpath-ten-tests-20261020-112451\\data\\export\\residential-selfcal_cross-1024\\train-tracked"
+    },
+    "metrics": {
+      "whole_static": {
+        "psnr": 18.31101815814167,
+        "ssim_gaussian11_masked_valid_windows": 0.49576497590278323
+      },
+      "facade_band": {
+        "psnr": 17.711610297688356,
+        "ssim_gaussian11_masked_valid_windows": 0.4229802179526384
+      },
+      "road_band": {
+        "psnr": 20.338853147173673,
+        "ssim_gaussian11_masked_valid_windows": 0.4399651809649885
+      }
+    },
+    "quality": {
+      "quality_gate_passed": false,
+      "native_images_inspected": true,
+      "native_motion_inspected": true
+    },
+    "metricType": "external source image metrics (whole_static, facade_band, road_band)"
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/completion.json",
+      "bytes": 3202,
+      "sha256": "805ee1445efda31128b9f1fcdb2e5fadd4eac1060a42a04843c4774007549ae0"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/training_config.json",
+      "bytes": 5674,
+      "sha256": "017c4f7942461fd4d33b4add7435b7ae0126ad827d879b02ad076fa52123a925"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/native-comparison/proper-camera-alignment.json",
+      "bytes": 697,
+      "sha256": "5037c66b69515652d72e7b38bd5753024faa7ffc171b815ba1ccc489e43620c3"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-selfcal/native-comparison/model-transform.json",
+      "bytes": 1589,
+      "sha256": "7942625514292c9e9542d88c4c94f1ced02f5bc7f9779db5255d4b9bad740d5d"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/comparisons/test-results.json",
+      "bytes": 27867,
+      "sha256": "1e5ed253f7807161f7a8f5a3646ddcdc482c94708c5a44a3ca960c36c35fd222"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/data/export/residential-selfcal_cross-1024/train-tracked/dataset-contract.json",
+      "bytes": 11499,
+      "sha256": "658456daf4d63f7ec41b4e1a965a5b8f729b24fa0daa6c84bb2e6b1f512160e4"
+    }
+  ],
+  "reviewProtocol": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained.",
+  "alignmentResiduals": {
+    "median_camera_center_residual": 0.0007822407297026345,
+    "max_camera_center_residual": 0.0015172441971726869
+  },
+  "observations": [
+    {
+      "category": "along",
+      "score": 6,
+      "observation": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable."
+    },
+    {
+      "category": "lateral",
+      "score": 4,
+      "observation": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views."
+    },
+    {
+      "category": "detail",
+      "score": 5,
+      "observation": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred."
+    },
+    {
+      "category": "artifacts",
+      "score": 3,
+      "observation": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts."
+    },
+    {
+      "category": "coverage",
+      "score": 5,
+      "observation": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity."
+    }
+  ],
+  "comparisons": [
+    "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+    "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times.",
+    "Whole-static source PSNR is 18.31 versus 17.99 dB for fixed calibration; this is not sufficient to award a lateral-quality win."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/residential-gut-selfcal.mp4",
+      "bytes": 1465366,
+      "sha256": "5b58ae70be600f1745e39ff1f4c6c6f252582404e179310ed5089132209aead7"
+    },
+    {
+      "url": "ratings/evidence/residential-gut-selfcal.jpg",
+      "bytes": 391433,
+      "sha256": "48426b37879115a72d29cee732c1875eeca492929396279b2a98ae2a6f33924f"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}

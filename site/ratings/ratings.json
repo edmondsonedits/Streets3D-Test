@@ -1,0 +1,4168 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-20",
+  "snapshotCommit": "726cb5103b566d91228bad9ab50750f81931f03d",
+  "rubric": [
+    {
+      "id": "along",
+      "label": "Along-road clarity",
+      "weight": 20,
+      "description": "Can houses, intersections and road edges be understood while advancing? Review the first six seconds; no real-time frame-rate claim.",
+      "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
+      "kind": "reviewer judgment"
+    },
+    {
+      "id": "lateral",
+      "label": "Side-to-side stability",
+      "weight": 20,
+      "description": "Do facades and poles stay coherent when leaving the capture path? Review seconds 6–10. This is relative view consistency, not surveyed geometry.",
+      "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
+      "kind": "reviewer judgment"
+    },
+    {
+      "id": "detail",
+      "label": "Detail sharpness",
+      "weight": 10,
+      "description": "Roof edges, windows, signs and porch detail in the unenhanced browser samples. This is a 960×540 delivery review, not a native-resolution contest.",
+      "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
+      "kind": "reviewer judgment"
+    },
+    {
+      "id": "artifacts",
+      "label": "Freedom from artifacts",
+      "weight": 10,
+      "description": "Fewer ghosts, streaks, transparent smears, dark holes and duplicated objects score higher. Fine temporal flicker is not measured by an 8 fps preview.",
+      "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
+      "kind": "reviewer judgment"
+    },
+    {
+      "id": "coverage",
+      "label": "Coverage & continuity",
+      "weight": 5,
+      "description": "Continuity across the reviewed route and lateral views. A longer capture does not automatically earn points; hidden backs of buildings and a complete city are not tested.",
+      "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
+      "kind": "reviewer judgment"
+    },
+    {
+      "id": "time",
+      "label": "Training speed",
+      "weight": 10,
+      "description": "Measured model-training stage only. Excludes extraction, camera solving, masking, exports and human review; captures and iteration counts differ.",
+      "anchors": "Project preference, linearly interpolated then rounded to 0.5: 5 min or less=10; 30 min=8; 1 h=6; 3 h=4; 6 h=2; 12 h or more=0. Not an end-to-end benchmark.",
+      "kind": "measured time, chosen utility scale"
+    },
+    {
+      "id": "effort",
+      "label": "Effort to repeat",
+      "weight": 10,
+      "description": "Hands-on setup, correction and review effort. No reliable human-hours log was found for any model; every entry receives the same explicitly unknown neutral placeholder.",
+      "anchors": "Unknown=5 neutral, not a measured assessment. A future time diary can replace it. This unresolved category alone could change any total by ±5 points.",
+      "kind": "unknown"
+    },
+    {
+      "id": "size",
+      "label": "Small download",
+      "weight": 10,
+      "description": "Exact bytes of the currently published 3D model only. Excludes shared viewer code, thumbnails and optional videos. This rates packaging as delivered, not raw training storage or bytes per street metre.",
+      "anchors": "Project preference, linear then rounded to 0.5: ≤5 MB=10; 10 MB=9; 15 MB=8; 25 MB=7; 35 MB=6; 50 MB=4; ≥100 MB=0. MB=1,000,000 bytes.",
+      "kind": "measured bytes, chosen utility scale"
+    },
+    {
+      "id": "browser",
+      "label": "Browser cost proxy",
+      "weight": 3,
+      "description": "Published splat count is a rough complexity proxy. Does not measure FPS, GPU memory, thermal behavior, overdraw or physical-phone performance.",
+      "anchors": "Project preference, linear then rounded to 0.5: ≤250k=10; 500k=8; 750k=6; 1M=4; 1.5M=2; ≥2M=0.",
+      "kind": "count proxy"
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence & repeatability",
+      "weight": 2,
+      "description": "Availability of hashed artifacts, saved camera paths, settings, timing and comparisons. More evidence raises confidence, not image quality.",
+      "anchors": "5=hashed model and repeatable browser samples; 6=plus useful runtime/status; 7=plus source/native metrics; 8=plus paired or independently documented native motion review. No entry earns 10: no independent off-path geometry truth or repeated-run uncertainty.",
+      "kind": "record audit"
+    }
+  ],
+  "methodology": {
+    "scope": "Provisional ratings of 21 currently published Gaussian assets. Higher is better. Visual quality counts for 65%; training time and effort 20%; model download 10%; browser cost proxy and evidence 5%. No model is certified as a finished street.",
+    "formula": "Total = round(sum(category score / 10 × category weight)). Equal rounded totals share a rank; no forced winner. Visual subtotal is out of 65.",
+    "unknownPolicy": "Unknown effort=5/10 neutral for every model; missing complete training time=5/10 neutral. These are placeholders, not measurements. Unknown effort alone can move a total ±5 points (±10 when time is also unknown), before subjective-review uncertainty. Treat close ranks as unresolved.",
+    "comparisonLimits": [
+      "Compare the same-footage groups before drawing method conclusions. Global scores include different capture lengths, camera paths, lighting, training budgets and packaging.",
+      "Human hours, complete pipeline time, surveyed accuracy, mobile FPS and GPU memory are unknown. Count is only a browser-cost proxy.",
+      "Scores and utility anchors express this project’s priorities, not an industry standard or probability of success. Small score differences do not establish a robust winner.",
+      "The published PLY diagnostics are larger than SOG models. Repacking may improve download rank without changing training quality.",
+      "Source-view PSNR/SSIM/LPIPS measure image fit; they do not certify side-to-side geometry. Single runs and shared SfM observations limit inference.",
+      "The broader off-path experiment was still evolving. These ratings cover only the 21 published hashes, not later results."
+    ],
+    "previewProtocol": "Each model has a 960×540, 75° field-of-view, 80-frame review encoded at 8 fps: 0–6s along the route, 6–10s lateral. Review duration is not capture duration. Eight labelled samples plus 1:1 center crops support the written observations. No enhancement was applied. Camera paths match within the listed groups; original-turn/MRNF lateral offsets are arbitrary reconstruction units, not measured lane widths. Compressed previews and sparse sampling cannot measure high-frequency flicker or live performance."
+  },
+  "ratings": [
+    {
+      "id": "construction-gut-k0",
+      "title": "Construction · fixed calibration",
+      "group": "construction",
+      "groupLabel": "Construction: matched regional views",
+      "total": 62,
+      "rank": 1,
+      "visualTotal": 37.0,
+      "confidence": "Moderate within group",
+      "verdict": "Fixed calibration: fast, but poles and barrels ghost.",
+      "bestFor": "Fast iteration on this short construction region",
+      "mainIssue": "At 8.50–9.88s near barrels duplicate and stretch; the distant houses stay recognizable.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: coherent road direction and recognizable houses; 2.00s roofs/fence are fairly clear.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: houses retain their broad shape, but near barrels, signs and vegetation stretch or double.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: roof and fence details resolve; at 8.50s the road-closed sign is recognizable but soft.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "0.00s: translucent barrels; 8.50–9.88s: duplicated orange barrels and smeared foliage.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "The sampled short junction is connected, with soft far-road limits and unstable foreground.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "4.8 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 288.32358956336975,
+        "timeScope": "training plus internal evaluation",
+        "images": 244,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          57,
+          67
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/construction-gut-k0.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/construction-gut-k0.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/construction-gut-k0.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/construction-gut-k0/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        }
+      ],
+      "comparisons": [
+        "Same regional review path as the other construction variants. They are tied in visual scores because these samples do not establish a convincing overall winner.",
+        "Self-calibration improves recorded whole-static source PSNR from 21.00 to 21.65 dB versus fixed calibration; that is source-view evidence, not a lateral-geometry guarantee. No external metric is recorded for original-focal rawF."
+      ]
+    },
+    {
+      "id": "construction-gut-rawF",
+      "title": "Construction · original focal model",
+      "group": "construction",
+      "groupLabel": "Construction: matched regional views",
+      "total": 62,
+      "rank": 1,
+      "visualTotal": 37.0,
+      "confidence": "Limited",
+      "verdict": "Original focal model: no clear visual advantage.",
+      "bestFor": "Fast iteration on this short construction region",
+      "mainIssue": "At 8.50–9.88s near barrels duplicate and stretch; the distant houses stay recognizable.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: coherent road direction and recognizable houses; 2.00s roofs/fence are fairly clear.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: houses retain their broad shape, but near barrels, signs and vegetation stretch or double.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: roof and fence details resolve; at 8.50s the road-closed sign is recognizable but soft.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "0.00s: translucent barrels; 8.50–9.88s: duplicated orange barrels and smeared foliage.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "The sampled short junction is connected, with soft far-road limits and unstable foreground.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "4.7 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 5,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records; independent off-path truth and/or source metrics are missing. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 284.57069420814514,
+        "timeScope": "training plus internal evaluation",
+        "images": 244,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          57,
+          67
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/construction-gut-rawF.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/construction-gut-rawF.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/construction-gut-rawF.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/construction-gut-rawF/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        }
+      ],
+      "comparisons": [
+        "Same regional review path as the other construction variants. They are tied in visual scores because these samples do not establish a convincing overall winner.",
+        "Self-calibration improves recorded whole-static source PSNR from 21.00 to 21.65 dB versus fixed calibration; that is source-view evidence, not a lateral-geometry guarantee. No external metric is recorded for original-focal rawF."
+      ]
+    },
+    {
+      "id": "construction-gut-selfcal",
+      "title": "Construction · self-calibration",
+      "group": "construction",
+      "groupLabel": "Construction: matched regional views",
+      "total": 62,
+      "rank": 1,
+      "visualTotal": 37.0,
+      "confidence": "Moderate within group",
+      "verdict": "Fast corner prototype; strong source metrics, visible ghosts.",
+      "bestFor": "Fast iteration on this short construction region",
+      "mainIssue": "At 8.50–9.88s near barrels duplicate and stretch; the distant houses stay recognizable.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: coherent road direction and recognizable houses; 2.00s roofs/fence are fairly clear.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: houses retain their broad shape, but near barrels, signs and vegetation stretch or double.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: roof and fence details resolve; at 8.50s the road-closed sign is recognizable but soft.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "0.00s: translucent barrels; 8.50–9.88s: duplicated orange barrels and smeared foliage.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "The sampled short junction is connected, with soft far-road limits and unstable foreground.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "4.7 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 280.996999502182,
+        "timeScope": "training plus internal evaluation",
+        "images": 244,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          57,
+          67
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/construction-gut-selfcal.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/construction-gut-selfcal.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/construction-gut-selfcal.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/construction-gut-selfcal/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        }
+      ],
+      "comparisons": [
+        "Same regional review path as the other construction variants. They are tied in visual scores because these samples do not establish a convincing overall winner.",
+        "Self-calibration improves recorded whole-static source PSNR from 21.00 to 21.65 dB versus fixed calibration; that is source-view evidence, not a lateral-geometry guarantee. No external metric is recorded for original-focal rawF."
+      ]
+    },
+    {
+      "id": "corner-mrnf-gut",
+      "title": "20-second corner · MRNF + GUT",
+      "group": "corner-mrnf",
+      "groupLabel": "MRNF corner: separate experiment",
+      "total": 60,
+      "rank": 4,
+      "visualTotal": 41.0,
+      "confidence": "Moderate within group",
+      "verdict": "Best visual subtotal here; slow and still imperfect.",
+      "bestFor": "Visual quality in this short reviewed corner",
+      "mainIssue": "Sign and facade detail hold up better; road, wires and vegetation still smear.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "4.00–5.88s: houses, sidewalks and shop frontage are comparatively well defined.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: house windows/fences remain identifiable, with stretching in road and porch regions.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "5.88s: the Dominion Lending Centres sign is relatively readable; window/roof lines are stronger.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: close barrels and grass ghost; thin wires and foliage retain doubled/hazy edges.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "The reviewed corner is connected, but occluded foreground and road detail remain incomplete. This is only a short segment.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 3.5,
+          "basis": "measured training-stage time",
+          "reason": "224.0 minutes measured. Exact native headless training log duration; upstream preparation, exports and review excluded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 8.0,
+          "basis": "measured delivered bytes",
+          "reason": "14,582,468 bytes (14.58 MB), SOG. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 4.0,
+          "basis": "splat-count proxy",
+          "reason": "1,000,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 14582468,
+        "splats": 1000000,
+        "trainingSeconds": 13441.42,
+        "timeScope": "Exact native headless training log duration; upstream preparation, exports and review excluded.",
+        "images": 180,
+        "maxWidth": 3840,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          55,
+          65
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/corner-mrnf-gut.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/corner-mrnf-gut.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/corner-mrnf-gut.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/corner-mrnf-gut/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Interpolated saved source-camera positions; lateral +/-4% of endpoint baseline. Different reconstruction from A/B; no matched-method claim."
+        },
+        {
+          "id": "native-0",
+          "label": "Peterborough corner motion check",
+          "url": "renders/peterborough-corner-motion-check.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Highest visual subtotal in this review, but different camera-path coverage from the A/B experiment; not a controlled MRNF-versus-other-trainer victory.",
+        "Native source-view PSNR 24.37, SSIM .811, LPIPS .292 on 20 images does not certify lateral geometry or metres."
+      ]
+    },
+    {
+      "id": "corner-a",
+      "title": "Corner A · box masks",
+      "group": "corner-ab",
+      "groupLabel": "Corner A/B: matched cameras",
+      "total": 58,
+      "rank": 5,
+      "visualTotal": 39.0,
+      "confidence": "Moderate within group",
+      "verdict": "Useful corner detail; effectively tied with B.",
+      "bestFor": "A simpler masking comparison baseline",
+      "mainIssue": "Lateral barrels, poles and facade edges still stretch despite readable signs.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "4.00–5.88s: recognizable houses and shop frontage along the route.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: poles, foreground barrels and facade edges deform during lateral movement.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "5.88s: shop lettering and window divisions are comparatively readable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: nearby barrels smear; 7.25s foreground objects and wires leave streaks.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "All sampled sections connect, with local occlusion defects. Same planned views as B.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 3.5,
+          "basis": "measured training-stage time",
+          "reason": "227.2 minutes measured. arm wall elapsed",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 8.0,
+          "basis": "measured delivered bytes",
+          "reason": "14,605,653 bytes (14.61 MB), SOG. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 4.0,
+          "basis": "splat-count proxy",
+          "reason": "1,000,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 8,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 14605653,
+        "splats": 1000000,
+        "trainingSeconds": 13629.795928478241,
+        "timeScope": "arm wall elapsed",
+        "images": null,
+        "maxWidth": null,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          53,
+          63
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/corner-a.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/corner-a.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/corner-a.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/corner-a/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Existing shared route and lateral plan, transformed with native-to-browser basis. A/B are matched. Half-block has a different, longer source route."
+        },
+        {
+          "id": "native-0",
+          "label": "A back route",
+          "url": "renders/a-back-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "A front route",
+          "url": "renders/a-front-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "A lateral",
+          "url": "renders/a-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "A B back route slow",
+          "url": "renders/a-b-back-route-slow.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-4",
+          "label": "A B front route slow",
+          "url": "renders/a-b-front-route-slow.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-5",
+          "label": "A B lateral slow",
+          "url": "renders/a-b-lateral-slow.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Matched A/B views and settings: B changes source PSNR by only +0.05 dB; LPIPS is effectively unchanged. No repeated runs establish superiority.",
+        "B has segmentation masks; both retain lateral barrel/pole smears. They receive identical visual scores."
+      ]
+    },
+    {
+      "id": "corner-b",
+      "title": "Corner B · segmentation masks",
+      "group": "corner-ab",
+      "groupLabel": "Corner A/B: matched cameras",
+      "total": 58,
+      "rank": 5,
+      "visualTotal": 39.0,
+      "confidence": "Moderate within group",
+      "verdict": "Segmentation has no clear overall win over A.",
+      "bestFor": "Testing whether better masks help this capture",
+      "mainIssue": "The matched route/lateral samples remain very close to A.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "4.00–5.88s: recognizable houses and shop frontage, much like A.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: poles, barrels and facade edges still deform; no defensible stability advantage over A.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 7,
+          "basis": "reviewer judgment",
+          "reason": "5.88s: readable shop/window structure, essentially the same detail tier as A.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s and 7.25s: foreground ghosts/streaks remain despite segmentation masks.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "Same connected sampled corner and planned views as A; local occlusion defects remain.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 3.5,
+          "basis": "measured training-stage time",
+          "reason": "230.7 minutes measured. arm wall elapsed",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 8.0,
+          "basis": "measured delivered bytes",
+          "reason": "14,631,996 bytes (14.63 MB), SOG. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 4.0,
+          "basis": "splat-count proxy",
+          "reason": "1,000,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 8,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 14631996,
+        "splats": 1000000,
+        "trainingSeconds": 13839.9270632267,
+        "timeScope": "arm wall elapsed",
+        "images": null,
+        "maxWidth": null,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          53,
+          63
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/corner-b.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/corner-b.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/corner-b.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/corner-b/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Existing shared route and lateral plan, transformed with native-to-browser basis. A/B are matched. Half-block has a different, longer source route."
+        },
+        {
+          "id": "native-0",
+          "label": "B back route",
+          "url": "renders/b-back-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "B front route",
+          "url": "renders/b-front-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "B lateral",
+          "url": "renders/b-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "A B back route slow",
+          "url": "renders/a-b-back-route-slow.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-4",
+          "label": "A B front route slow",
+          "url": "renders/a-b-front-route-slow.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-5",
+          "label": "A B lateral slow",
+          "url": "renders/a-b-lateral-slow.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Matched against A: +0.05 dB source PSNR, approximately identical SSIM and slightly worse LPIPS. Too small and unreplicated to call an overall win.",
+        "Segmentation setup and correction labor were not measured. This ranking does not claim it was free of effort."
+      ]
+    },
+    {
+      "id": "quality-improved",
+      "title": "Turn & street · improved",
+      "group": "original-turn",
+      "groupLabel": "Original turn: matched cameras",
+      "total": 57,
+      "rank": 7,
+      "visualTotal": 32.0,
+      "confidence": "Limited",
+      "verdict": "Cleaner than the baseline; sideways smears remain.",
+      "bestFor": "Compact improvement over the original",
+      "mainIssue": "The red-car ghost at 4.00s is reduced, but lateral porch and wire smears remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00–5.88s: stronger roof/window definition than the same-path baseline.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: houses remain legible, but porch/vegetation texture drifts and stretches.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s roof edges and 4.00s windows improve over baseline; foliage and facade details remain soft.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: the baseline red-car ghost is largely removed. Wire streaks and foreground haze persist.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "The same sampled corridor stays connected; cleanup does not recover occluded street detail.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 8.0,
+          "basis": "measured training-stage time",
+          "reason": "30.4 minutes measured. trainer elapsed; full pipeline unavailable",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 9.0,
+          "basis": "measured delivered bytes",
+          "reason": "10,503,068 bytes (10.50 MB), SOG. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 6.0,
+          "basis": "splat-count proxy",
+          "reason": "750,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 6,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records; independent off-path truth and/or source metrics are missing. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 10503068,
+        "splats": 750000,
+        "trainingSeconds": 1822.8192138671875,
+        "timeScope": "trainer elapsed; full pipeline unavailable",
+        "images": 204,
+        "maxWidth": 1920,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          52,
+          62
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/quality-improved.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/quality-improved.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/quality-improved.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/quality-improved/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Same interpolated six saved front-camera positions for all three turn models; lateral +/-4% of endpoint baseline, arbitrary units. Not a measured lane-width test."
+        }
+      ],
+      "comparisons": [
+        "Same camera review as baseline: less red-car ghost at 4.00s and better house detail, for 5.91 MB more model download.",
+        "The source review recorded improvement in 11 of 12 checked training views; that does not establish off-path accuracy."
+      ]
+    },
+    {
+      "id": "residential-fastgs-erank",
+      "title": "Residential · FastGS rank regularization",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 57,
+      "rank": 7,
+      "visualTotal": 31.5,
+      "confidence": "Moderate within group",
+      "verdict": "Very fast training; regularization does not fix lateral blur.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "2.9 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 175.75025081634521,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          52,
+          62
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-fastgs-erank.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-fastgs-erank.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-fastgs-erank.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-fastgs-erank/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential fastgs erank lateral",
+          "url": "renders/residential-fastgs-erank-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential fastgs erank route",
+          "url": "renders/residential-fastgs-erank-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential fastgs zero versus residential fastgs erank lateral",
+          "url": "renders/residential-fastgs-zero__vs__residential-fastgs-erank-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential fastgs zero versus residential fastgs erank route",
+          "url": "renders/residential-fastgs-zero__vs__residential-fastgs-erank-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times.",
+        "The zero-regularization control has nearly the same views and runtime; both receive the same visual score."
+      ]
+    },
+    {
+      "id": "residential-fastgs-zero",
+      "title": "Residential · FastGS control",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 57,
+      "rank": 7,
+      "visualTotal": 31.5,
+      "confidence": "Moderate within group",
+      "verdict": "Fast control; clear house shapes, unstable nearby detail.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "2.9 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 175.75676941871643,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          52,
+          62
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-fastgs-zero.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-fastgs-zero.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-fastgs-zero.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-fastgs-zero/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential fastgs zero lateral",
+          "url": "renders/residential-fastgs-zero-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential fastgs zero route",
+          "url": "renders/residential-fastgs-zero-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential fastgs zero versus residential fastgs erank lateral",
+          "url": "renders/residential-fastgs-zero__vs__residential-fastgs-erank-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential fastgs zero versus residential fastgs erank route",
+          "url": "renders/residential-fastgs-zero__vs__residential-fastgs-erank-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-4",
+          "label": "residential gut k0 versus residential fastgs zero lateral",
+          "url": "renders/residential-gut-k0__vs__residential-fastgs-zero-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-5",
+          "label": "residential gut k0 versus residential fastgs zero route",
+          "url": "renders/residential-gut-k0__vs__residential-fastgs-zero-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times."
+      ]
+    },
+    {
+      "id": "residential-priors-depth",
+      "title": "Residential · depth prior",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 57,
+      "rank": 7,
+      "visualTotal": 31.5,
+      "confidence": "Moderate within group",
+      "verdict": "Depth prior does not resolve porch/road distortions.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "3.2 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 190.3235695362091,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          52,
+          62
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-priors-depth.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-priors-depth.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-priors-depth.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-priors-depth/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential priors depth lateral",
+          "url": "renders/residential-priors-depth-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential priors depth route",
+          "url": "renders/residential-priors-depth-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential priors off versus residential priors depth lateral",
+          "url": "renders/residential-priors-off__vs__residential-priors-depth-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential priors off versus residential priors depth route",
+          "url": "renders/residential-priors-off__vs__residential-priors-depth-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times."
+      ]
+    },
+    {
+      "id": "residential-priors-normal",
+      "title": "Residential · normal prior",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 57,
+      "rank": 7,
+      "visualTotal": 31.5,
+      "confidence": "Moderate within group",
+      "verdict": "Normal prior does not anchor the facades reliably.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "3.4 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 205.57556891441345,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          52,
+          62
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-priors-normal.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-priors-normal.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-priors-normal.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-priors-normal/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential priors normal lateral",
+          "url": "renders/residential-priors-normal-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential priors normal route",
+          "url": "renders/residential-priors-normal-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential priors off versus residential priors normal lateral",
+          "url": "renders/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential priors off versus residential priors normal route",
+          "url": "renders/residential-priors-off__vs__residential-priors-normal-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times."
+      ]
+    },
+    {
+      "id": "residential-priors-off",
+      "title": "Residential · priors control",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 57,
+      "rank": 7,
+      "visualTotal": 31.5,
+      "confidence": "Moderate within group",
+      "verdict": "Useful control; priors variants are not clear fixes.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "3.2 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 190.8320655822754,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          52,
+          62
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-priors-off.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-priors-off.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-priors-off.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-priors-off/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential priors off lateral",
+          "url": "renders/residential-priors-off-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential priors off route",
+          "url": "renders/residential-priors-off-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential priors off versus residential priors both lateral",
+          "url": "renders/residential-priors-off__vs__residential-priors-both-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential priors off versus residential priors both route",
+          "url": "renders/residential-priors-off__vs__residential-priors-both-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-4",
+          "label": "residential priors off versus residential priors depth lateral",
+          "url": "renders/residential-priors-off__vs__residential-priors-depth-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-5",
+          "label": "residential priors off versus residential priors depth route",
+          "url": "renders/residential-priors-off__vs__residential-priors-depth-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-6",
+          "label": "residential priors off versus residential priors normal lateral",
+          "url": "renders/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-7",
+          "label": "residential priors off versus residential priors normal route",
+          "url": "renders/residential-priors-off__vs__residential-priors-normal-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times."
+      ]
+    },
+    {
+      "id": "residential-gut-k0",
+      "title": "Residential · fixed calibration",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 56,
+      "rank": 13,
+      "visualTotal": 30.5,
+      "confidence": "Moderate within group",
+      "verdict": "Fast baseline with strong sideways smearing.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10.0,
+          "basis": "measured training-stage time",
+          "reason": "5.0 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 300.1409568786621,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          51,
+          61
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-gut-k0.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-gut-k0.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-gut-k0.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-gut-k0/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential gut k0 lateral",
+          "url": "renders/residential-gut-k0-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential gut k0 route",
+          "url": "renders/residential-gut-k0-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential gut k0 vs selfcal lateral",
+          "url": "renders/residential-gut-k0-vs-selfcal-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential gut k0 vs selfcal route",
+          "url": "renders/residential-gut-k0-vs-selfcal-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-4",
+          "label": "residential gut k0 versus residential fastgs zero lateral",
+          "url": "renders/residential-gut-k0__vs__residential-fastgs-zero-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-5",
+          "label": "residential gut k0 versus residential fastgs zero route",
+          "url": "renders/residential-gut-k0__vs__residential-fastgs-zero-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-6",
+          "label": "residential gut k0 versus residential gut shadow lateral",
+          "url": "renders/residential-gut-k0__vs__residential-gut-shadow-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-7",
+          "label": "residential gut k0 versus residential gut shadow route",
+          "url": "renders/residential-gut-k0__vs__residential-gut-shadow-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times."
+      ]
+    },
+    {
+      "id": "residential-gut-selfcal",
+      "title": "Residential · self-calibration",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 56,
+      "rank": 13,
+      "visualTotal": 30.5,
+      "confidence": "Moderate within group",
+      "verdict": "Better source metrics; lateral defects remain.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "4.8 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 290.32689785957336,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          51,
+          61
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-gut-selfcal.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-gut-selfcal.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-gut-selfcal.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-gut-selfcal/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential gut k0 vs selfcal lateral",
+          "url": "renders/residential-gut-k0-vs-selfcal-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential gut k0 vs selfcal route",
+          "url": "renders/residential-gut-k0-vs-selfcal-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential gut selfcal lateral",
+          "url": "renders/residential-gut-selfcal-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential gut selfcal route",
+          "url": "renders/residential-gut-selfcal-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times.",
+        "Whole-static source PSNR is 18.31 versus 17.99 dB for fixed calibration; this is not sufficient to award a lateral-quality win."
+      ]
+    },
+    {
+      "id": "residential-gut-shadow",
+      "title": "Residential · shadow mask",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 56,
+      "rank": 13,
+      "visualTotal": 30.5,
+      "confidence": "Moderate within group",
+      "verdict": "Extra shadow masks show no clear visual payoff.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "4.8 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 289.7744631767273,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          51,
+          61
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-gut-shadow.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-gut-shadow.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-gut-shadow.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-gut-shadow/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential gut k0 versus residential gut shadow lateral",
+          "url": "renders/residential-gut-k0__vs__residential-gut-shadow-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential gut k0 versus residential gut shadow route",
+          "url": "renders/residential-gut-k0__vs__residential-gut-shadow-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential gut shadow lateral",
+          "url": "renders/residential-gut-shadow-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential gut shadow route",
+          "url": "renders/residential-gut-shadow-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times.",
+        "Whole-static source PSNR is 18.12 versus 17.99 dB for fixed calibration. The matching browser samples do not demonstrate a useful lateral fix."
+      ]
+    },
+    {
+      "id": "residential-priors-both",
+      "title": "Residential · depth + normal priors",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 56,
+      "rank": 13,
+      "visualTotal": 30.5,
+      "confidence": "Moderate within group",
+      "verdict": "Both priors still leave conspicuous dark road artifacts.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 2,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: several prominent dark wedges cross the road/driveway; lateral tree and porch ghosts also remain.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "3.5 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 7,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 210.0255162715912,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          51,
+          61
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-priors-both.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-priors-both.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-priors-both.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-priors-both/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        },
+        {
+          "id": "native-0",
+          "label": "residential priors both lateral",
+          "url": "renders/residential-priors-both-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "residential priors both route",
+          "url": "renders/residential-priors-both-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-2",
+          "label": "residential priors off versus residential priors both lateral",
+          "url": "renders/residential-priors-off__vs__residential-priors-both-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-3",
+          "label": "residential priors off versus residential priors both route",
+          "url": "renders/residential-priors-off__vs__residential-priors-both-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times.",
+        "More pronounced multiple road wedges at 4.00s justify the lower artifact score here. This single reviewed run does not prove priors always hurt."
+      ]
+    },
+    {
+      "id": "residential-gut-common-center",
+      "title": "Residential · common-center 1K",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 55,
+      "rank": 17,
+      "visualTotal": 30.5,
+      "confidence": "Limited",
+      "verdict": "Shared camera center still leaves haze and road holes.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: recognizable windows/roofs; 4.00s and 8.50s: porch and fine foliage remain blurred.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 10,
+          "basis": "measured training-stage time",
+          "reason": "4.9 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 5,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records; independent off-path truth and/or source metrics are missing. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 294.32856488227844,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          50,
+          60
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-gut-common-center.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-gut-common-center.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-gut-common-center.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-gut-common-center/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times."
+      ]
+    },
+    {
+      "id": "residential-gut-common-center-2048",
+      "title": "Residential · common-center 2K",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": 55,
+      "rank": 17,
+      "visualTotal": 31.5,
+      "confidence": "Limited",
+      "verdict": "A little more detail; 2K does not fix the geometry.",
+      "bestFor": "A quick diagnostic, not a finished street",
+      "mainIssue": "At 7.25–9.88s porches and trees stretch; dark road/driveway shapes remain.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: roof shingles and 8.50s window/roof boundaries show some extra definition; this does not stabilize geometry.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 9.0,
+          "basis": "measured training-stage time",
+          "reason": "15.2 minutes measured. training plus internal evaluation",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 6.5,
+          "basis": "measured delivered bytes",
+          "reason": "30,642,481 bytes (30.64 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 8.0,
+          "basis": "splat-count proxy",
+          "reason": "500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 5,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records; independent off-path truth and/or source metrics are missing. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 30642481,
+        "splats": 500000,
+        "trainingSeconds": 911.3309097290039,
+        "timeScope": "training plus internal evaluation",
+        "images": 240,
+        "maxWidth": 2048,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          50,
+          60
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/residential-gut-common-center-2048.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/residential-gut-common-center-2048.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/residential-gut-common-center-2048.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/residential-gut-common-center-2048/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained."
+        }
+      ],
+      "comparisons": [
+        "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+        "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times.",
+        "2K takes 911.3 s versus 294.3 s for common-center 1K (3.10× measured training-stage wall time), with the same 500k splats and 30.64 MB delivered file. Some roof detail improves, but the lateral defects survive."
+      ]
+    },
+    {
+      "id": "quality-cleaned",
+      "title": "Turn & street · cleanup comparison",
+      "group": "original-turn",
+      "groupLabel": "Original turn: matched cameras",
+      "total": 49,
+      "rank": 19,
+      "visualTotal": 32.0,
+      "confidence": "Limited",
+      "verdict": "No clear visual gain; much larger delivered file.",
+      "bestFor": "Inspecting the limits of simple cleanup",
+      "mainIssue": "Only 340 of 750,000 splats were removed; the larger file is a format difference.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: recognizable houses and road, visually close to the improved model on the identical path.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: the same porch/foliage stretching remains; no convincing lateral improvement.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "2.00s roofs and 4.00s windows resemble the improved version; no defensible extra sharpness score.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "0.00s and 9.88s: translucent foreground remains; thin streaks are still visible.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "Same connected sampled corridor as the improved version; removing 340 points did not fill missing detail.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Cleanup time not measured; parent training was 1,822.8 s. Combined rebuild time unknown. Neutral 5/10 placeholder.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 4.5,
+          "basis": "measured delivered bytes",
+          "reason": "45,941,941 bytes (45.94 MB), COMPRESSED-PLY. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 6.0,
+          "basis": "splat-count proxy",
+          "reason": "749,660 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 5,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records; independent off-path truth and/or source metrics are missing. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 45941941,
+        "splats": 749660,
+        "trainingSeconds": null,
+        "timeScope": "Cleanup time not measured; parent training was 1,822.8 s. Combined rebuild time unknown.",
+        "images": null,
+        "maxWidth": null,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          39,
+          59
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/quality-cleaned.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/quality-cleaned.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/quality-cleaned.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/quality-cleaned/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Same interpolated six saved front-camera positions for all three turn models; lateral +/-4% of endpoint baseline, arbitrary units. Not a measured lane-width test."
+        }
+      ],
+      "comparisons": [
+        "Removing 340 splats yields no convincing visual improvement in these matching views. The earlier cleanup was rejected.",
+        "45.94 MB versus 10.50 MB is principally a PLY-versus-SOG delivery difference, not proof that cleanup intrinsically increases size. Repacking could improve this score without retraining."
+      ]
+    },
+    {
+      "id": "turn-baseline",
+      "title": "Turn & street · baseline",
+      "group": "original-turn",
+      "groupLabel": "Original turn: matched cameras",
+      "total": 49,
+      "rank": 19,
+      "visualTotal": 25.0,
+      "confidence": "Limited",
+      "verdict": "Tiny download; prominent vehicle ghosts and soft facades.",
+      "bestFor": "Smallest download",
+      "mainIssue": "At 4.00s a red-car ghost crosses the road; at 7.25–9.88s porch edges smear.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: the street and houses remain recognizable, but the road foreground and roofs are soft.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "6–9.88s: porch edges, poles and foreground shapes stretch or double as the viewpoint shifts.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "2.00s: distant windows and roof edges are weak; 4.00s porch lines lack separation.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 2,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: conspicuous red-car ghost; 0.00s ghosted barrels and 9.88s transparent foreground clutter.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 6,
+          "basis": "reviewer judgment",
+          "reason": "All eight samples show a connected street, but foreground occlusion and incomplete edges remain.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Unknown final total; 1,145.6 s is only a near-completion observation, not used as a complete time. Neutral 5/10 placeholder.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 10,
+          "basis": "measured delivered bytes",
+          "reason": "4,594,791 bytes (4.59 MB), SOG. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 10,
+          "basis": "splat-count proxy",
+          "reason": "250,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 5,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records; independent off-path truth and/or source metrics are missing. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 4594791,
+        "splats": 250000,
+        "trainingSeconds": null,
+        "timeScope": "Unknown final total; 1,145.6 s is only a near-completion observation, not used as a complete time.",
+        "images": 204,
+        "maxWidth": 960,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          39,
+          59
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/turn-baseline.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/turn-baseline.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/turn-baseline.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/turn-baseline/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Same interpolated six saved front-camera positions for all three turn models; lateral +/-4% of endpoint baseline, arbitrary units. Not a measured lane-width test."
+        }
+      ],
+      "comparisons": [
+        "The improved and cleanup versions use the identical review cameras. At 4.00s compare the red-car ghost; at 9.88s compare porch/foreground distortion.",
+        "Smallest delivered file does not make this the best driving view. Final full training duration is not logged here; the 19.1-minute near-completion observation is not used as a complete time."
+      ]
+    },
+    {
+      "id": "half-block",
+      "title": "New footage · half-block",
+      "group": "half-block",
+      "groupLabel": "Half-block: separate capture",
+      "total": 45,
+      "rank": 21,
+      "visualTotal": 24.5,
+      "confidence": "Moderate within group",
+      "verdict": "Longer coverage, but road and facades break down.",
+      "bestFor": "Seeing the cost of extending the capture",
+      "mainIssue": "At 4.00–5.88s road/tree smears dominate; lateral facades are doubled.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "0–5.88s: the longer residential route is recognizable, but major road/tree smearing obscures detail.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 3,
+          "basis": "reviewer judgment",
+          "reason": "6–7.25s: white-house edges and branches double; 9.88s near-ground texture stretches.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 4,
+          "basis": "reviewer judgment",
+          "reason": "4.00s: roof/window detail is lost in foliage and haze; 5.88s buildings have soft duplicated contours.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 2,
+          "basis": "reviewer judgment",
+          "reason": "0.00s: recording-car-colored foreground smear; 4.00s large road streaks and 6.00s ghosted facades.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "reviewer judgment",
+          "reason": "Broader route than the short tests, but major local distortions break usable continuity. This is an open half-block, not a validated closed block.",
+          "evidenceIds": [
+            "review",
+            "sheet",
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": 5.5,
+          "basis": "measured training-stage time",
+          "reason": "86.7 minutes measured. headless training process wall",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": 5,
+          "basis": "unknown-neutral",
+          "reason": "Human setup, correction and review hours are not reliably recorded. Neutral placeholder for every model; GPU runtime is not human labor.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": 7.5,
+          "basis": "measured delivered bytes",
+          "reason": "21,794,447 bytes (21.79 MB), SOG. Model only. PLY/SOG packaging differences influence this score.",
+          "evidenceIds": [
+            "provenance",
+            "record"
+          ]
+        },
+        {
+          "category": "browser",
+          "score": 2.0,
+          "basis": "splat-count proxy",
+          "reason": "1,500,000 published splats. All loaded in the shared viewer; this score is not measured FPS, GPU memory or physical-phone performance.",
+          "evidenceIds": [
+            "provenance"
+          ]
+        },
+        {
+          "category": "evidence",
+          "score": 8,
+          "basis": "record audit",
+          "reason": "Hashed model, repeatable browser cameras, timing/config records, source metrics and saved native evidence. Single reviewed snapshot; no statistical error bars.",
+          "evidenceIds": [
+            "record",
+            "provenance",
+            "plan"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": 21794447,
+        "splats": 1500000,
+        "trainingSeconds": 5202.651005268097,
+        "timeScope": "headless training process wall",
+        "images": 360,
+        "maxWidth": 2048,
+        "humanHours": null,
+        "effortNote": "Not measured. All entries receive the same neutral effort placeholder.",
+        "unknownScoreRange": [
+          40,
+          50
+        ]
+      },
+      "evidence": [
+        {
+          "id": "review",
+          "label": "10-second route + lateral review",
+          "url": "ratings/evidence/half-block.mp4",
+          "kind": "video",
+          "note": "0–6s route, 6–10s lateral. 80 sampled frames at 8 fps; condensed synthetic camera movement, not a real-time performance or flicker benchmark."
+        },
+        {
+          "id": "sheet",
+          "label": "Eight examples + detail crops",
+          "url": "ratings/evidence/half-block.jpg",
+          "kind": "image",
+          "note": "Top groups: route 0, 2, 4, 5.88s. Bottom groups: lateral 6, 7.25, 8.5, 9.88s. Full frame above an unscaled center crop; no sharpening."
+        },
+        {
+          "id": "record",
+          "label": "Measurements, observations & source hashes",
+          "url": "ratings/records/half-block.json",
+          "kind": "json",
+          "note": "Public evidence extract; source files remain local and unchanged."
+        },
+        {
+          "id": "provenance",
+          "label": "Model provenance",
+          "url": "splats/half-block/provenance.json",
+          "kind": "json",
+          "note": "Exact published model hash, transforms and source lineage."
+        },
+        {
+          "id": "plan",
+          "label": "Repeatable camera plans",
+          "url": "ratings/camera-plans.json",
+          "kind": "json",
+          "note": "Existing shared route and lateral plan, transformed with native-to-browser basis. A/B are matched. Half-block has a different, longer source route."
+        },
+        {
+          "id": "native-0",
+          "label": "LichtFeld half block route",
+          "url": "renders/lichtfeld-half-block-route.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        },
+        {
+          "id": "native-1",
+          "label": "LichtFeld lateral",
+          "url": "renders/lichtfeld-lateral.mp4",
+          "kind": "native",
+          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+        }
+      ],
+      "comparisons": [
+        "This is a different, longer capture. Its poor result does not isolate length as the cause.",
+        "Recorded source-view PSNR 16.03 / SSIM .494 / LPIPS .526; the experiment quality target failed. No Postshot output was produced in that run."
+      ]
+    }
+  ]
+}

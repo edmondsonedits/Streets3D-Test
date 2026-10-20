@@ -21,6 +21,10 @@ Height lock preserves the selected source camera's level in the reconstruction c
 
 See [splat delivery and provenance](docs/SPLAT-PUBLICATION.md).
 
+## Ratings and evidence
+
+[Compare all 21 splats](https://edmondsonedits.github.io/Streets3D-Test/rankings.html): ten weighted categories, best-to-worst rows, expandable reasons, repeatable movement previews and source facts. Visual quality has 65% of the weight. The scores are provisional; different captures and missing human-effort measurements limit the comparisons. See [the review protocol](docs/RATINGS.md).
+
 ## Adding future tests
 
 1. Read [the publishing guide](docs/PUBLISHING.md).

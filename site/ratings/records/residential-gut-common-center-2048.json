@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "residential-gut-common-center-2048",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 30642481,
+    "sha256": "02e4accc144b70a7b3c86b9839df1362150e34e99420249431efbae860c65616",
+    "splats": 500000,
+    "format": "compressed-ply"
+  },
+  "sourceEvidence": {
+    "id": "residential-gut-common-center-2048",
+    "published_count": 500000,
+    "published_asset": "../../splats/residential-gut-common-center-2048/scene.compressed.ply",
+    "source_path": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/residential-gut-common-center-2048.ply",
+    "source_kind": "native Gaussian PLY",
+    "state": "prototype",
+    "primary_evidence_path": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/completion.json",
+    "training": {
+      "steps": 5000,
+      "wall_seconds": 911.3309097290039,
+      "gaussians": 500000,
+      "timing_scope": "training plus internal evaluation",
+      "native_training_seconds": 904.369,
+      "training_image_count": 240,
+      "max_width_configured": 2048,
+      "train_only": true,
+      "training_dataset_path": "Experiments\\offpath-ten-tests-20261020-112451\\data\\export\\residential-common-center-k0-2048\\train-tracked-scaled-control"
+    },
+    "quality": {
+      "native_images_inspected": true,
+      "native_motion_inspected": true,
+      "motion_path": "Experiments/offpath-ten-tests-20261020-112451/comparisons/commoncenter-motion/actual-review.json",
+      "quality_gate_passed": false
+    },
+    "nativeEvaluationMetrics": {
+      "metric_source": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/metrics_report.txt",
+      "evaluation_step": 5000,
+      "PSNR": 19.4232,
+      "SSIM": 0.5629,
+      "LPIPS": 0.4891,
+      "depthAbsRel": 0.1441,
+      "secondsPerImage": 1.6996,
+      "metric_image_count": null
+    },
+    "metricsNote": "No external source comparison metric recorded; 2K internal eval scores are in nativeEvaluationMetrics."
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/completion.json",
+      "bytes": 4050,
+      "sha256": "e8f2e1c698deb1232c8f682ee7633b8c2dd624a9810af9d38840ac4095acef20"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/training_config.json",
+      "bytes": 5714,
+      "sha256": "82a1e8985423e8549f26f838984042f70465eb879174243d2d06a37f5f13d124"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/native-comparison/proper-camera-alignment.json",
+      "bytes": 695,
+      "sha256": "ba7a89fb77baa7b3eb6d64fe7b138bdcbdc083a66f8a0187079db28b22f740b9"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/native-comparison/model-transform.json",
+      "bytes": 1589,
+      "sha256": "93169d51f5cc62016fe1105aa89e55dddc866a79b60a28fe21751ee5069f7219"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/comparisons/test-results.json",
+      "bytes": 27867,
+      "sha256": "1e5ed253f7807161f7a8f5a3646ddcdc482c94708c5a44a3ca960c36c35fd222"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/data/export/residential-common-center-k0-2048/train-tracked-scaled-control/dataset-contract.json",
+      "bytes": 11871,
+      "sha256": "1b514e8257b77318a6f1a6ac3a5e2d1dca06d42b0aab2328c01738e7e0f752e5"
+    }
+  ],
+  "reviewProtocol": "Shared regional route/lateral plan, mapped through each model's saved proper camera-center similarity and world matrix. No independent novel-view ground truth; alignment residuals retained.",
+  "alignmentResiduals": {
+    "median_camera_center_residual": 0.012648186809786464,
+    "max_camera_center_residual": 0.014247255822635217
+  },
+  "observations": [
+    {
+      "category": "along",
+      "score": 6,
+      "observation": "0–5.88s: houses and street direction remain readable, but near trees and driveway regions are unstable."
+    },
+    {
+      "category": "lateral",
+      "score": 4,
+      "observation": "7.25–9.88s: porch railings, the large tree and house edges change shape or smear across views."
+    },
+    {
+      "category": "detail",
+      "score": 6,
+      "observation": "4.00s: roof shingles and 8.50s window/roof boundaries show some extra definition; this does not stabilize geometry."
+    },
+    {
+      "category": "artifacts",
+      "score": 3,
+      "observation": "4.00s: dark road/driveway blob and colorful near-house clutter; 7.25–9.88s: translucent tree/porch ghosts."
+    },
+    {
+      "category": "coverage",
+      "score": 5,
+      "observation": "The sampled residential stretch connects, but near-road holes and occlusion artifacts prevent clean continuity."
+    }
+  ],
+  "comparisons": [
+    "Same regional route/lateral review plan as the other residential diagnostics, mapped through each saved alignment. The surviving porch/tree smears matter more than tiny source-view metric changes.",
+    "These 5,000-step local patches do not establish full-block performance. Preparation, solving and human review are excluded from the short training times.",
+    "2K takes 911.3 s versus 294.3 s for common-center 1K (3.10× measured training-stage wall time), with the same 500k splats and 30.64 MB delivered file. Some roof detail improves, but the lateral defects survive."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/residential-gut-common-center-2048.mp4",
+      "bytes": 1463655,
+      "sha256": "81f9ff329c1d4290ced112ee68a2543b86cabc50e56a6c5b244de89c165b7d72"
+    },
+    {
+      "url": "ratings/evidence/residential-gut-common-center-2048.jpg",
+      "bytes": 378340,
+      "sha256": "b05940584c581e3a521ef3ee9dc8097206d79a828b0a76f8fd84598411ce7497"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}

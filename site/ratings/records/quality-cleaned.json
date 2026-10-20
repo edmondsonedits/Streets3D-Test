@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "quality-cleaned",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 45941941,
+    "sha256": "34fcca434c81655b40b1b176c954a856d1a96adc35377a20498d90ab931ddbbb",
+    "splats": 749660,
+    "format": "compressed-ply"
+  },
+  "sourceEvidence": {
+    "id": "quality-cleaned",
+    "published_count": 749660,
+    "published_asset": "../../splats/quality-cleaned/scene.compressed.ply",
+    "source_path": "LichtFeld-360-test-2026-10-18/quality-v2/trained/Peterborough-quality-cleaned.ply",
+    "source_kind": "native Gaussian PLY",
+    "state": "prototype",
+    "primary_evidence_path": "LichtFeld-360-test-2026-10-18/quality-v2/trained/Peterborough-quality-cleaned.ply",
+    "training": {
+      "gaussians": 749660,
+      "removed_from_improved": 340,
+      "duration": "not separately measured",
+      "metrics": "no post-clean metric located"
+    },
+    "metrics": null,
+    "quality": null
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/quality-v2/trained/Peterborough-quality-cleaned.ply",
+      "bytes": 185917530,
+      "sha256": "ea6bb3e4b6f34a96a1c1e6ca7c6225b5ec8d27dbb3fc36f770ae0ac564301458"
+    }
+  ],
+  "reviewProtocol": "Same interpolated six saved front-camera positions for all three turn models; lateral +/-4% of endpoint baseline, arbitrary units. Not a measured lane-width test.",
+  "alignmentResiduals": null,
+  "observations": [
+    {
+      "category": "along",
+      "score": 6,
+      "observation": "0–5.88s: recognizable houses and road, visually close to the improved model on the identical path."
+    },
+    {
+      "category": "lateral",
+      "score": 4,
+      "observation": "6–9.88s: the same porch/foliage stretching remains; no convincing lateral improvement."
+    },
+    {
+      "category": "detail",
+      "score": 5,
+      "observation": "2.00s roofs and 4.00s windows resemble the improved version; no defensible extra sharpness score."
+    },
+    {
+      "category": "artifacts",
+      "score": 4,
+      "observation": "0.00s and 9.88s: translucent foreground remains; thin streaks are still visible."
+    },
+    {
+      "category": "coverage",
+      "score": 6,
+      "observation": "Same connected sampled corridor as the improved version; removing 340 points did not fill missing detail."
+    }
+  ],
+  "comparisons": [
+    "Removing 340 splats yields no convincing visual improvement in these matching views. The earlier cleanup was rejected.",
+    "45.94 MB versus 10.50 MB is principally a PLY-versus-SOG delivery difference, not proof that cleanup intrinsically increases size. Repacking could improve this score without retraining."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/quality-cleaned.mp4",
+      "bytes": 1273431,
+      "sha256": "c22914e7493e33151577010d12dfb41ad87713760f60eafbb7461777194baefd"
+    },
+    {
+      "url": "ratings/evidence/quality-cleaned.jpg",
+      "bytes": 297615,
+      "sha256": "c34d1b46ed3f4613af5906ae3514bfea969eefe64639a8d58ecd72c195c42db6"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}

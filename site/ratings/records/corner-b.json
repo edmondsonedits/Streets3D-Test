@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "corner-b",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 14631996,
+    "sha256": "e457a58b119ef1825a4f70bb1ee47a5d8c56ebd9985c9d5146bf84a0c98d0348",
+    "splats": 1000000,
+    "format": "sog"
+  },
+  "sourceEvidence": {
+    "id": "corner-b",
+    "published_count": 1000000,
+    "published_asset": "../../splats/corner-b/scene.sog",
+    "source_path": "Experiments/corner-ab-20261019-120505-0eecdf/viewers/Peterborough-corner-B.html",
+    "source_kind": "existing browser export",
+    "state": "prototype",
+    "primary_evidence_path": "Experiments/corner-ab-20261019-120505-0eecdf/B/training-completion.json",
+    "training": {
+      "steps": 30000,
+      "wall_seconds": 13839.9270632267,
+      "gaussians": 1000000,
+      "native_training_log_seconds": [
+        "13804.593"
+      ],
+      "eval_images": 20,
+      "timing_scope": "arm wall elapsed"
+    },
+    "metrics": {
+      "step": 30000,
+      "images": 20,
+      "PSNR_dB": 23.826108837127684,
+      "SSIM": 0.7770846605300903,
+      "LPIPS": 0.313977786898613
+    },
+    "quality": {
+      "native_images_inspected": true,
+      "native_motion_inspected": true,
+      "visual_review": "Experiments/corner-ab-20261019-120505-0eecdf/comparisons/native-visual-review.json",
+      "browser_review": "Experiments/corner-ab-20261019-120505-0eecdf/comparisons/browser-qa.json"
+    }
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "Experiments/corner-ab-20261019-120505-0eecdf/B/training-completion.json",
+      "bytes": 2038,
+      "sha256": "21af71fb670b529b7cbbeb80a586fab3c7697731c9b6989733225f9d3a5fac5a"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/corner-ab-20261019-120505-0eecdf/comparisons/native-metrics-comparison.json",
+      "bytes": 19810,
+      "sha256": "d00fcc513e8436acdb925b32bab238bbee028e4c9323b13107ab083c13a4eb38"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/corner-ab-20261019-120505-0eecdf/comparisons/native-visual-review.json",
+      "bytes": 3737,
+      "sha256": "ab4b3b35c4991d950a9655e858d744cd05f963fff314d4379eaa9fd52d308177"
+    }
+  ],
+  "reviewProtocol": "Existing shared route and lateral plan, transformed with native-to-browser basis. A/B are matched. Half-block has a different, longer source route.",
+  "alignmentResiduals": null,
+  "observations": [
+    {
+      "category": "along",
+      "score": 7,
+      "observation": "4.00–5.88s: recognizable houses and shop frontage, much like A."
+    },
+    {
+      "category": "lateral",
+      "score": 5,
+      "observation": "6–9.88s: poles, barrels and facade edges still deform; no defensible stability advantage over A."
+    },
+    {
+      "category": "detail",
+      "score": 7,
+      "observation": "5.88s: readable shop/window structure, essentially the same detail tier as A."
+    },
+    {
+      "category": "artifacts",
+      "score": 5,
+      "observation": "2.00s and 7.25s: foreground ghosts/streaks remain despite segmentation masks."
+    },
+    {
+      "category": "coverage",
+      "score": 6,
+      "observation": "Same connected sampled corner and planned views as A; local occlusion defects remain."
+    }
+  ],
+  "comparisons": [
+    "Matched against A: +0.05 dB source PSNR, approximately identical SSIM and slightly worse LPIPS. Too small and unreplicated to call an overall win.",
+    "Segmentation setup and correction labor were not measured. This ranking does not claim it was free of effort."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/corner-b.mp4",
+      "bytes": 1283401,
+      "sha256": "b5c04c228489e018d2e3b91946e3ae616483aaa249834d787888eb714bdf94a4"
+    },
+    {
+      "url": "ratings/evidence/corner-b.jpg",
+      "bytes": 366229,
+      "sha256": "5248489b5101385dda346b1a4af7725cdd900a7ee2ce91c7e7bb47cc40888267"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}

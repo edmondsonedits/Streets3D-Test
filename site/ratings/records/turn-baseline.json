@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "turn-baseline",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 4594791,
+    "sha256": "58c261b06823923827cd96749df9015f6fffd0ca579068c69078b90aee787bac",
+    "splats": 250000,
+    "format": "sog"
+  },
+  "sourceEvidence": {
+    "id": "turn-baseline",
+    "published_count": 250000,
+    "published_asset": "../../splats/turn-baseline/scene.sog",
+    "source_path": "LichtFeld-360-test-2026-10-18/trained-turn-test/Viewer/Peterborough-turn-test.html",
+    "source_kind": "existing browser export",
+    "state": "prototype",
+    "primary_evidence_path": "LichtFeld-360-test-2026-10-18/extraction-result.json",
+    "training": {
+      "steps": 30000,
+      "gaussians": 250000,
+      "source_pairs": 102,
+      "input_images": 204,
+      "max_width": 960,
+      "near_completion_elapsed_seconds": 1145.631103515625,
+      "duration_scope": "observed near-completion; not full pipeline"
+    },
+    "metrics": null,
+    "quality": null
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/extraction-result.json",
+      "bytes": 25463,
+      "sha256": "afb24036e172cec583ebaa0497ba32e2557699719e6e0d7732f39d59ad3172b4"
+    }
+  ],
+  "reviewProtocol": "Same interpolated six saved front-camera positions for all three turn models; lateral +/-4% of endpoint baseline, arbitrary units. Not a measured lane-width test.",
+  "alignmentResiduals": null,
+  "observations": [
+    {
+      "category": "along",
+      "score": 5,
+      "observation": "0–5.88s: the street and houses remain recognizable, but the road foreground and roofs are soft."
+    },
+    {
+      "category": "lateral",
+      "score": 3,
+      "observation": "6–9.88s: porch edges, poles and foreground shapes stretch or double as the viewpoint shifts."
+    },
+    {
+      "category": "detail",
+      "score": 4,
+      "observation": "2.00s: distant windows and roof edges are weak; 4.00s porch lines lack separation."
+    },
+    {
+      "category": "artifacts",
+      "score": 2,
+      "observation": "4.00s: conspicuous red-car ghost; 0.00s ghosted barrels and 9.88s transparent foreground clutter."
+    },
+    {
+      "category": "coverage",
+      "score": 6,
+      "observation": "All eight samples show a connected street, but foreground occlusion and incomplete edges remain."
+    }
+  ],
+  "comparisons": [
+    "The improved and cleanup versions use the identical review cameras. At 4.00s compare the red-car ghost; at 9.88s compare porch/foreground distortion.",
+    "Smallest delivered file does not make this the best driving view. Final full training duration is not logged here; the 19.1-minute near-completion observation is not used as a complete time."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/turn-baseline.mp4",
+      "bytes": 1092452,
+      "sha256": "05f6395ce0fbaf4c9984ffae4c33acb11eb01e4773cf23e81b90d75b5bc534da"
+    },
+    {
+      "url": "ratings/evidence/turn-baseline.jpg",
+      "bytes": 281474,
+      "sha256": "a9496b217f069d03e429861e38576c9a622e16b09078432fa790526bfe3c5bce"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}

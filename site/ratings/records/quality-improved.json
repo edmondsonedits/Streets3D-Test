@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "quality-improved",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 10503068,
+    "sha256": "c57a0220a3918c352e0886e11f611f6605e47e057d0f99bc3253eea0a2b6fe07",
+    "splats": 750000,
+    "format": "sog"
+  },
+  "sourceEvidence": {
+    "id": "quality-improved",
+    "published_count": 750000,
+    "published_asset": "../../splats/quality-improved/scene.sog",
+    "source_path": "LichtFeld-360-test-2026-10-18/trained-turn-test/Viewer/Peterborough-quality-improved.html",
+    "source_kind": "existing browser export",
+    "state": "prototype",
+    "primary_evidence_path": "LichtFeld-360-test-2026-10-18/quality-v2/quality-status.json",
+    "training": {
+      "steps": 30000,
+      "gaussians": 750000,
+      "source_pairs": 102,
+      "input_images": 204,
+      "max_width": 1920,
+      "trainer_elapsed_seconds": 1822.8192138671875,
+      "duration_scope": "trainer elapsed; full pipeline unavailable"
+    },
+    "metrics": null,
+    "quality": {
+      "source_views_improved": 11,
+      "source_views_checked": 12,
+      "browser_verified": true,
+      "limitations": [
+        "soft corner/tree detail",
+        "foreground haze at recording-car occlusions"
+      ]
+    }
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/quality-v2/quality-status.json",
+      "bytes": 594,
+      "sha256": "01d7584cab6973cb81d4555454a8b9914b864bef23bf42a163a986ad0eef0bda"
+    },
+    {
+      "pathRelativeToCaptureArchive": "LichtFeld-360-test-2026-10-18/quality-v2/training-final-runtime-state.json",
+      "bytes": 1456,
+      "sha256": "01a6819711224477d8f61465044141356c9cb517c5c03c9fb8c75107c286e8b1"
+    }
+  ],
+  "reviewProtocol": "Same interpolated six saved front-camera positions for all three turn models; lateral +/-4% of endpoint baseline, arbitrary units. Not a measured lane-width test.",
+  "alignmentResiduals": null,
+  "observations": [
+    {
+      "category": "along",
+      "score": 6,
+      "observation": "2.00–5.88s: stronger roof/window definition than the same-path baseline."
+    },
+    {
+      "category": "lateral",
+      "score": 4,
+      "observation": "6–9.88s: houses remain legible, but porch/vegetation texture drifts and stretches."
+    },
+    {
+      "category": "detail",
+      "score": 5,
+      "observation": "2.00s roof edges and 4.00s windows improve over baseline; foliage and facade details remain soft."
+    },
+    {
+      "category": "artifacts",
+      "score": 4,
+      "observation": "4.00s: the baseline red-car ghost is largely removed. Wire streaks and foreground haze persist."
+    },
+    {
+      "category": "coverage",
+      "score": 6,
+      "observation": "The same sampled corridor stays connected; cleanup does not recover occluded street detail."
+    }
+  ],
+  "comparisons": [
+    "Same camera review as baseline: less red-car ghost at 4.00s and better house detail, for 5.91 MB more model download.",
+    "The source review recorded improvement in 11 of 12 checked training views; that does not establish off-path accuracy."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/quality-improved.mp4",
+      "bytes": 1271145,
+      "sha256": "c0dd3b8ee92559e29ed190da8da5571f2c8dff400cb3961c78732fd48bda6202"
+    },
+    {
+      "url": "ratings/evidence/quality-improved.jpg",
+      "bytes": 296695,
+      "sha256": "b71c511c45ca85688baa611e54aee247b3d4567bb36a07809b58f05768e54f18"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}

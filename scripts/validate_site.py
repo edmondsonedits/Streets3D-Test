@@ -113,5 +113,22 @@ if scene_file.exists():
             check(video['url'] in [v['url'] for v in match['renders']],f'Render not reachable from {ident}')
     for item in data['scenes']:
         for render in item['renders']:check(render['url'] in urls,f'Unregistered render in {item["id"]}')
+# Ratings must cover the exact delivered models; all linked evidence is published.
+ratings_path=ROOT/'ratings/ratings.json'
+if ratings_path.exists():
+    rating_data=json.loads(ratings_path.read_text(encoding='utf-8'))
+    check(rating_data.get('schemaVersion')==1,'Unknown ratings schema')
+    rubric=rating_data['rubric'];rows=rating_data['ratings']
+    check(len(rubric)==10 and sum(x['weight'] for x in rubric)==100,'Ratings must have 10 categories totalling 100')
+    check(len(rows)==len(scene_ids) and {x['id'] for x in rows}==scene_ids,'Ratings must cover each published splat once')
+    for row in rows:
+        ident=row['id'];scene=next(x for x in data['scenes'] if x['id']==ident)
+        check(row['facts']['assetBytes']==scene['assetBytes'],'Stale rated model size '+ident)
+        check(len(row['scores'])==10 and {x['category'] for x in row['scores']}=={x['id'] for x in rubric},'Incomplete scores '+ident)
+        check(all(isinstance(x['score'],(int,float)) and math.isfinite(x['score']) and 0<=x['score']<=10 for x in row['scores']),'Invalid category score '+ident)
+        for link in row['evidence']:ref(ROOT,link['url'])
+        proof=json.loads((ROOT/'ratings/records'/f'{ident}.json').read_text(encoding='utf-8'))
+        check(proof['publishedModel']['sha256']==scene['assetSha256'],'Stale rating provenance '+ident)
+        for item in proof['reviewArtifacts']:artifact((ROOT/item['url']).resolve(),item['bytes'],item['sha256'])
 if errors:raise SystemExit('\n'.join(errors))
 print(json.dumps({'valid':True,'tests':len(seen),'files':len(files),'siteBytes':size,'largestFileBytes':max(p.stat().st_size for p in files)}))

@@ -45,3 +45,7 @@ Use `site/demos/splat-explorer-v1/?scene=<id>` for an additional compatible mode
 Every splat model must provide a verified initial camera and auditable height reference, or explicitly label the reference as estimated. Preserve the capture-height toggle and its free-flight alternative. Run `node scripts/test-splat-navigation.mjs`, the validator, and browser checks for each model: actual visible scene, translation, look-around, height lock, free-flight height change, pose reset, and render playback. Draw-call counts alone do not prove that geometry is visible.
 
 The current publication is approximately 0.84 GB. It fits the free-site budget but leaves limited space. Check the validator before adding more models; do not silently remove earlier tests or introduce paid storage.
+
+## Gaussian ratings
+
+New Gaussian publications also need a rating/evidence entry under `site/ratings/`; follow [RATINGS.md](RATINGS.md). Score the exact delivered model hash and retain unknown facts explicitly. Run `node scripts/test-ratings.mjs`; the validator requires all current models to be rated and evidence hashes to match.

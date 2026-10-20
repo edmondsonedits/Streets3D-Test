@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "id": "half-block",
+  "reviewedAt": "2026-10-20",
+  "publishedModel": {
+    "bytes": 21794447,
+    "sha256": "426ebbb6ecebfdcda2dc99a157f6ad9f56d57cb8e5483958cc1f23e64647cfd0",
+    "splats": 1500000,
+    "format": "sog"
+  },
+  "sourceEvidence": {
+    "id": "half-block",
+    "published_count": 1500000,
+    "published_asset": "../../splats/half-block/scene.sog",
+    "source_path": "Experiments/block-lichtfeld-postshot-20261019-222743-6h/delivery/Peterborough-new-half-block-LichtFeld.html",
+    "source_kind": "existing browser export",
+    "state": "prototype",
+    "primary_evidence_path": "Experiments/block-lichtfeld-postshot-20261019-222743-6h/results-report.json",
+    "training": {
+      "steps": 30000,
+      "wall_seconds": 5202.651005268097,
+      "native_training_seconds": [
+        "5186.190"
+      ],
+      "gaussians": 1500000,
+      "input_images": 360,
+      "max_width": 2048,
+      "timing_scope": "headless training process wall"
+    },
+    "metrics": {
+      "step": 30000,
+      "images": 36,
+      "PSNR": 16.03297217686971,
+      "SSIM": 0.4941599460111724,
+      "LPIPS": 0.5262394464678235,
+      "front": {
+        "workflow": "LichtFeld",
+        "step": 30000,
+        "lens": "front",
+        "images": 18,
+        "psnr": 16.93497461742825,
+        "ssim": 0.5499563697311614,
+        "lpips": 0.49338128831651473
+      },
+      "back": {
+        "workflow": "LichtFeld",
+        "step": 30000,
+        "lens": "back",
+        "images": 18,
+        "psnr": 15.13096973631117,
+        "ssim": 0.43836352229118347,
+        "lpips": 0.5590976046191322
+      }
+    },
+    "quality": {
+      "native_motion_visually_inspected": true,
+      "route_frames": 1800,
+      "route_fps": 30,
+      "lateral_frames": 540,
+      "lateral_fps": 30,
+      "quality_goal_achieved": false
+    }
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "Experiments/block-lichtfeld-postshot-20261019-222743-6h/results-report.json",
+      "bytes": 12557,
+      "sha256": "3156d38b99e62d9fb32c79da9f1627767f24565ccef1d8d2e70620a8e83e27b9"
+    }
+  ],
+  "reviewProtocol": "Existing shared route and lateral plan, transformed with native-to-browser basis. A/B are matched. Half-block has a different, longer source route.",
+  "alignmentResiduals": null,
+  "observations": [
+    {
+      "category": "along",
+      "score": 5,
+      "observation": "0–5.88s: the longer residential route is recognizable, but major road/tree smearing obscures detail."
+    },
+    {
+      "category": "lateral",
+      "score": 3,
+      "observation": "6–7.25s: white-house edges and branches double; 9.88s near-ground texture stretches."
+    },
+    {
+      "category": "detail",
+      "score": 4,
+      "observation": "4.00s: roof/window detail is lost in foliage and haze; 5.88s buildings have soft duplicated contours."
+    },
+    {
+      "category": "artifacts",
+      "score": 2,
+      "observation": "0.00s: recording-car-colored foreground smear; 4.00s large road streaks and 6.00s ghosted facades."
+    },
+    {
+      "category": "coverage",
+      "score": 5,
+      "observation": "Broader route than the short tests, but major local distortions break usable continuity. This is an open half-block, not a validated closed block."
+    }
+  ],
+  "comparisons": [
+    "This is a different, longer capture. Its poor result does not isolate length as the cause.",
+    "Recorded source-view PSNR 16.03 / SSIM .494 / LPIPS .526; the experiment quality target failed. No Postshot output was produced in that run."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/evidence/half-block.mp4",
+      "bytes": 1462716,
+      "sha256": "6d4f853e7bf8b45313915ca0481a40180bb75f933d1ebc6b6e84d13fe1c77e97"
+    },
+    {
+      "url": "ratings/evidence/half-block.jpg",
+      "bytes": 427246,
+      "sha256": "e3cd16845351d1bd8c33c05649ad3500c5def9084c579c6dfe0190501026af57"
+    }
+  ],
+  "limits": [
+    "AI-assisted editorial assessment of eight labelled samples per model, with links to the complete 80-sample review and existing native evidence. Not an independent human panel.",
+    "No real-time FPS, fine temporal flicker, physical-phone thermal test, surveyed scale or independent novel-view truth measured.",
+    "Human effort and end-to-end elapsed time unknown; source-view metrics are not lateral geometric accuracy.",
+    "Different captures, routes, training budgets and encodings make cross-group ranking a provisional asset-utility judgment, not an algorithm leaderboard."
+  ]
+}
