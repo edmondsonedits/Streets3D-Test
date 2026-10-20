@@ -3,8 +3,8 @@
   "artifacts": [
     {
       "path": "assets/demo-manifest.json",
-      "bytes": 6359,
-      "sha256": "1b02187fefcb248cc3ecbbdd4a8656566804c8842cde517c1b84510c77659914"
+      "bytes": 6067,
+      "sha256": "2afee96db8cd17e63c0089db048974fc2a0f1a5b95ec6b81952195e7a3318c4d"
     },
     {
       "path": "assets/left-00.webp",

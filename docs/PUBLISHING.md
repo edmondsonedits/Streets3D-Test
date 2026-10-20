@@ -12,7 +12,7 @@ Use relative assets (no leading `/`, file URLs, localhost addresses or local dri
 
 ## Source preservation and provenance
 
-Keep original recordings, training caches, credentials and private notes out of the public site. For each test, record the camera, capture date, source time ranges, transformations, web-preview settings, input/output hashes where available, and known limits in a public-safe provenance file. A filename or content hash can identify a source without exposing a personal absolute path. Never replace the source recording when encoding a preview.
+Keep original recordings, training caches, credentials and private notes out of the public site. For each test, record the camera, capture date, source time ranges, transformations, web-preview settings, input/output hashes where available, and known limits in a public-safe provenance file. A filename or content hash can identify a source without exposing a personal absolute path. Never replace the source recording when encoding a preview. Hash textual artifacts only after normalizing them to LF line endings (`newline="\n"` when writing with Python on Windows), matching the repository attributes and Linux deployment.
 
 ## Media budget
 

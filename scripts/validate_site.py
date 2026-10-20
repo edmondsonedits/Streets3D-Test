@@ -61,6 +61,8 @@ for manifest in ROOT.glob('demos/*/media-manifest.json'):
         path=(manifest.parent/item['path']).resolve()
         check(path.is_relative_to(ROOT.resolve()),'Artifact path escapes site')
         if not path.is_file():errors.append(f'Missing artifact {item["path"]}');continue
+        if path.suffix in ('.json','.txt','.html','.js','.css'):
+            check(b'\r\n' not in path.read_bytes(),f'Hashed text must use LF line endings: {item["path"]}')
         check(path.stat().st_size==item['bytes'],f'Artifact size mismatch {item["path"]}')
         check(hashlib.file_digest(path.open('rb'),'sha256').hexdigest()==item['sha256'],f'Artifact hash mismatch {item["path"]}')
 if errors:raise SystemExit('\n'.join(errors))
