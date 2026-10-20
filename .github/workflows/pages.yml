@@ -25,7 +25,9 @@ jobs:
       - name: Check capture-height navigation
         run: node scripts/test-splat-navigation.mjs
       - name: Check ratings and evidence contracts
-        run: node scripts/test-ratings.mjs
+        run: |
+          node scripts/test-ratings.mjs
+          node scripts/test-rating-efficiency.mjs
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload site only

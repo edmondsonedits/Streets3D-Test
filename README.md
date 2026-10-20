@@ -23,7 +23,7 @@ See [splat delivery and provenance](docs/SPLAT-PUBLICATION.md).
 
 ## Ratings and evidence
 
-[Compare all 21 splats](https://edmondsonedits.github.io/Streets3D-Test/rankings.html): ten weighted categories, best-to-worst rows, expandable reasons, repeatable movement previews and source facts. Visual quality has 65% of the weight. The scores are provisional; different captures and missing human-effort measurements limit the comparisons. See [the review protocol](docs/RATINGS.md).
+[Compare all 21 splats](https://edmondsonedits.github.io/Streets3D-Test/rankings.html): a visual-only ranking with expandable examples and a ten-category quality/efficiency rubric. Storage and effort are intended to be measured per **100 unique usable street metres**, not by raw bytes or footage length. Metre-normalized efficiency, hands-on labor and controlled runtime/startup have not been established, so the full score remains unavailable. No neutral placeholders are awarded. Matched-capture cost facts remain available separately. See [the review protocol](docs/RATINGS.md).
 
 ## Adding future tests
 

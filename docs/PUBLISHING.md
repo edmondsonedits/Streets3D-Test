@@ -48,4 +48,4 @@ The current publication is approximately 0.84 GB. It fits the free-site budget b
 
 ## Gaussian ratings
 
-New Gaussian publications also need a rating/evidence entry under `site/ratings/`; follow [RATINGS.md](RATINGS.md). Score the exact delivered model hash and retain unknown facts explicitly. Run `node scripts/test-ratings.mjs`; the validator requires all current models to be rated and evidence hashes to match.
+New Gaussian publications also need a rating/evidence entry under `site/ratings/`; follow [RATINGS.md](RATINGS.md). Score the exact delivered model hash and retain unknown facts explicitly. Run `node scripts/test-ratings.mjs` and `node scripts/test-rating-efficiency.mjs`; the validator requires every current model to have a rating record and matching evidence hashes. Unsupported category scores and the incomplete overall total must remain null. Current rankings are explicitly visual-only. Storage, compute and labor comparisons require unique accepted coverage at a common quality target, never guessed metres, raw image count or neutral placeholder points.

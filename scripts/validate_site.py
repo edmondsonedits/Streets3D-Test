@@ -117,7 +117,7 @@ if scene_file.exists():
 ratings_path=ROOT/'ratings/ratings.json'
 if ratings_path.exists():
     rating_data=json.loads(ratings_path.read_text(encoding='utf-8'))
-    check(rating_data.get('schemaVersion')==1,'Unknown ratings schema')
+    check(rating_data.get('schemaVersion')==2,'Unknown ratings schema')
     rubric=rating_data['rubric'];rows=rating_data['ratings']
     check(len(rubric)==10 and sum(x['weight'] for x in rubric)==100,'Ratings must have 10 categories totalling 100')
     check(len(rows)==len(scene_ids) and {x['id'] for x in rows}==scene_ids,'Ratings must cover each published splat once')
@@ -125,7 +125,8 @@ if ratings_path.exists():
         ident=row['id'];scene=next(x for x in data['scenes'] if x['id']==ident)
         check(row['facts']['assetBytes']==scene['assetBytes'],'Stale rated model size '+ident)
         check(len(row['scores'])==10 and {x['category'] for x in row['scores']}=={x['id'] for x in rubric},'Incomplete scores '+ident)
-        check(all(isinstance(x['score'],(int,float)) and math.isfinite(x['score']) and 0<=x['score']<=10 for x in row['scores']),'Invalid category score '+ident)
+        check(all(x['score'] is None or (isinstance(x['score'],(int,float)) and math.isfinite(x['score']) and 0<=x['score']<=10) for x in row['scores']),'Invalid category score '+ident)
+        check(not any(x['score'] is None for x in row['scores']) or row['total'] is None,'Incomplete rubric must not get a total '+ident)
         for link in row['evidence']:ref(ROOT,link['url'])
         proof=json.loads((ROOT/'ratings/records'/f'{ident}.json').read_text(encoding='utf-8'))
         check(proof['publishedModel']['sha256']==scene['assetSha256'],'Stale rating provenance '+ident)

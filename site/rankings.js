@@ -1,4 +1,4 @@
-import { calculateTotal, rankRatings } from './ratings-core.mjs';
+import { calculateTotal, calculateVisualScore, rankRatings } from './ratings-core.mjs';
 
 const byId = (id) => document.getElementById(id);
 const groups = byId('groupFilters');
@@ -32,13 +32,13 @@ function duration(seconds, scope) {
   return scope ? `${shown} (${scope})` : shown;
 }
 function assertData(data) {
-  if (!data || data.schemaVersion !== 1 || !Array.isArray(data.rubric) || !Array.isArray(data.ratings)) {
+  if (!data || data.schemaVersion !== 2 || !Array.isArray(data.rubric) || !Array.isArray(data.ratings)) {
     throw new Error('The ratings file is not a supported schema version.');
   }
   if (data.rubric.length !== 10 || data.rubric.reduce((sum, item) => sum + item.weight, 0) !== 100) throw new Error(`Expected 10 rubric categories weighted to 100, found ${data.rubric.length}.`);
   for (const rating of data.ratings) {
     const calculated = calculateTotal(rating.scores, data.rubric);
-    if (!Number.isFinite(rating.total) || calculated !== rating.total) {
+    if (calculated !== rating.total || calculateVisualScore(rating.scores,data.rubric)!==rating.visualScore) {
       throw new Error(`Published total for ${rating.id ?? 'unknown scene'} does not match its weighted category scores.`);
     }
   }
@@ -56,6 +56,9 @@ function addMethod(data) {
   scope.append(node('p', '', safe(method.scope, 'Review scope not recorded.')));
   scope.append(node('p', '', safe(method.formula, 'Category weights are listed at right.')));
   if (data.reviewedAt) scope.append(node('p', '', `Reviewed ${data.reviewedAt}${data.snapshotCommit ? ` · source snapshot ${data.snapshotCommit}` : ''}`));
+  if (method.coverageExample) scope.append(node('h2','','Why coverage matters'),node('p','',method.coverageExample));
+  const protocol=node('ol');for(const text of method.acceptanceProtocol||[])protocol.append(node('li','',text));
+  if(protocol.childElementCount) scope.append(node('h2','','How useful coverage will be measured'),protocol);
   body.append(scope);
 
   const rubricSection = node('section');
@@ -85,6 +88,21 @@ function addMethod(data) {
   preview.append(node('p', '', safe(method.previewProtocol, 'Preview protocol not recorded.')));
   body.append(preview);
 }
+function addCostComparisons(data) {
+  const body=byId('costBody');body.replaceChildren();
+  body.append(node('p','','These compare costs for matched input extent, not proven useful metres. Compare the visual score alongside cost; a cheaper failed reconstruction is not a better finished street. Training is only one processing stage.'));
+  for(const group of data.costComparisons||[]){
+    const section=node('section','cost-group');section.append(node('h3','',group.label),node('p','small-note',group.scope));
+    const wrap=node('div','table-scroll'),table=node('table','cost-table');
+    const caption=node('caption','','Reference: '+group.referenceLabel+'. Ratios describe this capture only.');table.append(caption);
+    const head=node('thead'),headrow=node('tr');for(const title of ['Model','Visual /100','Model MB','Bytes vs reference','Training min','Training vs reference'])headrow.append(node('th','',title));head.append(headrow);table.append(head);
+    const rows=node('tbody');for(const item of group.rows){const row=node('tr');const cell=node('td'),link=node('a','',item.title);link.href='#'+item.id;cell.append(link);row.append(cell);
+      for(const value of [item.visualScore,(item.assetBytes/1e6).toFixed(2),item.bytesRatio===null?'Not comparable':item.bytesRatio.toFixed(2)+'×',item.trainingSeconds===null?'Unknown':(item.trainingSeconds/60).toFixed(1),item.trainingRatio===null?'Not comparable':item.trainingRatio.toFixed(2)+'×'])row.append(node('td','',value));rows.append(row);}
+    table.append(rows);wrap.append(table);section.append(wrap);const proof=node('a','small-note','Coverage audit and source hashes');proof.href='ratings/coverage-audit.json';section.append(proof);body.append(section);
+  }
+  body.append(node('p','small-note','Metres and accepted coverage are unknown for all current models. Capture seconds and image counts are retained in the audit as diagnostics, never converted into street length.'));
+}
+
 function makeFacts(rating) {
   const facts = rating.facts || {};
   const section = node('section', 'detail-block');
@@ -97,7 +115,9 @@ function makeFacts(rating) {
     ['Training images', Number.isFinite(facts.images) ? number.format(facts.images) : 'Not recorded'],
     ['Image max width', Number.isFinite(facts.maxWidth) ? `${number.format(facts.maxWidth)} px` : 'Not recorded'],
     ['Human effort', Number.isFinite(facts.humanHours) ? `${facts.humanHours} h` : 'Unrecorded'],
-    ['Unknown-score range', Array.isArray(facts.unknownScoreRange) && facts.unknownScoreRange.length === 2 ? `${facts.unknownScoreRange[0]}–${facts.unknownScoreRange[1]} / 100` : 'Not recorded'],
+    ['Accepted unique street length', 'Not measured'],
+    ['MB per 100 usable metres', 'Not established'],
+    ['Full quality + efficiency score', 'Pending measurements'],
   ];
   for (const [label, value] of entries) {
     const wrap = node('div');
@@ -118,9 +138,9 @@ function makeScores(rating, rubric) {
     const row = node('div', 'score');
     const label = node('div', 'score-label');
     label.append(document.createTextNode(item.label));
-    const basisText = score?.basis === 'unknown-neutral' ? 'neutral placeholder · not measured' : (score?.basis || 'judgment');
+    const basisText = score?.score === null ? 'not measured comparably' : (score?.basis || 'judgment');
     label.append(node('span', 'score-basis', `${item.weight}% weight · ${basisText}`));
-    const displayedScore = score.basis === 'unknown-neutral' ? 'Unknown' : `${score.score}/10`;
+    const displayedScore = score.score === null ? 'Not scored' : `${score.score}/10`;
     const reason = node('div', 'score-reason', score.reason);
     const evidenceById = new Map((rating.evidence || []).map((item) => [item.id, item]));
     const evidenceLinks = node('span', 'score-evidence');
@@ -200,7 +220,7 @@ function makeRating(rating, rubric) {
   name.append(node('span', 'scene-title', rating.title));
   name.append(node('span', 'scene-group', rating.groupLabel || rating.group || 'Unmatched cohort'));
   const total = node('span', 'total');
-  total.append(document.createTextNode(String(rating.total)), node('small', '', ' / 100'));
+  total.append(document.createTextNode(String(rating.visualScore)), node('small', '', ' / 100'), node('small', 'score-type', 'visual only'));
   const size = node('span', 'size', `Size · ${bytes(rating.facts?.assetBytes)}`);
   const verdict = node('span', 'verdict', safe(rating.verdict, 'No concise verdict recorded.'));
   const chevron = node('span', 'chevron', '›');
@@ -212,8 +232,8 @@ function makeRating(rating, rubric) {
   const left = node('div');
   const visualSummary = node('p', 'visual-summary');
   visualSummary.append(node('b', '', `Visual subtotal · ${Number(rating.visualTotal).toFixed(1)} / 65`));
-  visualSummary.append(node('span', '', Array.isArray(rating.facts?.unknownScoreRange) ? `Unknown-score range · ${rating.facts.unknownScoreRange[0]}–${rating.facts.unknownScoreRange[1]} / 100` : 'Unknown-score range not recorded'));
-  visualSummary.append(node('small', '', 'Overall rank also weights time, packaging, effort and evidence; it is a project-priority score, not a universal visual winner.'));
+  visualSummary.append(node('span', '', 'Overall quality + efficiency: pending'));
+  visualSummary.append(node('small', '', 'Five visual categories assessed. Cost and performance need useful-coverage measurements; no placeholder points are included.'));
   left.append(visualSummary, makeScores(rating, rubric));
   const notes = node('div', 'detail-grid');
   const best = node('section', 'detail-block');
@@ -278,16 +298,17 @@ async function main() {
     assertData(data);
     const ranked = rankRatings(data.ratings);
     addMethod(data);
+    addCostComparisons(data);
     list.replaceChildren(...ranked.map((rating) => makeRating(rating, data.rubric)));
     installFilters(ranked);
     const openHashRating = () => {
       const id = decodeURIComponent(location.hash.slice(1));
       const target = id ? document.getElementById(id) : null;
-      if (target?.classList.contains('ranking')) { target.open = true; target.scrollIntoView({ block: 'start' }); }
+      if (target?.classList.contains('ranking')) { if(target.hidden)groups.querySelector('button[data-group=all]').click(); target.open = true; target.scrollIntoView({ block: 'start' }); }
     };
     window.addEventListener('hashchange', openHashRating);
     openHashRating();
-    byId('pageSummary').replaceChildren(node('span', 'dot'), node('span', '', `${ranked.length} scenes · reviewed ${safe(data.reviewedAt, 'date not recorded')} · project-weighted ratings; each scene shows its unknown-score range`));
+    byId('pageSummary').replaceChildren(node('span', 'dot'), node('span', '', `${ranked.length} scenes · reviewed ${safe(data.reviewedAt, 'date not recorded')} · visual ranking only · 5 of 10 categories assessed · efficiency pending`));
 
   } catch (error) {
     errorBox.hidden = false;
