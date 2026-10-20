@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "title": "Streets3D Test Lab",
+  "tests": [
+    {
+      "id": "photo-walls-v1",
+      "title": "Photo-wall drive",
+      "category": "2.5D experiment",
+      "date": "2026-10-20",
+      "version": "1",
+      "status": "prototype",
+      "url": "demos/street-alternatives-v1/?mode=road",
+      "preview": "previews/photo-walls.png",
+      "description": "Drive and move across a simple road, with real Peterborough footage turned into photo walls.",
+      "controls": "WASD / arrows to move · drag to look · touch controls on phones",
+      "limitation": "Flat facades and visible joins. Street dimensions are illustrative, not surveyed."
+    },
+    {
+      "id": "video-drive-v1",
+      "title": "360° video drive",
+      "category": "Recorded journey",
+      "date": "2026-10-20",
+      "version": "1",
+      "status": "prototype",
+      "url": "demos/street-alternatives-v1/?mode=video",
+      "preview": "previews/video-drive.png",
+      "description": "Look around from the cab, change playback speed and switch to a real recorded return journey.",
+      "controls": "Drag to look · play and speed controls · turn around",
+      "limitation": "Fixed camera path. Turning around cuts to an approximately matched location on the return pass."
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "title": "Peterborough / Two ways to drive",
+  "sourceNote": "Real Insta360 X4 Air footage recorded October 19, 2026. Web preview: 3072 × 1536 at 24 fps; full-quality source preserved locally.",
+  "road": {
+    "length": 204.0,
+    "width": 8,
+    "wallHeight": 8.6,
+    "wallSetback": 8,
+    "cameraHeight": 2.4,
+    "panels": [
+      {
+        "side": "left",
+        "start": 0.0,
+        "end": 17.0,
+        "url": "./assets/left-00.webp"
+      },
+      {
+        "side": "left",
+        "start": 17.0,
+        "end": 34.0,
+        "url": "./assets/left-01.webp"
+      },
+      {
+        "side": "left",
+        "start": 34.0,
+        "end": 51.0,
+        "url": "./assets/left-02.webp"
+      },
+      {
+        "side": "left",
+        "start": 51.0,
+        "end": 68.0,
+        "url": "./assets/left-03.webp"
+      },
+      {
+        "side": "left",
+        "start": 68.0,
+        "end": 85.0,
+        "url": "./assets/left-04.webp"
+      },
+      {
+        "side": "left",
+        "start": 85.0,
+        "end": 102.0,
+        "url": "./assets/left-05.webp"
+      },
+      {
+        "side": "left",
+        "start": 102.0,
+        "end": 119.0,
+        "url": "./assets/left-06.webp"
+      },
+      {
+        "side": "left",
+        "start": 119.0,
+        "end": 136.0,
+        "url": "./assets/left-07.webp"
+      },
+      {
+        "side": "left",
+        "start": 136.0,
+        "end": 153.0,
+        "url": "./assets/left-08.webp"
+      },
+      {
+        "side": "left",
+        "start": 153.0,
+        "end": 170.0,
+        "url": "./assets/left-09.webp"
+      },
+      {
+        "side": "left",
+        "start": 170.0,
+        "end": 187.0,
+        "url": "./assets/left-10.webp"
+      },
+      {
+        "side": "left",
+        "start": 187.0,
+        "end": 204.0,
+        "url": "./assets/left-11.webp"
+      },
+      {
+        "side": "right",
+        "start": 0.0,
+        "end": 17.0,
+        "url": "./assets/right-00.webp"
+      },
+      {
+        "side": "right",
+        "start": 17.0,
+        "end": 34.0,
+        "url": "./assets/right-01.webp"
+      },
+      {
+        "side": "right",
+        "start": 34.0,
+        "end": 51.0,
+        "url": "./assets/right-02.webp"
+      },
+      {
+        "side": "right",
+        "start": 51.0,
+        "end": 68.0,
+        "url": "./assets/right-03.webp"
+      },
+      {
+        "side": "right",
+        "start": 68.0,
+        "end": 85.0,
+        "url": "./assets/right-04.webp"
+      },
+      {
+        "side": "right",
+        "start": 85.0,
+        "end": 102.0,
+        "url": "./assets/right-05.webp"
+      },
+      {
+        "side": "right",
+        "start": 102.0,
+        "end": 119.0,
+        "url": "./assets/right-06.webp"
+      },
+      {
+        "side": "right",
+        "start": 119.0,
+        "end": 136.0,
+        "url": "./assets/right-07.webp"
+      },
+      {
+        "side": "right",
+        "start": 136.0,
+        "end": 153.0,
+        "url": "./assets/right-08.webp"
+      },
+      {
+        "side": "right",
+        "start": 153.0,
+        "end": 170.0,
+        "url": "./assets/right-09.webp"
+      },
+      {
+        "side": "right",
+        "start": 170.0,
+        "end": 187.0,
+        "url": "./assets/right-10.webp"
+      },
+      {
+        "side": "right",
+        "start": 187.0,
+        "end": 204.0,
+        "url": "./assets/right-11.webp"
+      }
+    ]
+  },
+  "video": {
+    "forward": {
+      "url": "./assets/route-forward.mp4",
+      "duration": 60.041667,
+      "startSource": 91.09100000000001,
+      "headingYaw": 90
+    },
+    "reverse": {
+      "url": "./assets/route-return.mp4",
+      "duration": 61.041667,
+      "startSource": 343.343,
+      "headingYaw": 90
+    },
+    "reverseKind": "recorded-return",
+    "correspondence": [
+      {
+        "forward": 0.0,
+        "reverse": 61.061
+      },
+      {
+        "forward": 1.001,
+        "reverse": 61.061
+      },
+      {
+        "forward": 3.003,
+        "reverse": 58.058
+      },
+      {
+        "forward": 8.008,
+        "reverse": 50.05
+      },
+      {
+        "forward": 9.009,
+        "reverse": 50.05
+      },
+      {
+        "forward": 11.011,
+        "reverse": 47.047
+      },
+      {
+        "forward": 13.013,
+        "reverse": 45.045
+      },
+      {
+        "forward": 16.016,
+        "reverse": 42.042
+      },
+      {
+        "forward": 18.018,
+        "reverse": 41.041
+      },
+      {
+        "forward": 20.02,
+        "reverse": 38.038
+      },
+      {
+        "forward": 22.022,
+        "reverse": 36.036
+      },
+      {
+        "forward": 23.023,
+        "reverse": 36.036
+      },
+      {
+        "forward": 25.025,
+        "reverse": 33.033
+      },
+      {
+        "forward": 27.027,
+        "reverse": 31.031
+      },
+      {
+        "forward": 29.029,
+        "reverse": 29.029
+      },
+      {
+        "forward": 32.032,
+        "reverse": 26.026
+      },
+      {
+        "forward": 34.034,
+        "reverse": 24.024
+      },
+      {
+        "forward": 36.036,
+        "reverse": 23.023
+      },
+      {
+        "forward": 39.039,
+        "reverse": 19.019
+      },
+      {
+        "forward": 41.041,
+        "reverse": 16.016
+      },
+      {
+        "forward": 44.044,
+        "reverse": 10.01
+      },
+      {
+        "forward": 46.046,
+        "reverse": 8.008
+      },
+      {
+        "forward": 47.047,
+        "reverse": 6.006
+      },
+      {
+        "forward": 50.05,
+        "reverse": 5.005
+      },
+      {
+        "forward": 52.052,
+        "reverse": 3.003
+      },
+      {
+        "forward": 54.054,
+        "reverse": 3.003
+      },
+      {
+        "forward": 55.055,
+        "reverse": 3.003
+      },
+      {
+        "forward": 57.057,
+        "reverse": 3.003
+      },
+      {
+        "forward": 60.06,
+        "reverse": 0.0
+      }
+    ],
+    "projection": "equirectangular",
+    "note": "Turn around switches to a separately recorded return pass at an approximate matching location. The camera changes lanes; this is a cut, not a recorded U-turn. Free approximate dual-lens projection may show seams. Camera height stays as recorded."
+  }
+}

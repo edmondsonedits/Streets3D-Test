@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "artifacts": [
+    {
+      "path": "assets/demo-manifest.json",
+      "bytes": 6359,
+      "sha256": "1b02187fefcb248cc3ecbbdd4a8656566804c8842cde517c1b84510c77659914"
+    },
+    {
+      "path": "assets/left-00.webp",
+      "bytes": 161430,
+      "sha256": "3623ad8c3e72aa0fc041ae06bb8a9dbae7dce39313045b34dc56c359dfcba105"
+    },
+    {
+      "path": "assets/left-01.webp",
+      "bytes": 169534,
+      "sha256": "01ee72ac610672ef692817a7538e9d398c97613cbc8821a1e40d80cf1cb00e88"
+    },
+    {
+      "path": "assets/left-02.webp",
+      "bytes": 205002,
+      "sha256": "bf4babd49372898cb17e32dc24028b4d97e032eeafc80100d465725038609b7a"
+    },
+    {
+      "path": "assets/left-03.webp",
+      "bytes": 134310,
+      "sha256": "ca2ac3b901516b9358c4a941ee7ded3be92d116e6ee691a2c80dc0c26036839b"
+    },
+    {
+      "path": "assets/left-04.webp",
+      "bytes": 153624,
+      "sha256": "ac2e1f7b62130585f0b605599c76e878fa4c78c78caa38c659377f4a90eb00a0"
+    },
+    {
+      "path": "assets/left-05.webp",
+      "bytes": 225008,
+      "sha256": "21c6fd2d9d38ea2aac8f7a5eb80e809c69ad06a702317014779d8f639e5023a2"
+    },
+    {
+      "path": "assets/left-06.webp",
+      "bytes": 269264,
+      "sha256": "ba9c64e9b2cdbd3824a89d51a2355e1c20eb746ebf8b988e308ef9d4c4e0fbb8"
+    },
+    {
+      "path": "assets/left-07.webp",
+      "bytes": 162824,
+      "sha256": "a6cbee17d525c600a0cd7ce161d0672a4810cc3e103064fbcd1ab83e2f1ac5d7"
+    },
+    {
+      "path": "assets/left-08.webp",
+      "bytes": 137062,
+      "sha256": "dbbdb0aa77c01349f21128a058700bd332bdf75e6d5533c90d1b19fcca603813"
+    },
+    {
+      "path": "assets/left-09.webp",
+      "bytes": 210612,
+      "sha256": "e7084898899be8bfe66aa42efdda08e7c693bb3a5a928c8e631dfe9b2cc65418"
+    },
+    {
+      "path": "assets/left-10.webp",
+      "bytes": 130988,
+      "sha256": "b80f4064612fb1090940ab5b488e4f878a11ffe8377f257934a08dc5b884369a"
+    },
+    {
+      "path": "assets/left-11.webp",
+      "bytes": 131598,
+      "sha256": "35bf06a78283bd5a82a5a59481a5a6bc7ecdd608db95557c18a7b506181859e5"
+    },
+    {
+      "path": "assets/right-00.webp",
+      "bytes": 312016,
+      "sha256": "f43392a45313368d3e9dda848b28b8f1241700dd2739a98a0047369992422734"
+    },
+    {
+      "path": "assets/right-01.webp",
+      "bytes": 225142,
+      "sha256": "d26e849c476aec0e4bd35d01b3fff9c826879eb2a62b4ca49e60a0a1dffc5ac3"
+    },
+    {
+      "path": "assets/right-02.webp",
+      "bytes": 197954,
+      "sha256": "8469553446a6c13861a3cd4fba1f9b062acfbdcacca33a93745183c6758022b2"
+    },
+    {
+      "path": "assets/right-03.webp",
+      "bytes": 265566,
+      "sha256": "5318f2dfb91c272c21994b9e5af31b3f2bd26a75cc630939cab7c86e9a709060"
+    },
+    {
+      "path": "assets/right-04.webp",
+      "bytes": 344700,
+      "sha256": "11725b0e5db3b50deb9fac967fd54c456515a0601f6c5b83a1e31f856875e8ed"
+    },
+    {
+      "path": "assets/right-05.webp",
+      "bytes": 308480,
+      "sha256": "fe7a86dbeaeb8cdca04609077d04846fb5810549b2c52770c7bbc1e00b413332"
+    },
+    {
+      "path": "assets/right-06.webp",
+      "bytes": 361708,
+      "sha256": "1307693f3bbe45d0fc785d69dfe0142be0b7538d629a0f3ae192dabdf8e0ab1f"
+    },
+    {
+      "path": "assets/right-07.webp",
+      "bytes": 220600,
+      "sha256": "405a652853532e6e4c1823d11f9bf8caa2266cee0962fff6a275f0b2849c7205"
+    },
+    {
+      "path": "assets/right-08.webp",
+      "bytes": 218712,
+      "sha256": "8cacb0db99d8b1eb1259b83fdcda16ddf69e526d103baac9e7131048d6f70243"
+    },
+    {
+      "path": "assets/right-09.webp",
+      "bytes": 216098,
+      "sha256": "6510116cdf41b176c4a10356f83f00c78f9eb3c4aef2ceb68db681ee33e0e907"
+    },
+    {
+      "path": "assets/right-10.webp",
+      "bytes": 187970,
+      "sha256": "c518d50dcad9a116863f907aecdb5b554bdcb8e68daa9983ad3aeb9a9289e62e"
+    },
+    {
+      "path": "assets/right-11.webp",
+      "bytes": 82460,
+      "sha256": "988f23a53d75424283a43f08c3774cafa9a3501e6f860462f1c994135e292688"
+    },
+    {
+      "path": "assets/route-forward.mp4",
+      "bytes": 38015883,
+      "sha256": "d2b346d2db0447849d092bce53808c25fe82d6624f49e67097d9de5d5ef474ad"
+    },
+    {
+      "path": "assets/route-return.mp4",
+      "bytes": 38620907,
+      "sha256": "6c9aa43c82b7107003ae799f3587aee0319caf8a82e9c89f0a77db14c70b026d"
+    }
+  ]
+}

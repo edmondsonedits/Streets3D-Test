@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "experiment": "street-alternatives-v1",
+  "captureDate": "2026-10-19",
+  "camera": "Insta360 X4 Air",
+  "sourceRecording": "VID_20261019_130358_00_001.insv",
+  "sourcePreserved": true,
+  "sourceSeconds": {
+    "outbound": [
+      91.091,
+      151.151
+    ],
+    "return": [
+      343.343,
+      404.404
+    ]
+  },
+  "inputPreviews": [
+    {
+      "file": "route-forward.mp4",
+      "bytes": 455212198,
+      "sha256": "1378fe91d370b2d2f0143230e656678d6394682f9052859ed2f2b70e360f7db6"
+    },
+    {
+      "file": "route-return.mp4",
+      "bytes": 451324742,
+      "sha256": "c265bb1806f9063c1399cd6982dc0da904530051930f0dd459ed9312093d5e5f"
+    }
+  ],
+  "processing": {
+    "webEncoder": "FFmpeg 9.0.2 / libx264",
+    "webSettings": "3072x1536, 24fps inherited, fast preset, CRF 23, maxrate 5M, bufsize 10M, GOP 48, keyint_min 24, yuv420p, no audio, faststart",
+    "sourceProjection": "Approximate dual-lens conversion; not the calibrated Insta360 Studio stitch",
+    "photoWalls": "24 static image panels sampled from the outbound interval; sky-key transparency; illustrative geometry",
+    "returnMapping": "Monotonic approximate correspondence from reconstructed trajectories; not measured GNSS"
+  },
+  "limitations": [
+    "Photo walls are flat and contain visible seams and baked-in cars/trees.",
+    "Street dimensions and photo placement are illustrative, not geographically surveyed.",
+    "Video remains on the recorded path; no lateral viewpoint movement.",
+    "Turnaround cuts between different lanes at an approximately matched location.",
+    "Web previews are compressed copies, not the original resolution or bitrate.",
+    "Desktop and phone-sized browser checks are not certification on physical phones."
+  ],
+  "rights": "Owner-supplied footage. No open reuse license inferred. Three.js retains its bundled MIT notice."
+}

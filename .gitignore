@@ -1,0 +1,9 @@
+work/
+node_modules/
+__pycache__/
+*.insv
+*.lrv
+*.tmp
+.env
+.env.*
+!.env.example
