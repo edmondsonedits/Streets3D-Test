@@ -7,7 +7,7 @@
     "northFootprints": 7,
     "southFootprints": 12,
     "referenceFiles": 12,
-    "referenceBytes": 2979477,
+    "referenceBytes": 3031133,
     "photoPatches": 2,
     "fiveStationBaysVerifiedInSource": true,
     "sourceImageHashes": "All twelve checked against recorded hashes",
@@ -31,7 +31,8 @@
       "nonoverlapping portrait/landscape controls"
     ],
     "pageErrors": 0,
-    "failedAssetRequests": 0
+    "failedAssetRequests": 0,
+    "sourceIdentityReview": "Two pre-Aylmer reference frames removed; S01/S02 now use in-block0140/0144 images. Remaining uncertain house pairings are explicitly partial/inferred."
   },
   "notMeasured": [
     "Survey/checkpoint accuracy",
@@ -47,7 +48,7 @@
   ],
   "inputHashes": {
     "block.json": "63a8473408afb5a8798ac5067333eac4f1c025e826b7fd6959cb227f90620581",
-    "buildings.json": "8a715f922d53f4454cb7e1b3a3c4307e2661fb69ca29bf99bd3525bc03189bc0",
+    "buildings.json": "7a07ec71db59822904e07267fe01d349a32980a62bb52cf75fc4d663f28dab38",
     "app.js": "f3f49e2c62567624ab66950fd297f716ea434ffcbf8c170397543e6405fb7c93",
     "scene-geometry.mjs": "e43e314826c7cd872520c6852c3b498e2b59218f5e9eb52cdf4270be950efa84"
   }

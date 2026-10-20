@@ -270,28 +270,28 @@
     {
       "id": "way/1006575745",
       "label": "S01",
-      "name": "Sherbrooke south-side house",
+      "name": "Aylmer corner brick residence",
       "confidence": "partial",
-      "height": 8.5,
-      "eaveHeight": 6.1,
-      "roof": "gable",
-      "roofRise": 2.1,
+      "height": 5.3,
+      "eaveHeight": 3.6,
+      "roof": "hip",
+      "roofRise": 1.7,
       "wallColor": "#783b31",
       "roofColor": "#414541",
       "trimColor": "#e8e3d4",
-      "levels": 2,
+      "levels": 1,
       "windowColumns": 3,
       "style": "house",
       "features": [
-        "front-porch"
+        "porch"
       ],
       "signText": null,
-      "notes": "Early opposite-side views show detached red/brown masonry houses with porches in west end stretch. Exact individual facade match/roof detail is uncertain; association follows sequence and map order.",
+      "notes": "Frame0140 shows the south-east corner residence beside Aylmer: a low brick frontage, raised stone foundation and hip-roofed front volume. A taller rear portion is partly obscured and simplified. This replaces an earlier wrong-block reference; dimensions are estimates, not surveyed.",
       "reference": {
-        "file": "references/0098_RIGHT_SIDE.jpg",
-        "sourceSequence": 98,
-        "sourceSeconds": 63.496767,
-        "sha256": "ad14a3e5ef5ae4f94d7ac4f8a6982049516ae33f36272b975752ea7fda572198"
+        "file": "references/0140_RIGHT_SIDE.jpg",
+        "sourceSequence": 140,
+        "sourceSeconds": 115.748967,
+        "sha256": "b4727e00d426d883bfcb015862e9e0894b382e6544a8003207ac37975db7054d"
       },
       "texturePatch": null
     },
@@ -314,12 +314,12 @@
         "front-porch"
       ],
       "signText": null,
-      "notes": "Early opposite-side views show detached masonry houses with porches; exact footprint-to-image pairing is not camera-pose solved. Facade detail is low confidence.",
+      "notes": "Frame0144 provides correct in-block context just east of Aylmer: the next brick residence is partly hidden by a large tree. Two-storey masonry, porch and dark roof are approximate; exact openings and rear silhouette remain unverified. Earlier pre-Aylmer reference was removed.",
       "reference": {
-        "file": "references/0108_RIGHT_SIDE.jpg",
-        "sourceSequence": 108,
-        "sourceSeconds": 71.004267,
-        "sha256": "88db6f33bc527e90faa521726cef704809b26a48466cc34495430bf4c43a32ab"
+        "file": "references/0144_RIGHT_SIDE.jpg",
+        "sourceSequence": 144,
+        "sourceSeconds": 117.750967,
+        "sha256": "b804d39c86ba87b5c249a11a35ffa0b699c7b2311c52096496be3d2a2a195672"
       },
       "texturePatch": null
     },

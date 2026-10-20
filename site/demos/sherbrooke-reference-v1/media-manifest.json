@@ -14,8 +14,8 @@
     },
     {
       "path": "buildings.json",
-      "bytes": 19845,
-      "sha256": "8a715f922d53f4454cb7e1b3a3c4307e2661fb69ca29bf99bd3525bc03189bc0"
+      "bytes": 20041,
+      "sha256": "7a07ec71db59822904e07267fe01d349a32980a62bb52cf75fc4d663f28dab38"
     },
     {
       "path": "index.html",
@@ -29,18 +29,18 @@
     },
     {
       "path": "quality-report.json",
-      "bytes": 2141,
-      "sha256": "25f273e0780a7e5b915f0967ec29b1d3184a68347962439064a723e8bcaaf1f1"
+      "bytes": 2323,
+      "sha256": "9434b44384b35b5831181bfbda383725229d4ec28ceea15fad0b443e44a9c5a4"
     },
     {
-      "path": "references/0098_RIGHT_SIDE.jpg",
-      "bytes": 265404,
-      "sha256": "ad14a3e5ef5ae4f94d7ac4f8a6982049516ae33f36272b975752ea7fda572198"
+      "path": "references/0140_RIGHT_SIDE.jpg",
+      "bytes": 275613,
+      "sha256": "b4727e00d426d883bfcb015862e9e0894b382e6544a8003207ac37975db7054d"
     },
     {
-      "path": "references/0108_RIGHT_SIDE.jpg",
-      "bytes": 254451,
-      "sha256": "88db6f33bc527e90faa521726cef704809b26a48466cc34495430bf4c43a32ab"
+      "path": "references/0144_RIGHT_SIDE.jpg",
+      "bytes": 295898,
+      "sha256": "b804d39c86ba87b5c249a11a35ffa0b699c7b2311c52096496be3d2a2a195672"
     },
     {
       "path": "references/0149_LEFT_SIDE.jpg",
