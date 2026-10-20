@@ -15,7 +15,7 @@ Both use the same Insta360 X4 Air recording, captured October 19, 2026. The host
 
 ## Gaussian tests and saved renders
 
-The gallery also contains **21 distinct Gaussian models** and **44 saved native render videos**. Each model opens in a shared 3D explorer with drag-to-look, WASD/arrow movement, touch controls, reset, saved capture views, and a capture-height toggle. Open **Recorded renders** inside a model to play its saved native motion comparisons.
+The gallery also contains **21 distinct Gaussian models** and **48 saved native render videos**. Each model opens in a shared 3D explorer with drag-to-look, WASD/arrow movement, touch controls, reset, saved capture views, and a capture-height toggle. Open **Recorded renders** inside a model to play its saved native motion comparisons. The rankings also offer on-demand native playback and **seven later unranked results with 12 additional motion previews**. These compact previews retain the actual route timing; they do not add interactive models or change scores.
 
 The models include the baseline/improved/cleanup turn tests, the 20-second MRNF + GUT corner, the corner A/B comparison, the newer half-block, and 14 completed off-path diagnostic snapshots. The rejected cleanup and unfinished study quality remain clearly labelled. No Postshot model or completed 2DGS model was available. Duplicate coordinate exports are represented once.
 

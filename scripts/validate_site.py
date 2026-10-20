@@ -131,5 +131,29 @@ if ratings_path.exists():
         proof=json.loads((ROOT/'ratings/records'/f'{ident}.json').read_text(encoding='utf-8'))
         check(proof['publishedModel']['sha256']==scene['assetSha256'],'Stale rating provenance '+ident)
         for item in proof['reviewArtifacts']:artifact((ROOT/item['url']).resolve(),item['bytes'],item['sha256'])
+# Supplemental native previews are evidence only: never silently assign model ranks.
+updates_path=ROOT/'ratings/native-updates.json'
+if updates_path.exists():
+    updates=json.loads(updates_path.read_text(encoding='utf-8'))
+    check(updates.get('schemaVersion')==1 and updates.get('qualityGoalAchieved') is False,'Invalid supplemental preview status')
+    entries=updates['entries'];clips=updates['clips'];entry_ids=[x['id'] for x in entries];clip_ids=[x['id'] for x in clips]
+    check(len(entries)==7 and len(set(entry_ids))==7,'Expected seven distinct unranked previews')
+    check(not set(entry_ids)&scene_ids,'Supplemental preview duplicates a ranked model')
+    check(len(clip_ids)==len(set(clip_ids))==12,'Expected twelve unique supplemental videos')
+    used=set()
+    for entry in entries:
+        check(entry.get('qualityGoalAchieved') is False and 'scores' not in entry and 'rank' not in entry,'Unranked preview acquired a score')
+        ref(ROOT,entry['poster']['url']);artifact((ROOT/entry['poster']['url']).resolve(),entry['poster']['bytes'],entry['poster']['sha256'])
+        check(len(entry['clipIds'])==2 and set(entry['clipIds']).issubset(clip_ids),'Missing route/lateral preview '+entry['id'])
+        used.update(entry['clipIds'])
+    check(used==set(clip_ids),'Unreachable supplemental render')
+    for clip in clips:
+        ref(ROOT,clip['url']);artifact((ROOT/clip['url']).resolve(),clip['bytes'],clip['sha256'])
+        check(clip['frames']==clip['source']['frames'] and clip['fps']==clip['source']['fps'] and abs(clip['durationSeconds']-clip['source']['durationSeconds'])<.05,'Changed preview timing '+clip['id'])
+        source=clip['source']['archivePath']
+        check(source.startswith('Experiments/offpath-ten-tests-20261020-112451/') and '..' not in source,'Invalid archive provenance')
+        check(bool(re.fullmatch(r'[a-f0-9]{64}',clip['source']['sha256'])),'Missing source hash')
+    hybrid=[x for x in entries if x['id'].startswith('residential-perspective-hybrid')]
+    check(len(hybrid)==2 and hybrid[0]['clipIds']==hybrid[1]['clipIds'],'Paired hybrid clips must share one published copy')
 if errors:raise SystemExit('\n'.join(errors))
 print(json.dumps({'valid':True,'tests':len(seen),'files':len(files),'siteBytes':size,'largestFileBytes':max(p.stat().st_size for p in files)}))

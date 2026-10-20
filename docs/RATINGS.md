@@ -70,7 +70,7 @@ Ratios use a named reference within each group. A missing reference duration or 
 - `site/ratings/records/<scene>.json`: original model identity, source facts, hashes and review observations. These are preserved source records; current score semantics are in the v2 registry.
 - `site/ratings/camera-plans.json`: exact review poses, FOV and alignment residuals.
 - `site/ratings/evidence/<scene>.mp4` and `.jpg`: 10-second route/lateral review and eight labelled samples with detail crops.
-- Existing provenance and 44 native render videos remain separately available.
+- Existing provenance and 48 native render videos remain separately available.
 
 Each browser review is 960×540, 75° FOV, 80 sampled frames at 8 fps: route 0–6 seconds and lateral 6–10 seconds. H.264 CRF25 targets at most 1.1 Mbps; screenshots use JPEG quality90 and contact sheets quality83. These are compressed evidence copies, not full-resolution judgments or high-frequency flicker/live-FPS measurements. The reviewer inspected eight samples per model and consulted native reviews/metrics. Ratings are AI-assisted editorial judgments, not a blinded human panel. No independent off-path ground truth is claimed.
 
@@ -91,3 +91,11 @@ node scripts/test-rating-efficiency.mjs
 ```
 
 For changes to the shared 3D viewer, also run `node scripts/test-splat-navigation.mjs` and its navigation checks. Rating-page checks cover collapsed summaries, all ten category explanations, filters, links, cost-table arithmetic, evidence playback, keyboard access and phone-width overflow. After Pages deployment, repeat relevant live checks and compare changed data/script hashes.
+
+## Later native-render previews
+
+The rankings page now plays native MP4 evidence on demand, alongside the existing browser review clips. Four missing 24-second route/lateral web copies were added for the ranked residential common-centre 1K and 2K entries. Source hashes, conversion details and scene associations are recorded in the render/provenance registries. All scores and ordering remain unchanged.
+
+Seven later diagnostic variants appear in a separate **unranked** section, using `site/ratings/native-updates.json`: shared lens calibration; one-side unrigged/common-centre; valid-seed perspective/native-fisheye; hybrid 5K/12K. Their seven still previews and twelve distinct motion videos come from actual saved native outputs. The two hybrid entries share the same paired clips (left 5K, right 12K); the extended run also changes learning-rate/refinement horizons. No new numerical scores, interactive model links, full-block completion or quality success are implied.
+
+Web copies preserve duration, frame count, frame rate and aspect ratio, with lower resolution/bitrate and no audio. Source archive paths/hashes and exact output dimensions/hashes are in the manifest. Full-resolution originals remain local. Native interpolated views have no measured ground-truth image; do not infer novel-view PSNR or geographic accuracy.

@@ -1998,6 +1998,186 @@
           "+faststart"
         ]
       }
+    },
+    {
+      "id": "residential-gut-common-center-route",
+      "title": "Residential common-center 1K route",
+      "url": "../../renders/residential-gut-common-center-route.mp4",
+      "sceneIds": [
+        "residential-gut-common-center"
+      ],
+      "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local.",
+      "bytes": 1250097,
+      "sha256": "2ffc445758d7247da042d68febee25a021087222dc12e3339c0c1a7a62a41220",
+      "durationSeconds": 24.0,
+      "width": 960,
+      "height": 540,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/commoncenter-motion/residential-gut-common-center-route_frames.mp4",
+        "bytes": 16543818,
+        "sha256": "0cb892f66c98944a89193d7a1b6d725986413bc3065111646babc59afd32c0be"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(960,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "25",
+          "-maxrate",
+          "400k",
+          "-bufsize",
+          "800k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "2",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-common-center-lateral",
+      "title": "Residential common-center 1K lateral",
+      "url": "../../renders/residential-gut-common-center-lateral.mp4",
+      "sceneIds": [
+        "residential-gut-common-center"
+      ],
+      "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local.",
+      "bytes": 1239129,
+      "sha256": "3dbbbedfb226f7db821a55cd1876e2cba4d6993b436c1b1e64904f73ad68a484",
+      "durationSeconds": 24.0,
+      "width": 960,
+      "height": 540,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/commoncenter-motion/residential-gut-common-center-lateral_frames.mp4",
+        "bytes": 15271614,
+        "sha256": "8c054c2f0f5499eefe7658accf7eed62c5012adf3681e05eb1b50de2749e4cc6"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(960,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "25",
+          "-maxrate",
+          "400k",
+          "-bufsize",
+          "800k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "2",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-common-center-2048-route",
+      "title": "Residential common-center 2K route",
+      "url": "../../renders/residential-gut-common-center-2048-route.mp4",
+      "sceneIds": [
+        "residential-gut-common-center-2048"
+      ],
+      "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local.",
+      "bytes": 1247864,
+      "sha256": "2b26c805995a78e66daef786636391f8616f6f0252be480e3ea74ba761726993",
+      "durationSeconds": 24.0,
+      "width": 960,
+      "height": 540,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/commoncenter-motion/residential-gut-common-center-2048-route_frames.mp4",
+        "bytes": 15324928,
+        "sha256": "ed6d64d14cb8d428dcd355e28a8789c849bc92c208745dd0a9da74c5041f05ce"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(960,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "25",
+          "-maxrate",
+          "400k",
+          "-bufsize",
+          "800k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "2",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
+    },
+    {
+      "id": "residential-gut-common-center-2048-lateral",
+      "title": "Residential common-center 2K lateral",
+      "url": "../../renders/residential-gut-common-center-2048-lateral.mp4",
+      "sceneIds": [
+        "residential-gut-common-center-2048"
+      ],
+      "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local.",
+      "bytes": 1237540,
+      "sha256": "22a9c42bbc55f7acb96163c3a42713cf0130b69e841c605be372dfd441e46083",
+      "durationSeconds": 24.0,
+      "width": 960,
+      "height": 540,
+      "source": {
+        "file": "Experiments/offpath-ten-tests-20261020-112451/delivery/commoncenter-motion/residential-gut-common-center-2048-lateral_frames.mp4",
+        "bytes": 13928882,
+        "sha256": "40290ce62c1b4344442de3aa2c12d5b9a88ac323c77d622e9124df8f65731b11"
+      },
+      "conversion": {
+        "tool": "FFmpeg 9.0.2 / libx264",
+        "parameters": [
+          "-map",
+          "0:v:0",
+          "-vf",
+          "scale=w='min(960,iw)':h=-2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "veryfast",
+          "-crf",
+          "25",
+          "-maxrate",
+          "400k",
+          "-bufsize",
+          "800k",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "2",
+          "-an",
+          "-movflags",
+          "+faststart"
+        ]
+      }
     }
   ],
   "duplicates": [

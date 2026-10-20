@@ -1,6 +1,6 @@
 # Gaussian test publication
 
-This release adds 21 distinct models and 44 distinct saved render videos to the existing two driving demos. It is an inventory snapshot, not a claim that the ongoing off-path study has passed its quality targets. Originals were read, never overwritten or deleted. The production simulators are unchanged.
+This release adds 21 distinct models and 48 distinct saved render videos to the existing two driving demos. It is an inventory snapshot, not a claim that the ongoing off-path study has passed its quality targets. Originals were read, never overwritten or deleted. The production simulators are unchanged.
 
 ## What is included
 
@@ -10,8 +10,8 @@ This release adds 21 distinct models and 44 distinct saved render videos to the 
 | 20-second MRNF + GUT corner | 1 | 1 |
 | Corner A/B | 2 | 9 (including paired comparisons) |
 | New half-block | 1 | 2 |
-| Completed off-path diagnostic arms | 14 | 32 |
-| Total | 21 | 44 |
+| Completed off-path diagnostic arms | 14 | 36 |
+| Total | 21 | 48 |
 
 Videos shared by two model pages are stored once. Two duplicate video copies were excluded by SHA-256. Coordinate-only exports of the same Gaussian set are represented once. Source sparse point clouds, partial runtime probes, training caches, and screenshot-only galleries are not counted as Gaussian models. No completed Postshot or 2DGS model was available in the inspected test packages. Failed-quality and rejected-cleanup results remain playable and labelled.
 
@@ -54,3 +54,7 @@ Give a materially different reconstruction a new scene ID/version. Never overwri
 - Browser video: play and seek every distinct saved clip; close the render dialog and verify source release.
 - Desktop and emulated portrait/landscape phone layouts: gallery filters, touch navigation and dialogs. Emulation does not certify physical-phone GPU performance, thermals, or memory limits. Largest model: 1.5 million splats.
 - Recheck the deployed GitHub Pages artifact after a successful workflow; a local pass or Git push is not deployment verification.
+
+## Ranking render update
+
+Four route/lateral videos for the common-centre 1K and 2K models bring the associated saved-render registry to 48. The rankings page supports on-demand playback of all linked native videos. A separate unranked evidence section adds seven later diagnostic results, seven JPEG stills and twelve distinct compact native-motion previews; the hybrid pair shares two paired clips. Those seven results do not add interactive 3D assets or alter the 21-model rating snapshot. All remain below the requested off-path quality target. `site/ratings/native-updates.json` records source hashes, web-copy hashes and timing. The existing 900 MB site limit remains enforced.

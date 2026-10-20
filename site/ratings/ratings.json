@@ -2363,6 +2363,20 @@
           "url": "ratings/coverage-audit.json",
           "kind": "json",
           "note": "Explains why metres, full processing cost and human effort remain unknown; lists inspected source hashes."
+        },
+        {
+          "id": "native-route",
+          "label": "Native renderer · route (compressed web copy)",
+          "url": "renders/residential-gut-common-center-2048-route.mp4",
+          "kind": "native",
+          "note": "Actual 24-second native-render recording at 1152x648 and 30 fps. The linked asset is a compressed 960x540 H.264 web copy, not the interactive view; original native-resolution video remains local."
+        },
+        {
+          "id": "native-lateral",
+          "label": "Native renderer · lateral (compressed web copy)",
+          "url": "renders/residential-gut-common-center-2048-lateral.mp4",
+          "kind": "native",
+          "note": "Actual 24-second native-render recording at 1152x648 and 30 fps. The linked asset is a compressed 960x540 H.264 web copy, not the interactive view; original native-resolution video remains local."
         }
       ],
       "comparisons": [
@@ -3240,6 +3254,20 @@
           "url": "ratings/coverage-audit.json",
           "kind": "json",
           "note": "Explains why metres, full processing cost and human effort remain unknown; lists inspected source hashes."
+        },
+        {
+          "id": "native-route",
+          "label": "Native renderer · route (compressed web copy)",
+          "url": "renders/residential-gut-common-center-route.mp4",
+          "kind": "native",
+          "note": "Actual 24-second native-render recording at 1152x648 and 30 fps. The linked asset is a compressed 960x540 H.264 web copy, not the interactive view; original native-resolution video remains local."
+        },
+        {
+          "id": "native-lateral",
+          "label": "Native renderer · lateral (compressed web copy)",
+          "url": "renders/residential-gut-common-center-lateral.mp4",
+          "kind": "native",
+          "note": "Actual 24-second native-render recording at 1152x648 and 30 fps. The linked asset is a compressed 960x540 H.264 web copy, not the interactive view; original native-resolution video remains local."
         }
       ],
       "comparisons": [

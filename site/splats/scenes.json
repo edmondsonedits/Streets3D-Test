@@ -2467,7 +2467,16 @@
       "fov": 75,
       "speed": 0.08063887081295834,
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
-      "renders": [],
+      "renders": [
+        {
+          "url": "../../renders/residential-gut-common-center-route.mp4",
+          "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local."
+        },
+        {
+          "url": "../../renders/residential-gut-common-center-lateral.mp4",
+          "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local."
+        }
+      ],
       "state": "prototype",
       "source": {
         "file": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center/residential-gut-common-center.ply",
@@ -2685,7 +2694,16 @@
       "fov": 75,
       "speed": 0.08063887081295834,
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
-      "renders": [],
+      "renders": [
+        {
+          "url": "../../renders/residential-gut-common-center-2048-route.mp4",
+          "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local."
+        },
+        {
+          "url": "../../renders/residential-gut-common-center-2048-lateral.mp4",
+          "note": "Recorded native render. The published file is a compressed 960x540 H.264 web copy, not the interactive view; the original native-resolution video remains local."
+        }
+      ],
       "state": "prototype",
       "source": {
         "file": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048/residential-gut-common-center-2048.ply",

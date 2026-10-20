@@ -178,8 +178,9 @@ function makeEvidence(rating) {
     caption.append(node('b', '', item.label || item.id || 'Evidence'));
     if (item.note) caption.append(node('p', '', item.note));
     const actions = node('div', 'evidence-actions');
-    if (item.kind === 'video') {
-      const play = node('button', '', 'Load review clip');
+    if (item.kind === 'video' || item.kind === 'native') {
+      const play = node('button', '', item.kind === 'native' ? 'Load native render' : 'Load review clip');
+      if (item.kind === 'native') play.setAttribute('aria-label', `Load native render: ${item.label || item.id}`);
       play.type = 'button';
       play.addEventListener('click', () => {
         if (play.dataset.loaded === 'true') return;
@@ -304,7 +305,7 @@ async function main() {
     const openHashRating = () => {
       const id = decodeURIComponent(location.hash.slice(1));
       const target = id ? document.getElementById(id) : null;
-      if (target?.classList.contains('ranking')) { if(target.hidden)groups.querySelector('button[data-group=all]').click(); target.open = true; target.scrollIntoView({ block: 'start' }); }
+      if (target?.matches('.ranking, .native-update')) { if(target.hidden)groups.querySelector('button[data-group=all]').click(); target.open = true; target.scrollIntoView({ block: 'start' }); }
     };
     window.addEventListener('hashchange', openHashRating);
     openHashRating();
@@ -318,3 +319,41 @@ async function main() {
   }
 }
 main();
+
+async function loadNativeUpdates() {
+  const status = byId('nativeUpdatesStatus');
+  try {
+    const response = await fetch(new URL('./ratings/native-updates.json', import.meta.url));
+    if (!response.ok) throw new Error(`Native previews could not load (${response.status}).`);
+    const data = await response.json();
+    if (data.schemaVersion !== 1 || !Array.isArray(data.entries) || !Array.isArray(data.clips)) throw new Error('Unsupported native-preview manifest.');
+    const clips = new Map(data.clips.map((clip) => [clip.id, clip]));
+    const cards = data.entries.map((entry) => {
+      const card = node('details', 'native-update');
+      card.id = entry.id;
+      const summary = node('summary');
+      const name = node('span');
+      name.append(node('span', 'scene-title', entry.title), node('span', 'scene-group', `${number.format(entry.iterations)} training steps · native render · no score`));
+      summary.append(name, node('span', 'preview-badge', 'Preview ↓'));
+      const body = node('div', 'native-update-body');
+      body.append(node('p', '', entry.scope), node('p', 'small-note', entry.limitation), node('p', 'small-note', entry.comparisonNote));
+      const evidence = [{ kind: 'image', url: entry.poster.url, label: entry.poster.label, note: 'Actual native halfway-between-paths view. JPEG preview; no measured ground truth exists at this interpolated camera.' }];
+      for (const id of entry.clipIds) {
+        const clip = clips.get(id);
+        if (!clip) throw new Error(`Missing native preview ${id}.`);
+        evidence.push({ id: clip.id, kind: 'native', url: clip.url, label: clip.label, note: `${clip.durationSeconds}s · ${clip.width} × ${clip.height} · ${bytes(clip.bytes)} · compact native-render web copy${clip.paired ? ' · left 5K / right 12K' : ''}` });
+      }
+      body.append(makeEvidence({ title: entry.title, evidence }));
+      card.append(summary, body);
+      return card;
+    });
+    byId('nativeUpdatesList').replaceChildren(...cards);
+    status.textContent = `${data.entries.length} unranked results · ${data.clips.length} distinct motion clips · load a video only when you want to play it`;
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target?.classList.contains('native-update')) { target.open = true; target.scrollIntoView({ block: 'start' }); }
+  } catch (error) {
+    status.className = 'error';
+    status.textContent = error instanceof Error ? error.message : 'Native previews could not load.';
+  }
+}
+loadNativeUpdates();
