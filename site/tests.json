@@ -3,6 +3,19 @@
   "title": "Streets3D Test Lab",
   "tests": [
     {
+      "id": "house-pass-comparison-v1",
+      "title": "One house · closer vs farther vs both",
+      "category": "Gaussian comparison",
+      "date": "2026-10-21",
+      "version": "1",
+      "status": "prototype",
+      "url": "demos/house-pass-comparison-v1/",
+      "preview": "demos/house-pass-comparison-v1/preview.jpg",
+      "description": "Both passes give the best overall result in this short house screen. Closer-only does not cure ghosted edges and deteriorates more toward the other path; farther-only is softer. None demonstrates clean, freely explorable walls.",
+      "controls": "Matched driving / sideways videos · live Gaussian free view for each arm · WASD / drag / review-height lock",
+      "limitation": "Short5K screening; common SfM uses both passes. No off-path ground truth or surveyed road alignment. One house, not full block."
+    },
+    {
       "id": "hybrid-fire-drive-v2",
       "title": "Ford/Duffus · local Gaussian alignment preview",
       "category": "Hybrid driving",

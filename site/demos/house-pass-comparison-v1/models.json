@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "scenes": [
+    {
+      "id": "near",
+      "title": "Closer pass only · house test",
+      "description": "Matched 5,000-step MRNF + GUT screen, 2K inputs, neutral common initialization. 48 input views from one pass.",
+      "limitation": "Short single-house screen. Shared SfM and seed positions use both passes. Second overall. Recognizable, locally sharp facade, but road shadows stretch into dark sheets toward the farther path. Foliage and some building edges remain translucent.",
+      "asset": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/near.compressed.ply",
+      "format": "compressed-ply",
+      "count": 500000,
+      "modelMatrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.05536315917493709,
+        0.9977715335462052,
+        0.03724093783760827
+      ],
+      "initial": {
+        "position": [
+          3.875279196425471,
+          -0.26671775507479206,
+          2.525453200248756
+        ],
+        "target": [
+          5.374576992169654,
+          -0.2181498723463787,
+          0.7521376678733369
+        ],
+        "label": "Interpolated house review view"
+      },
+      "poses": [
+        {
+          "position": [
+            3.1717337389849645,
+            -0.30412246629319195,
+            2.657945774470881
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 3s"
+        },
+        {
+          "position": [
+            2.8386662790517034,
+            -0.27365214620676215,
+            2.354405527323401
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 6s"
+        },
+        {
+          "position": [
+            2.503214533649508,
+            -0.24169690137923489,
+            2.053870709738421
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 9s"
+        }
+      ],
+      "fov": 75,
+      "speed": 0.45,
+      "heightReference": "Estimated fixed review-height plane through the interpolated path; arbitrary scene units, not surveyed metres or a road collision surface.",
+      "renders": [
+        {
+          "title": "Matched driving comparison",
+          "url": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/comparison-driving.mp4",
+          "note": "Native full-precision GUT models, common camera path; web video encoding."
+        },
+        {
+          "title": "Matched sideways comparison",
+          "url": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/comparison-sideways.mp4",
+          "note": "Native GUT models; closer / farther / both, same positions/FOV/timing."
+        }
+      ],
+      "state": "prototype",
+      "assetSha256": "785084307a21533d5e105e4068421054ee13688e91569c15b7cafa0b337f1994"
+    },
+    {
+      "id": "far",
+      "title": "Farther pass only · house test",
+      "description": "Matched 5,000-step MRNF + GUT screen, 2K inputs, neutral common initialization. 48 input views from one pass.",
+      "limitation": "Short single-house screen. Shared SfM and seed positions use both passes. Third overall. Softer facade, porch and road boundaries; broad shadow/foliage smears remain. Dropping the closer pass does not produce clean walls.",
+      "asset": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/far.compressed.ply",
+      "format": "compressed-ply",
+      "count": 500000,
+      "modelMatrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.05536315917493709,
+        0.9977715335462052,
+        0.03724093783760827
+      ],
+      "initial": {
+        "position": [
+          3.875279196425471,
+          -0.26671775507479206,
+          2.525453200248756
+        ],
+        "target": [
+          5.374576992169654,
+          -0.2181498723463787,
+          0.7521376678733369
+        ],
+        "label": "Interpolated house review view"
+      },
+      "poses": [
+        {
+          "position": [
+            3.1717337389849645,
+            -0.30412246629319195,
+            2.657945774470881
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 3s"
+        },
+        {
+          "position": [
+            2.8386662790517034,
+            -0.27365214620676215,
+            2.354405527323401
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 6s"
+        },
+        {
+          "position": [
+            2.503214533649508,
+            -0.24169690137923489,
+            2.053870709738421
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 9s"
+        }
+      ],
+      "fov": 75,
+      "speed": 0.45,
+      "heightReference": "Estimated fixed review-height plane through the interpolated path; arbitrary scene units, not surveyed metres or a road collision surface.",
+      "renders": [
+        {
+          "title": "Matched driving comparison",
+          "url": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/comparison-driving.mp4",
+          "note": "Native full-precision GUT models, common camera path; web video encoding."
+        },
+        {
+          "title": "Matched sideways comparison",
+          "url": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/comparison-sideways.mp4",
+          "note": "Native GUT models; closer / farther / both, same positions/FOV/timing."
+        }
+      ],
+      "state": "prototype",
+      "assetSha256": "f6749763e91e2ce689acdc55fd44962139f106ddf1dc26436d2107d4d8bc4126"
+    },
+    {
+      "id": "both",
+      "title": "Both passes · house test",
+      "description": "Matched 5,000-step MRNF + GUT screen, 2K inputs, neutral common initialization. 96 input views from both passes.",
+      "limitation": "Short single-house screen. Shared SfM and seed positions use both passes. Best overall here. More continuous road/sidewalk and useful facade appearance across the tested corridor. Roof edges, foliage and adjacent facade still flare or ghost.",
+      "asset": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/both.compressed.ply",
+      "format": "compressed-ply",
+      "count": 500000,
+      "modelMatrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.05536315917493709,
+        0.9977715335462052,
+        0.03724093783760827
+      ],
+      "initial": {
+        "position": [
+          3.875279196425471,
+          -0.26671775507479206,
+          2.525453200248756
+        ],
+        "target": [
+          5.374576992169654,
+          -0.2181498723463787,
+          0.7521376678733369
+        ],
+        "label": "Interpolated house review view"
+      },
+      "poses": [
+        {
+          "position": [
+            3.1717337389849645,
+            -0.30412246629319195,
+            2.657945774470881
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 3s"
+        },
+        {
+          "position": [
+            2.8386662790517034,
+            -0.27365214620676215,
+            2.354405527323401
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 6s"
+        },
+        {
+          "position": [
+            2.503214533649508,
+            -0.24169690137923489,
+            2.053870709738421
+          ],
+          "target": [
+            5.374576992169654,
+            -0.2181498723463787,
+            0.7521376678733369
+          ],
+          "label": "Route 9s"
+        }
+      ],
+      "fov": 75,
+      "speed": 0.45,
+      "heightReference": "Estimated fixed review-height plane through the interpolated path; arbitrary scene units, not surveyed metres or a road collision surface.",
+      "renders": [
+        {
+          "title": "Matched driving comparison",
+          "url": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/comparison-driving.mp4",
+          "note": "Native full-precision GUT models, common camera path; web video encoding."
+        },
+        {
+          "title": "Matched sideways comparison",
+          "url": "https://raw.githubusercontent.com/edmondsonedits/Streets3D-Test/4aeca98a4a2766d95bdf20016672176dc4dc81c8/model-assets/house-pass-comparison-v1/comparison-sideways.mp4",
+          "note": "Native GUT models; closer / farther / both, same positions/FOV/timing."
+        }
+      ],
+      "state": "prototype",
+      "assetSha256": "d8cadc1e371fae1e9149f6b1e84ef8596ac4b74baae2a79a9ac2a670e1086a3e"
+    }
+  ]
+}
