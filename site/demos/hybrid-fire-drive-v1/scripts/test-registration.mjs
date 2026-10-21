@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {applyTransform,fitSimilarity,assessRegistration,validateTransform} from '../registration.mjs';
+const truth={scale:2.4,yaw:.7,x:25,y:3,z:-19};
+const source=[[0,0,0],[20,1,0],[4,2,30],[30,-1,30],[12,0,19]];
+const pairs=source.map((p,i)=>({source:p,target:applyTransform(p,truth),role:i<3?'fit':'check',label:'known-'+i}));
+const fit=fitSimilarity(pairs.filter(p=>p.role==='fit'));
+for(const key of ['scale','yaw','x','y','z'])assert.ok(Math.abs(fit[key]-truth[key])<1e-9,key);
+assert.equal(assessRegistration(pairs,fit).checksPass,true);
+const bad=pairs.map(p=>({...p,target:[...p.target]}));bad[4].target[0]+=20;
+assert.equal(assessRegistration(bad,fit).checksPass,false,'independent check points expose mismatches');
+assert.throws(()=>fitSimilarity([pairs[0],pairs[0],pairs[0]]),/spread|distinct/);
+assert.throws(()=>validateTransform({...truth,scale:-1}),/scale/);
+assert.throws(()=>validateTransform({...truth,x:Infinity}),/finite/);
+assert.equal(assessRegistration(pairs.slice(0,3),fit).checksPass,false,'fit residual alone cannot validate registration');
+console.log('Uniform similarity / independent-check registration tests passed');

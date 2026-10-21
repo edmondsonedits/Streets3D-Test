@@ -36,6 +36,13 @@ jobs:
         run: |
           python3 scripts/test_new_romaine_block.py
           node site/demos/new-romaine-block-v1/scripts/test-block-navigation.mjs
+      - name: Check hybrid fire-truck driving
+        run: |
+          python3 scripts/test_hybrid_drive.py
+          node site/demos/hybrid-fire-drive-v1/scripts/test-driving.mjs
+          node site/demos/hybrid-fire-drive-v1/scripts/test-registration.mjs
+          node site/demos/hybrid-fire-drive-v1/scripts/test-camera-obstacles.mjs
+          node --loader ./site/demos/hybrid-fire-drive-v1/scripts/three-test-loader.mjs site/demos/hybrid-fire-drive-v1/scripts/test-vehicle.mjs
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload site only

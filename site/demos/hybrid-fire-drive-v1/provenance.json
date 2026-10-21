@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "title": "Hybrid Fire Drive v1",
+  "status": "Playable geographic driving foundation; Gaussian registration unverified",
+  "sourceRepository": "https://github.com/edmondsonedits/Peterborough-Map-Game",
+  "sourceCommit": "3754f99a0e59cd97b35d5e64ac31ac26c6bbbde8",
+  "reused": {
+    "map": "../new-romaine-block-v1/provenance.json",
+    "handling": "Source gameplay-systems.js pumper envelope and acceleration/braking constants, adapted into a new fixed-step kinematic controller",
+    "contact": "Four source-terrain wheel samples; independently tested oriented footprint collision and swept motion",
+    "vehicle": {
+      "metadata": "vehicle.json",
+      "url": "https://raw.githubusercontent.com/edmondsonedits/Peterborough-Map-Game/3754f99a0e59cd97b35d5e64ac31ac26c6bbbde8/city-explorer/assets/vehicles/generic-pumper.glb",
+      "bytes": 3030292,
+      "sha256": "ab616d03025278e057a835fc1d32088071419838115800fb132d568424e63fbb",
+      "cors": "Access-Control-Allow-Origin: * verified on 2026-10-21; browser success also tested",
+      "fallback": "Bounded 9-second fetch, SHA-256 verification; procedural vehicle if unavailable. ?vehicle=fallback explicitly exercises fallback."
+    }
+  },
+  "layers": {
+    "collision": "Mapped terrain triangles, estimated road corridor widths and source building footprints. Gaussian opacity/visibility never changes collision.",
+    "visual": "Three.js r180 opaque mesh world plus optional existing Spark 2.3.1 Gaussian layer, same depth buffer. No retraining or source/model overwrite.",
+    "coordinates": "Map X east, Z south, Y up, local metres. Original model basis is preserved, then upright uniform scale + yaw + XYZ translation. No nonuniform stretching."
+  },
+  "registration": {
+    "suggestion": "route-suggestion.json",
+    "routeRmsMetres": 7.4519360147063,
+    "independentLandmarks": 0,
+    "verified": false,
+    "controls": "Identifiable ground points only; >=3 fit and >=2 independent checks, spatial spread/area and residual gates. Passing residuals do not verify landmark identity or surveyed accuracy.",
+    "persistence": "Local browser storage bound to selected model ID and SHA-256; JSON import/export. Never changes map geometry."
+  },
+  "gaussianReferences": [
+    "../../splats/half-block/provenance.json",
+    "../../splats/construction-gut-k0/provenance.json",
+    "../../splats/construction-gut-rawF/provenance.json",
+    "../../splats/residential-gut-common-center-2048/provenance.json"
+  ],
+  "licenses": [
+    {
+      "component": "Adapted Map Game and new simulator code",
+      "license": "GPL-2.0-only",
+      "notice": "LICENSE.txt"
+    },
+    {
+      "component": "Three.js r180 and GLTFLoader / BufferGeometryUtils",
+      "license": "MIT",
+      "notice": "../street-alternatives-v1/vendor/THREE-LICENSE.txt"
+    },
+    {
+      "component": "Spark 2.3.1",
+      "license": "MIT",
+      "notice": "../splat-explorer-v1/vendor/SPARK-LICENSE.txt"
+    },
+    {
+      "component": "Map data",
+      "license": "ODbL-1.0",
+      "url": "https://www.openstreetmap.org/copyright"
+    },
+    {
+      "component": "Ontario terrain",
+      "license": "Open Government Licence - Ontario",
+      "url": "https://www.ontario.ca/page/open-government-licence-ontario"
+    }
+  ],
+  "limitations": [
+    "This is a playable test foundation, not a finished AAA game or certified driver-training simulator.",
+    "All 284 building heights, roof/facade detail and road widths are estimates. No surveyed geographic accuracy claim.",
+    "Current source Gaussian geometry remains blurry/streaked and does not align reliably to mapped facades. A mesh does not repair the captured model.",
+    "Current route is an open half-block capture; a complete photographic block is not claimed.",
+    "Kinematic truck handling: no tire forces, suspension solver, damage, traffic AI, pedestrians, firefighting missions, cab interior, weather or multiplayer.",
+    "Browser phone layout is emulated; physical phone/gamepad behaviour and performance are not certified.",
+    "Detailed pumper needs the pinned public GitHub asset; map and procedural vehicle remain playable without that external asset. Other local site data is still required.",
+    "Raw source footage and private machine paths are not published. Existing demos and production Map Game are preserved."
+  ]
+}

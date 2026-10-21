@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "scope": "Local browser release candidate; deployed release separately checked after Pages publishing",
+  "browser": "Codex in-app browser; real WebGL rendering and native browser input",
+  "checksPassed": [
+    "Detailed pinned GLB downloaded, hash verified, visible truck",
+    "Drive: 30 km/h at 11 m during a 2.2-second keyboard acceleration sample",
+    "Right steering, off-road departure, building collision, brake to reverse and recovery actually exercised",
+    "Chase, driver-eye, free translation/height and overview exercised",
+    "Half-block hybrid layer visible with mapped road and truck",
+    "All four offered existing Gaussian models loaded and their stored capture viewpoints visually inspected",
+    "Registration refuses empty controls; independent-check numerical tests passed",
+    "Emergency lights and opt-in sound toggles exercised",
+    "390x844 responsive layout and held touch throttle: 25 km/h at 7 m; touch rise exercised",
+    "844x390 layout inspected, minimap subsequently hidden at short height to preserve playfield",
+    "Explicit procedural-fallback URL visibly labelled and driven",
+    "No new console errors observed after 12:40 UTC; earlier observed DOM/import/CSS/encoding defects corrected",
+    "All ten named street recovery starts successfully resolved against the actual extracted block data"
+  ],
+  "notCertified": [
+    "Physical phone or gamepad hardware",
+    "Full-loop driving endurance/performance benchmark",
+    "Surveyed road/building accuracy",
+    "Correct real-world landmark identity or Gaussian/map registration",
+    "Improved reconstruction geometry or AAA visual fidelity"
+  ],
+  "knownGeometryOutcome": "Existing Gaussian blur/streaks and map misalignment remain visible. Map is the default. This release is a playable integration foundation, not a new high-quality reconstruction.",
+  "preview": {
+    "path": "../../previews/hybrid-fire-drive.jpg",
+    "origin": "Genuine local browser PNG, JPEG compression only; no generative or scene editing"
+  }
+}

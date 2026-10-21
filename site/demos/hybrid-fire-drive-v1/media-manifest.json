@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "artifacts": [
+    {
+      "path": "app.js",
+      "bytes": 24532,
+      "sha256": "bc937f855d357d1ccd97073821b4813657fe6b7a6fbee0de94a5c96102db152a"
+    },
+    {
+      "path": "camera-obstacles.mjs",
+      "bytes": 980,
+      "sha256": "6fa92d940557263c816708425df913921662626bc2c7a6727e34220b0a32ec05"
+    },
+    {
+      "path": "driving.mjs",
+      "bytes": 14510,
+      "sha256": "45c686a2e0aeb33f0a7f99758edc142a9f53aec1038795e19a8fc4e3b09d1235"
+    },
+    {
+      "path": "index.html",
+      "bytes": 13431,
+      "sha256": "1cb4141314edfaeb6d4f753d2ec253b3e7b4ab1a99917134c943f89d859836d9"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 4349,
+      "sha256": "f2f87069d49c116b0ac720468df66d61d8c100be310b64347f4a2be6562ac03a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4640,
+      "sha256": "1024df5bd2a8a9f75ef40a75708b36f8d29607dc22e5f8a543af733d4dde4fd7"
+    },
+    {
+      "path": "registration.mjs",
+      "bytes": 3517,
+      "sha256": "8b15f42c7ae30ea603a9be5a8b6dd03157f3683e980e0d561af4b3c945a10d96"
+    },
+    {
+      "path": "route-suggestion.json",
+      "bytes": 6704,
+      "sha256": "29a9aeb491eac3f1e005630223b6816fa7182b01ba58dad9a1ed2c5d6c4ef628"
+    },
+    {
+      "path": "scripts/test-camera-obstacles.mjs",
+      "bytes": 654,
+      "sha256": "a720bd80f7e423e95f48f96679f5b4b45257952983392e21dc30ec368b67b0e4"
+    },
+    {
+      "path": "scripts/test-driving.mjs",
+      "bytes": 5682,
+      "sha256": "c3dd66931dfae73d5286f5e2120b61b1dacd208fb748eb2b5d39618f6ce73a06"
+    },
+    {
+      "path": "scripts/test-registration.mjs",
+      "bytes": 1189,
+      "sha256": "dce6afcff25866a77e87e80a813f6baf51d31e184d6efdb60482cdd02bd4b74e"
+    },
+    {
+      "path": "scripts/test-vehicle.mjs",
+      "bytes": 3054,
+      "sha256": "78b729a7d0ea1e591e1e63453b6ad1b90d946ff2eff2598bd24d6c0e4d607f3a"
+    },
+    {
+      "path": "scripts/three-test-loader.mjs",
+      "bytes": 288,
+      "sha256": "f7421232de5877cbe85c9b3cd965794cf074b9ada789daed6eba21068013300f"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 22445,
+      "sha256": "38cecc1542f55db8896d7f4ed51859e1374a6496758fe3e0395dcecfb233d97a"
+    },
+    {
+      "path": "vehicle.json",
+      "bytes": 785,
+      "sha256": "b81bc10e8d42a406001230ff9724862075613420396256266044a836acca2b7a"
+    },
+    {
+      "path": "vehicle.mjs",
+      "bytes": 10182,
+      "sha256": "0d32f95955768941333c8273b03226afade995377fb974b9952683b47ad86e16"
+    },
+    {
+      "path": "vendor/loaders/GLTFLoader.js",
+      "bytes": 114739,
+      "sha256": "67ac5551fdafa6e349bd80c8f8e5e39c136d6b2fb1ad647db9abb21dc86f9e4a"
+    },
+    {
+      "path": "vendor/utils/BufferGeometryUtils.js",
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 2072,
+      "sha256": "c797cfff22f131245782fbc2b903ffafb76dd866ee7f80598822aa2793c42245"
+    },
+    {
+      "path": "world.mjs",
+      "bytes": 8263,
+      "sha256": "dcbbd20151f8f635a7cd08aec107264ba25ac660e707ca66ca094e53b54de60b"
+    },
+    {
+      "path": "../../previews/hybrid-fire-drive.jpg",
+      "bytes": 90962,
+      "sha256": "c6496badf69fb0780f4970450da5ef64c247ba76347250b0fb1a0aa405fa2761"
+    }
+  ],
+  "externalAssets": [
+    {
+      "purpose": "Pinned detailed pumper; fallback provided",
+      "url": "https://raw.githubusercontent.com/edmondsonedits/Peterborough-Map-Game/3754f99a0e59cd97b35d5e64ac31ac26c6bbbde8/city-explorer/assets/vehicles/generic-pumper.glb",
+      "bytes": 3030292,
+      "sha256": "ab616d03025278e057a835fc1d32088071419838115800fb132d568424e63fbb"
+    }
+  ]
+}

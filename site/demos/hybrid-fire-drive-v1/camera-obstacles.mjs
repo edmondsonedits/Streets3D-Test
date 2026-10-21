@@ -1,0 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0-only
+// Conservative building boxes for chase-camera obstruction; no render triangles scanned.
+export function buildCameraObstacles(buildings){return buildings.map(b=>{const a=[...(b.wallPositions||[]),...(b.roofPositions||[])],min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];for(let i=0;i<a.length;i++) {const k=i%3;min[k]=Math.min(min[k],a[i]);max[k]=Math.max(max[k],a[i]);}return {min,max};}).filter(b=>b.min.every(Number.isFinite));}
+export function cameraSegmentFraction(start,end,boxes,padding=.35){let nearest=1;for(const box of boxes){let near=0,far=1;for(let k=0;k<3;k++){const delta=end[k]-start[k],lo=box.min[k]-padding,hi=box.max[k]+padding;if(Math.abs(delta)<1e-9){if(start[k]<lo||start[k]>hi){near=2;break;}}else{let a=(lo-start[k])/delta,b=(hi-start[k])/delta;if(a>b)[a,b]=[b,a];near=Math.max(near,a);far=Math.min(far,b);if(near>far)break;}}if(near<=far&&near>=0&&near<nearest)nearest=near;}return nearest;}

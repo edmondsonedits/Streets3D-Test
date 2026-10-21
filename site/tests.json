@@ -3,6 +3,19 @@
   "title": "Streets3D Test Lab",
   "tests": [
     {
+      "id": "hybrid-fire-drive-v1",
+      "title": "New Romaine · fire truck + Gaussian lab",
+      "category": "Hybrid driving",
+      "date": "2026-10-21",
+      "version": "1",
+      "status": "prototype",
+      "url": "demos/hybrid-fire-drive-v1/",
+      "preview": "previews/hybrid-fire-drive.jpg",
+      "description": "Drive the Map Game pumper on terrain-following roads, with building collision, chase/driver-eye/free cameras and an optional Gaussian scenery layer.",
+      "controls": "WASD / arrows · brake/reverse · Space park · C camera · F free view · R recover · touch controls",
+      "limitation": "Playable foundation. Gaussian map alignment remains unverified (7.45 m route-fit RMS; no landmark ties); scenery quality is unchanged. Heights/road widths and vehicle handling are approximate."
+    },
+    {
       "id": "new-romaine-block-v1",
       "title": "New Romaine · geographic block sandbox",
       "category": "Map-derived 3D",

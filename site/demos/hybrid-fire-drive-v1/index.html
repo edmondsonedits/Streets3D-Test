@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#242624">
+  <meta name="description" content="A map-led fire-apparatus driving and Gaussian alignment lab for New Romaine Street.">
+  <title>Hybrid Fire Drive — Streets3D Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">{ "imports": { "three": "../street-alternatives-v1/vendor/three.module.js", "three/addons/": "../splat-explorer-v1/vendor/three/addons/" } }</script>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="topbar" aria-label="Street driving lab">
+    <a class="back-link" href="../../index.html"><span class="back-arrow" aria-hidden="true">←</span><span>Street tests</span></a>
+    <span class="top-divider" aria-hidden="true"></span>
+    <div class="route-title"><span class="eyebrow">HYBRID DRIVE LAB</span><strong id="streetName" aria-live="polite">New Romaine Street</strong></div>
+    <span id="alignmentBadge" class="alignment-badge" role="status"><span>GAUSSIAN ALIGNMENT <i aria-hidden="true"></i> EXPERIMENTAL</span><small>7.45 M ROUTE FIT · NOT VERIFIED</small></span>
+    <div class="topbar-spacer"></div>
+    <button id="settings" class="top-action" type="button" aria-haspopup="dialog"><span class="action-glyph" aria-hidden="true">⚙</span><span>Lab settings</span></button>
+    <button id="help" class="top-action help-action" type="button" aria-haspopup="dialog"><span class="action-glyph help-glyph" aria-hidden="true">?</span><span>Controls</span></button>
+  </header>
+
+  <main class="lab-stage">
+    <div id="viewport" class="viewport" tabindex="0" role="application" aria-label="Interactive fire truck driving scene">
+      <div class="world-vignette" aria-hidden="true"></div>
+      <div id="loadingOverlay" class="loading-overlay" role="status" aria-live="polite">
+        <span class="loading-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <div><strong id="loadText">Setting the street</strong><p id="loadDetail">Loading the mapped road surface and apparatus.</p><button id="retryStart" type="button" hidden>Reload driving lab</button></div>
+      </div>
+
+      <section class="scene-switcher hud-surface" aria-label="Scene view">
+        <label class="select-label" for="sceneMode">VIEW</label>
+        <select id="sceneMode" aria-label="Scene view"><option value="map" selected>Map</option><option value="hybrid">Hybrid</option><option value="splat">Splat</option></select>
+        <span class="switcher-rule" aria-hidden="true"></span>
+        <label class="select-label splat-label" for="splatSelect">CAPTURE</label>
+        <select id="splatSelect" aria-label="Gaussian capture"><option value="">Choose a capture…</option></select>
+      </section>
+
+      <section class="minimap-panel hud-surface" aria-label="Block minimap"><div class="minimap-title"><span>BLOCK MAP</span><span class="minimap-caption">N ↑</span></div><canvas id="minimap" width="240" height="180" aria-label="Map of the nearby streets"></canvas></section>
+
+      <section class="speed-panel hud-surface" aria-label="Driving status">
+        <div class="speed-readout"><span class="speed-caption">ROAD SPEED</span><div class="speed-line"><strong id="speed">00</strong><span class="speed-unit">KM/H</span><span class="gear-chip" id="gear">N</span></div></div>
+        <div class="speed-divider" aria-hidden="true"></div>
+        <div class="status-grid">
+          <div class="status-item"><span class="status-label">SURFACE</span><strong id="surface">Road</strong></div>
+          <div class="status-item"><span class="status-label">TRAVEL</span><strong id="distance">0 m</strong></div>
+          <div class="status-item"><span class="status-label">DRIVE</span><strong id="driveState">Ready</strong></div>
+          <div class="status-item"><span class="status-label">CONTACT</span><strong id="collisionStatus" class="status-clear">Clear</strong></div>
+        </div>
+        <div class="model-status-row"><span class="status-dot" aria-hidden="true"></span><span id="modelStatus">Map block ready</span></div>
+      </section>
+
+      <section class="action-dock hud-surface" aria-label="Driving and camera controls">
+        <span class="dock-kicker">APPARATUS CONTROLS <span aria-hidden="true">/</span> LOCAL SIM</span>
+        <div class="action-grid">
+          <button id="startDrive" class="drive-button" type="button"><span class="play-glyph" aria-hidden="true">▶</span>Drive</button>
+          <button id="cameraMode" type="button">Chase camera</button>
+          <button id="freeView" type="button">Free camera</button>
+          <button id="mapOverview" type="button">Overview</button>
+          <button id="resetTruck" type="button">Recover</button>
+          <button id="pause" type="button">Pause</button>
+          <button id="lights" type="button">Lights</button>
+          <button id="audio" type="button">Sound off</button>
+        </div>
+      </section>
+
+      <div id="touchDrive" class="touch-drive" aria-label="Touch driving controls" hidden>
+        <div class="touch-steering" aria-label="Steering"><button type="button" data-action="left" aria-label="Steer left">◀</button><button type="button" data-action="right" aria-label="Steer right">▶</button></div>
+        <div class="touch-pedals" aria-label="Pedals">
+          <button type="button" data-action="brake" aria-label="Brake and reverse"><span>BRAKE</span><b>▼</b></button>
+          <button type="button" data-action="throttle" aria-label="Throttle"><span>THROTTLE</span><b>▲</b></button>
+          <button type="button" data-action="handbrake" aria-label="Handbrake">PARK</button>
+        </div>
+      </div>
+      <div id="touchFlight" class="touch-flight" aria-label="Touch free-flight controls" hidden>
+        <div class="flight-pad" aria-label="Move view"><button type="button" data-action="flyForward" aria-label="Move forward">▲</button><button type="button" data-action="flyLeft" aria-label="Move left">◀</button><button type="button" data-action="flyBack" aria-label="Move backward">▼</button><button type="button" data-action="flyRight" aria-label="Move right">▶</button></div>
+        <div class="flight-height"><button type="button" data-action="flyUp" aria-label="Rise">＋</button><span>ALT</span><button type="button" data-action="flyDown" aria-label="Descend">−</button></div>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="panel" class="lab-dialog" aria-labelledby="panelTitle">
+    <form method="dialog" class="dialog-shell">
+      <header class="dialog-header"><div><span class="eyebrow">FIELD CONFIGURATION</span><h1 id="panelTitle">Lab settings</h1></div><button id="closePanel" class="close-button" type="button" aria-label="Close settings">×</button></header>
+      <div class="dialog-content">
+        <details class="settings-group" open>
+          <summary><span>Scene &amp; graphics</span><span class="summary-note">LIVE VIEW</span></summary>
+          <div class="settings-fields">
+            <label class="field-row" for="roadStart"><span><b>Recover to street</b><small>Choose a safe start along a mapped road.</small></span><select id="roadStart"><option value="">Nearest safe street…</option></select></label>
+            <label class="field-row" for="quality"><span><b>Render quality</b><small>Adjust scene detail for your device.</small></span><select id="quality"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label>
+            <label class="field-row range-row" for="opacity"><span><b>Capture opacity</b><small>Blend Gaussian scenery over the map.</small></span><input id="opacity" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+            <label class="check-row" for="mapBuildings"><span><b>Map buildings</b><small>Rendering only; mapped collision remains active.</small></span><input id="mapBuildings" type="checkbox" checked></label>
+            <label class="check-row" for="routeLine"><span><b>Route line</b><small>Show the street path in the scene.</small></span><input id="routeLine" type="checkbox"></label>
+            <label class="check-row" for="showSourcePath"><span><b>Source camera path</b><small>Show the recorded capture route.</small></span><input id="showSourcePath" type="checkbox"></label>
+            <div class="field-row diagnostics-row"><span><b>Frame rate</b><small>Local render diagnostic.</small></span><output id="fps">— FPS</output></div><div class="field-row"><span><b>Truck asset</b><small>Verified pinned model or clearly labelled offline fallback.</small></span><output id="vehicleStatus">Loading</output></div>
+          </div>
+        </details>
+        <details class="settings-group registration-group">
+          <summary><span>Registration</span><span class="summary-note">PREVIEW ONLY</span></summary>
+          <div class="registration-notes">
+            <p><b>Roads and building footprints remain the collision authority.</b> Gaussian scenery changes appearance only; it never sets vehicle physics.</p>
+            <p><span id="routeFitStatus">The half-block route suggestion has 7.45 m RMS residual and no independent landmark ties.</span> Alignment stays unverified until reviewed. Apparatus envelope is estimated at <strong>10.4 × 2.55 m</strong>.</p>
+            <div class="source-links"><a href="../new-romaine-block-v1/provenance.json" target="_blank" rel="noreferrer">Map provenance ↗</a><a href="./provenance.json" target="_blank" rel="noreferrer">Capture notes ↗</a></div>
+          </div>
+          <div class="transform-grid">
+            <label for="regScale">Uniform scale<input id="regScale" type="number" min="0.0001" max="10000" step="0.001" value="1"></label>
+            <label for="regYaw">Yaw · degrees<input id="regYaw" type="number" step="0.1" value="0"></label>
+            <label for="regX">Offset X · m<input id="regX" type="number" step="0.1" value="0"></label>
+            <label for="regY">Offset Y · m<input id="regY" type="number" step="0.1" value="0"></label>
+            <label for="regZ">Offset Z · m<input id="regZ" type="number" step="0.1" value="0"></label>
+          </div>
+          <div class="registration-actions">
+            <button id="applyTransform" type="button" class="accent-outline">Apply transform</button><button id="resetTransform" type="button">Reset</button>
+            <button id="splatView" type="button">Inspect source capture</button><button id="pickSource" type="button">Pick splat ground point</button>
+            <button id="pickMap" type="button">Pick map ground point</button><button id="fitRegistration" type="button">Fit registration</button>
+            <button id="exportRegistration" type="button">Export JSON</button><label class="file-button" for="importRegistration">Import JSON<input id="importRegistration" type="file" accept="application/json,.json"></label>
+          </div>
+          <label class="pairs-label" for="pairs">Landmark pairs <span>labeled control / check pairs</span></label>
+          <textarea id="pairs" rows="5" spellcheck="false" aria-describedby="pairsHint">[]</textarea>
+          <small id="pairsHint" class="field-hint">Use matching ground controls only (road or ground corners), never facade/roof-to-ground pairs. Keep independent checks separate. Building heights are estimated.</small>
+          <pre id="registrationReport" class="registration-report" role="status" aria-live="polite">Registration not verified. Add labeled landmark pairs and inspect independent checks.</pre>
+        </details>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="controls" class="lab-dialog controls-dialog" aria-labelledby="controlsTitle">
+    <form method="dialog" class="dialog-shell">
+      <header class="dialog-header"><div><span class="eyebrow">DRIVER REFERENCE</span><h1 id="controlsTitle">Controls</h1></div><button id="closeControls" class="close-button" type="button" aria-label="Close controls">×</button></header>
+      <div class="dialog-content control-reference">
+        <p class="dialog-lead">A quiet street to practise with the map as the physical scaffold. Camera motion is separate from truck motion.</p>
+        <div class="key-list">
+          <div><kbd>W</kbd><span>Throttle</span></div><div><kbd>S</kbd><span>Brake · hold to reverse</span></div>
+          <div><kbd>A</kbd><kbd>D</kbd><span>Steer left · right</span></div><div><kbd>Space</kbd><span>Handbrake</span></div>
+          <div><kbd>C</kbd><span>Cycle camera</span></div><div><kbd>F</kbd><span>Free camera</span></div>
+          <div><kbd>V</kbd><span>Overview</span></div><div><kbd>R</kbd><span>Recover truck</span></div>
+          <div><kbd>P</kbd><span>Pause · resume</span></div><div><kbd>L</kbd><span>Emergency lights</span></div>
+          <div><kbd>E</kbd><kbd>Q</kbd><span>Rise · descend in free view</span></div>
+        </div>
+        <p class="look-note"><span class="drag-icon" aria-hidden="true">↗</span>Drag in the scene to look around. Touch controls and gamepads are available on supported devices.</p>
+        <p class="small-print">Mapped roads, terrain and building footprints govern movement. Gaussian captures are visual references and may not align with the map.</p>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
