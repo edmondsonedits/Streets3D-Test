@@ -16,7 +16,9 @@
     "844x390 layout inspected, minimap subsequently hidden at short height to preserve playfield",
     "Explicit procedural-fallback URL visibly labelled and driven",
     "No new console errors observed after 12:40 UTC; earlier observed DOM/import/CSS/encoding defects corrected",
-    "All ten named street recovery starts successfully resolved against the actual extracted block data"
+    "All ten named street recovery starts successfully resolved against the actual extracted block data",
+    "Scaled Gaussian picker A/B at same visible road pixel: direct query 0 hits, normalized native-frame query 1 hit; a QA map pair was added, remained unverified, then reset without saving",
+    "Scaled picking regression verifies native unit direction, world-space hit distance, world near/far clipping and unchanged live mesh matrix"
   ],
   "notCertified": [
     "Physical phone or gamepad hardware",

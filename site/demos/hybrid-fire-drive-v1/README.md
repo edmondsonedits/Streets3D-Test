@@ -25,6 +25,8 @@ Large Gaussian files and Three/Spark code are reused from existing same-origin s
 
 Load Hybrid, inspect the stored capture viewpoint, then use identifiable ground features (road/ground corners). Never pair a facade/roof point with terrain. Add at least three spread fit controls and two independent checks, with labels. One uniform scale, yaw and translation are fitted. Check residuals and inspect several camera viewpoints. Import/export binds controls to the exact model hash. A passing numerical gate still requires independent landmark-identity review. Building heights are estimated and unsuitable for vertical controls.
 
+The pinned Spark 2.3.1 scaled-mesh ray query is wrapped in a normalized native-coordinate query. Points and distances are converted back into map coordinates without changing the live mesh. A real rendered road pixel returned no hit through the direct query and one through this wrapper at the same transform; world-distance/near/far and matrix-preservation tests cover the adapter. This enables control selection; landmark identity still needs review.
+
 The supplied route-only suggestion has 7.45 m RMS nearest-road residual and **zero** independent landmark ties. Several grid streets can fit similar shapes. Its vertical offset assumes a 2.3 m camera height along map terrain. Neither that fit nor the screenshot establishes geographic alignment. The model's doubled/streaked surfaces persist. Keep Map as the normal driving view until proper ties and capture geometry pass review.
 
 ## Release gates beyond this foundation

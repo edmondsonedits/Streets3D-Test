@@ -43,6 +43,7 @@ jobs:
           node site/demos/hybrid-fire-drive-v1/scripts/test-registration.mjs
           node site/demos/hybrid-fire-drive-v1/scripts/test-camera-obstacles.mjs
           node --loader ./site/demos/hybrid-fire-drive-v1/scripts/three-test-loader.mjs site/demos/hybrid-fire-drive-v1/scripts/test-vehicle.mjs
+          node --loader ./site/demos/hybrid-fire-drive-v1/scripts/three-test-loader.mjs site/demos/hybrid-fire-drive-v1/scripts/test-splat-picking.mjs
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload site only
