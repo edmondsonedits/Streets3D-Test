@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "half-block",
+  "assetSha256": "426ebbb6ecebfdcda2dc99a157f6ad9f56d57cb8e5483958cc1f23e64647cfd0",
+  "result": "LOCAL_PREVIEW_ONLY_GLOBAL_REGISTRATION_FAILED",
+  "geographicIdentity": {
+    "sourceFile": "VID_20261019_130358_00_001.insv",
+    "intersection": "Duffus Street / Ford Street",
+    "directEvidence": "Both names legible on original native back/pass1_0024.jpg, source111.111s; another Brown Street sign seen at130.130s.",
+    "captureRouteInterpretation": "New Romaine westbound -> Ford northbound past Duffus -> Brown eastbound; return pass reverses it.",
+    "sourceObservations": [
+      {
+        "label": "west270-ne",
+        "source": [
+          -2.405222486349211,
+          -0.06613497010930447,
+          8.130034415323669
+        ],
+        "targetXZ": [
+          -164.068,
+          6.42
+        ],
+        "observations": [
+          {
+            "image": "front/pass1_0024.jpg",
+            "pixel": [
+              2360,
+              2022
+            ]
+          },
+          {
+            "image": "front/pass1_0025.jpg",
+            "pixel": [
+              2293,
+              2031
+            ]
+          }
+        ],
+        "reprojectionErrors": [
+          5.58382092795849,
+          5.699391048907304
+        ]
+      },
+      {
+        "label": "east2-nw",
+        "source": [
+          -0.9693994058353467,
+          -0.09076346903866894,
+          7.5188791211043515
+        ],
+        "targetXZ": [
+          -128.193,
+          26.803
+        ],
+        "observations": [
+          {
+            "image": "back/pass1_0024.jpg",
+            "pixel": [
+              3377,
+              2091
+            ]
+          },
+          {
+            "image": "back/pass1_0025.jpg",
+            "pixel": [
+              3432,
+              2065
+            ]
+          }
+        ],
+        "reprojectionErrors": [
+          2.41438155472774,
+          2.321560020901272
+        ]
+      }
+    ]
+  },
+  "targets": [
+    {
+      "label": "west270-ne",
+      "osmWay": "999229835",
+      "cornerXZ": [
+        -164.068,
+        6.42
+      ]
+    },
+    {
+      "label": "east2-nw",
+      "osmWay": "999229094",
+      "cornerXZ": [
+        -128.193,
+        26.803
+      ]
+    }
+  ],
+  "localFit": {
+    "fitControls": 2,
+    "independentControls": 0,
+    "horizontalFitMetres": 0,
+    "validationPassed": false,
+    "reason": "Two manually selected corners are insufficient for the existing three-fit/two-independent-check gate. No house height used as a measured target.",
+    "verticalResidualPerControlMetres": 0.2697
+  },
+  "globalRejectedFit": {
+    "method": "Identity-constrained least-squares similarity on selected straight legs; pass1 fit, pass2 excluded from fit. One Ford/Duffus road-node anchor.",
+    "transformXZ": {
+      "scale": 20.895,
+      "yawDegrees": -64.708,
+      "x": 16.009,
+      "z": -20.214
+    },
+    "pass1StraightLegRmsMetres": 4.8,
+    "heldOutPass2StraightLegRmsMetres": 6.45,
+    "nearestBrownFordTurnMetres": {
+      "pass1": 46.28,
+      "pass2": 47.87
+    },
+    "interpretation": "Low straight-leg RMS hides a failed turn. Do not use this as verified full-block placement."
+  },
+  "frameAudit": {
+    "sogDecodedBoundsMatchAlignedPly": true,
+    "extraCenterOrScaleFound": false,
+    "cameraToBrowser": "diag(-1,1,-1) after recorded proper upright rotation",
+    "splatEntityRotation": "diag(-1,-1,1)",
+    "isolatedGroundPickRejected": true,
+    "note": "The previously picked low point was one isolated floater, not a supported road landmark."
+  },
+  "remaining": [
+    "Unconfirmed exact building-corner identity and manual pixel uncertainty (2.3–5.7px reprojection).",
+    "Independent building controls, measured vertical tie and global road topology are not validated.",
+    "Original reconstruction blur, needles, weak facades and off-path failure remain.",
+    "The accepted model is an open half-block. The rest of the mapped driving block has no captured Gaussian coverage."
+  ],
+  "nextRequiredWork": "Re-solve the source poses against multiple independently identified facade/ground controls at both turns, reject inconsistent components, then retrain from that corrected solve. Moving or stretching the mapped roads/buildings would conceal the defect.",
+  "currentLocalPlacementRouteDiagnostics": {
+    "pass1": {
+      "BrownFord": 26.53620325897445,
+      "DuffusFord": 2.963143612650522,
+      "NewRomaineFord": 6.494936227999416
+    },
+    "pass2": {
+      "BrownFord": 31.874140996279106,
+      "DuffusFord": 2.3418606006345204,
+      "NewRomaineFord": 2.234906547735893
+    }
+  },
+  "currentLocalPlacementRouteDiagnosticsNote": "Nearest polyline approach, not a known exact surveyed camera position; both passes are evaluated, neither provides novel-view ground truth.",
+  "reviewPlot": "alignment-plan.png"
+}

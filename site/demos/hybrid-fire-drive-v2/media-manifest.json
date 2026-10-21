@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifacts": [
+    {
+      "path": "index.html",
+      "bytes": 13485,
+      "sha256": "06dab0871dba098e7c3b82621445800ca7373d6d141d019003acb8a465edae95"
+    },
+    {
+      "path": "route-suggestion.json",
+      "bytes": 8555,
+      "sha256": "f31324c812b7fe431ff8c4ea7b5fd3f49f874edf9c5e906b53edb6903668f9ea"
+    },
+    {
+      "path": "alignment-evidence.json",
+      "bytes": 4837,
+      "sha256": "5065bf0cb3307e33f1e183011fb39b4e1d9d693ce5d6ca045f474407159a3f1c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1730,
+      "sha256": "646b2cbe8082c292529c36140b2d562e545e2ed4c47c5dc3f3051e95df33a087"
+    },
+    {
+      "path": "alignment-plan.png",
+      "bytes": 61305,
+      "sha256": "9bffd966a781ef63fba2b6174f0c028ccf2860f582495ccb0e3be09494fc70de"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1415,
+      "sha256": "d9c057fdffe69f1e08ea64be420393a5521d78a8e8df12680795f9f12c18fdf2"
+    },
+    {
+      "path": "../../previews/hybrid-alignment.jpg",
+      "bytes": 66487,
+      "sha256": "a81d92975157e7e634123a88b628212ee7857abcf7d4e3684dcd3e1039c2326f"
+    }
+  ]
+}

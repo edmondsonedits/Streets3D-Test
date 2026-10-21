@@ -6,6 +6,8 @@ The shared destination for Peterborough street experiments and future playable t
 
 ## Current tests
 
+- [Ford/Duffus local alignment preview](https://edmondsonedits.github.io/Streets3D-Test/demos/hybrid-fire-drive-v2/): two-building placement with a drivable mapped road. The full block still fails alignment; [measured evidence](site/demos/hybrid-fire-drive-v2/alignment-evidence.json) and [map/trajectory plot](site/demos/hybrid-fire-drive-v2/alignment-plan.png).
+
 - [New Romaine fire-truck / Gaussian lab](https://edmondsonedits.github.io/Streets3D-Test/demos/hybrid-fire-drive-v1/): terrain-following roads, building collision, the Map Game pumper, chase/driver-eye/free cameras and optional Gaussian scenery. [Architecture, workflow and remaining gates](site/demos/hybrid-fire-drive-v1/README.md). Gaussian registration is still unverified; source quality is unchanged.
 
 - [Sherbrooke reference-built block](https://edmondsonedits.github.io/Streets3D-Test/demos/sherbrooke-reference-v1/): both sides of the Aylmer–George block, with 19 map-derived building footprints, footage-informed 3D details, a baseline toggle and source-photo inspector. See [method and limitations](docs/SHERBROOKE-REFERENCE-BLOCK.md).

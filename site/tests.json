@@ -3,6 +3,19 @@
   "title": "Streets3D Test Lab",
   "tests": [
     {
+      "id": "hybrid-fire-drive-v2",
+      "title": "Ford/Duffus · local Gaussian alignment preview",
+      "category": "Hybrid driving",
+      "date": "2026-10-21",
+      "version": "2",
+      "status": "prototype",
+      "url": "demos/hybrid-fire-drive-v2/",
+      "preview": "previews/hybrid-alignment.jpg",
+      "description": "Provisional two-building placement at the signed Duffus/Ford intersection, with a mapped-road fire truck and overlap controls.",
+      "controls": "WASD / arrows · C cab/chase · Hybrid/Map/Splat · building visibility · R recover",
+      "limitation": "LOCAL PREVIEW ONLY. Two fit controls and no independent checks. The current placement misses Brown/Ford by27–32m. Existing reconstruction quality is unchanged."
+    },
+    {
       "id": "hybrid-fire-drive-v1",
       "title": "New Romaine · fire truck + Gaussian lab",
       "category": "Hybrid driving",

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-21",
+  "scope": "Actual local in-app browser; live deployment separately verified after push",
+  "result": "Playable local placement preview; full-block alignment NOT achieved",
+  "checksPassed": [
+    "Actual1.5M-SOG and pinned detailed pumper loaded and visually inspected.",
+    "Keyboard drive24m through signed Duffus/Ford area with4/4 paved contacts; chase and cab views inspected.",
+    "Phone390x844 held touch throttle1.4s:19km/h, about5m additional movement, four contacts. Emulated, not physical hardware.",
+    "Map-building visibility toggled independently of collisions; opacity1 inspected.",
+    "Pure regression: two controls remain below the3-fit/2-check gate; safe Ford start drives>30m with4contacts and no building collision.",
+    "Saved/imported transform restore preserves failed-check evidence and local inspection camera.",
+    "Actual map/trajectory plot inspected: both capture passes disagree with wider mapped road topology."
+  ],
+  "notVerified": [
+    "Independent landmark identity/accuracy or surveyed scale and height.",
+    "Whole-block or complete half-block geographic alignment.",
+    "Improved Gaussian reconstruction quality, realistic off-path scenery or physical-phone performance."
+  ],
+  "previewOrigin": "Genuine browser screenshot, resized to960x540 and JPEG compressed only. No generative content or geometry editing.",
+  "modelUnchanged": true
+}
