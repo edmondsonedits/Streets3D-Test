@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "reviewedAt": "2026-10-20",
-  "snapshotCommit": "726cb5103b566d91228bad9ab50750f81931f03d",
+  "snapshotCommit": "3910d2c33dc1eb28ea870cabf5cac99d6be7ec43",
   "rubric": [
     {
       "id": "along",
       "label": "Along-road clarity",
       "weight": 20,
-      "description": "Can houses, intersections and road edges be understood while advancing? Review the first six seconds; no real-time frame-rate claim.",
+      "description": "Can houses, intersections and road edges be understood while advancing? Review the route segment; no real-time frame-rate claim.",
       "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
       "kind": "evidence-linked reviewer judgment",
       "dimension": "visual"
@@ -16,7 +16,7 @@
       "id": "lateral",
       "label": "Side-to-side stability",
       "weight": 20,
-      "description": "Do facades and poles stay coherent when leaving the capture path? Review seconds 6–10. This is relative view consistency, not surveyed geometry.",
+      "description": "Do facades and poles stay coherent when leaving the capture path? Review the lateral segment. This is relative view consistency, not surveyed geometry.",
       "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
       "kind": "evidence-linked reviewer judgment",
       "dimension": "visual"
@@ -25,7 +25,7 @@
       "id": "detail",
       "label": "Detail sharpness",
       "weight": 10,
-      "description": "Roof edges, windows, signs and porch detail in the unenhanced browser samples. This is a 960×540 delivery review, not a native-resolution contest.",
+      "description": "Roof edges, windows, signs and porch detail in the unenhanced reviewed images. Native/browser delivery differs; resolution alone earns no extra point.",
       "anchors": "Reviewer anchors: 0 unusable; 2 severe defects; 5 recognizable prototype with obvious defects; 8 mostly clear/stable in reviewed views; 10 close to source quality throughout. Intermediate integers are judgments, not calibrated measurements.",
       "kind": "evidence-linked reviewer judgment",
       "dimension": "visual"
@@ -95,7 +95,7 @@
     }
   ],
   "methodology": {
-    "scope": "Revised rubric: useful quality and efficiency, not smallest file or shortest run. The ten category weights total 100. Current records support five visual judgments (65% of the intended rubric), but not a complete efficiency score. The visible ranking is visual-only.",
+    "scope": "28 visual results: 21 published interactive models plus seven scored native-render previews. Scores judge recognizable road/facade views, lateral stability, detail, artifacts and completeness. Different capture scopes and native/browser render paths limit cross-group conclusions; this is an editorial result ranking, not an algorithm benchmark.",
     "formula": "Visual score = round(100 × earned visual points / 65). A complete overall score is sum(score / 10 × weight), rounded, ONLY when all ten categories have comparable evidence. Unknown categories remain null; they are neither zero nor neutral points.",
     "unknownPolicy": "No placeholder ratings. Missing verified accepted distance, complete timing, human labor or controlled performance prevents a full quality-and-efficiency total. Five visual categories are currently assessed; the other five say Not scored. The old combined rankings are withdrawn, not directly comparable with these visual-only scores.",
     "comparisonLimits": [
@@ -106,9 +106,12 @@
       "Visual scores remain editorial judgments backed by examples. Different camera routes, scene complexity and capture conditions limit cross-capture ranking; prefer matched views to infer method effects.",
       "The browser cost proxy and evidence-quality bonus were removed. Splat count, records and confidence stay as facts; they no longer add points for quality or performance.",
       "The 8 fps review clips cannot establish live frame pacing or high-frequency flicker. Real-time runtime and startup need dedicated controlled measurements; physical-phone behavior is unmeasured.",
-      "Packaging remains part of delivery cost. Compare equivalent exported quality/SH/LOD and unique usable extent; report PLY/SOG differences rather than attributing all savings to training."
+      "Packaging remains part of delivery cost. Compare equivalent exported quality/SH/LOD and unique usable extent; report PLY/SOG differences rather than attributing all savings to training.",
+      "Seven native-render-only results are now included. Their interactive assets and runtime/startup are untested; no Explore link is implied. Existing 21 category scores are preserved, but ranks shift when new results are inserted.",
+      "New one-side patches omit the opposite facade band; hybrid route black regions lower completeness. Narrower coverage is not treated as a better full-street workflow.",
+      "Four new one-side variants tie at 50/100. Hybrid 5K/12K tie at 46/100. Small inconsistent texture differences do not justify fine-grained winners."
     ],
-    "previewProtocol": "Each model has a 960×540, 75° field-of-view, 80-frame review encoded at 8 fps: 0–6s along the route, 6–10s lateral. Review duration is not capture duration. Eight labelled samples plus 1:1 center crops support the written observations. No enhancement was applied. Review paths match within the original-turn, A/B, construction and residential review groups; MRNF is a separate review path; original-turn/MRNF lateral offsets are arbitrary reconstruction units, not measured lane widths. Compressed previews and sparse sampling cannot measure high-frequency flicker or live performance.",
+    "previewProtocol": "Existing 21 reviews: 960x540, 8 fps, 10 seconds (0-6s route, 6-10s lateral). New seven: original native 1152x648 frames sampled at start/middle/end of route and lateral clips, plus native motion excerpts and archived review observations. Web MP4s are compact previews; paired hybrid outputs use 2304x696 originals. No live-FPS, fine-flicker or off-path ground-truth metric is claimed.",
     "coverageExample": "Example only: 1,000 usable metres at 500 MB = 50 MB/100 m. 500 usable metres at 200 MB = 40 MB/100 m: 20% less storage per equal length, or 25% more length per MB. Equal required quality and viewpoint coverage are prerequisites.",
     "acceptanceProtocol": [
       "Define the required street section and supported driving corridor before comparing: both sides, forward views and lateral offsets, with the same displayed resolution.",
@@ -1358,12 +1361,736 @@
       }
     },
     {
+      "id": "residential-nativefisheye-validseeds-2048",
+      "title": "Native fisheye 2K: valid seeds",
+      "publicationType": "native-render-preview",
+      "group": "validseed-native",
+      "groupLabel": "Projection: matched valid-seed pair",
+      "total": null,
+      "rank": 7,
+      "visualTotal": 32.5,
+      "visualScore": 50,
+      "assessedWeight": 65,
+      "assessedCategories": 5,
+      "confidence": "Moderate within matched native pair; limited across different captures/renderers",
+      "verdict": "Recognizable house-side views; tied prototype, not an off-path fix.",
+      "bestFor": "Recognizing the observed houses in this partial diagnostic patch",
+      "mainIssue": "One physical street-side patch across two capture passes; 24s route and three separate 4s lateral sweeps. No completed road or block. Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 0, 12 and 23.97s: the white/grey houses, sidewalk and street direction are readily recognizable. The road, close trees and near-car region still smear during advancement.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native lateral 0, 6 and 11.97s: the observed facade shapes remain readable, while porch, roof and tree boundaries still deform or turn translucent. Direct native-fisheye projection with valid seeds does not remove those defects.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 12s and lateral 11.97s: roof shingles, window outlines and siding show useful prototype detail, but fine porch/branch detail remains soft or doubled. The matched peer is in the same detail grade.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 23.97s shows a dark floating near-road patch; lateral 0 and 6s retain stretched foliage, wire-like streaks and smeared shadows. These large defects survive native rendering.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "The observed house-side strip is connected in the sampled views, but the opposite facade band and a complete road corridor are unsupported. One street side cannot earn the broader patch completeness grade.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": null,
+          "basis": "not scored",
+          "reason": "No interactive model package for this result is published, and accepted unique metres are unmeasured. Native PLY bytes and MP4 size do not establish comparable storage efficiency.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": null,
+          "basis": "not scored",
+          "reason": "The recorded duration covers training plus internal evaluation only. Full pipeline time and accepted unique metres are unknown, so the shorter run earns no efficiency points.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": null,
+          "basis": "not scored",
+          "reason": "Human setup, correction and review time was not logged comparably. No neutral or inferred labor points are awarded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "runtime",
+          "score": null,
+          "basis": "not scored",
+          "reason": "A prerecorded native video cannot measure interactive frame time, stalls or device performance; no controlled live benchmark is available.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "startup",
+          "score": null,
+          "basis": "not scored",
+          "reason": "This result is a native-render preview without a published interactive model or controlled cold-load benchmark. No startup score can be inferred.",
+          "evidenceIds": [
+            "record"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": null,
+        "splats": 500000,
+        "trainingSeconds": 564.7164478302002,
+        "timeScope": "Training plus internal evaluation; preparation, solving, native export and review excluded.",
+        "images": 60,
+        "maxWidth": 2048,
+        "humanHours": null,
+        "effortNote": "No comparable human-effort or accepted-metre measurement; no efficiency points."
+      },
+      "evidence": [
+        {
+          "id": "sheet",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-nativefisheye-validseeds-2048-review.jpg",
+          "label": "Six timestamped native movement samples",
+          "note": "Three route frames (top) and three lateral frames (bottom), sampled at start/middle/end. Native images reduced without sharpening. Sweeps may contain cuts; frames alone are not a temporal benchmark."
+        },
+        {
+          "id": "poster",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-nativefisheye-validseeds-2048.jpg",
+          "label": "Native interpolated camera view: anchor 1, back view, halfway between paths",
+          "note": "Actual native interpolated view, not a source photo. No ground-truth image exists here."
+        },
+        {
+          "id": "route",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-nativefisheye-validseeds-2048-route.mp4",
+          "label": "Road traverse",
+          "note": "24s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "lateral",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-nativefisheye-validseeds-2048-lateral.mp4",
+          "label": "Lateral movement",
+          "note": "12s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "record",
+          "kind": "json",
+          "url": "ratings/records/residential-nativefisheye-validseeds-2048.json",
+          "label": "Review scores, native model identity and source hashes",
+          "note": "AI-assisted visual review; original native frames and videos remain in the local archive."
+        }
+      ],
+      "comparisons": [
+        "Tied at 50/100 with Perspective 2K: valid seeds: visible differences do not support a whole category point or a controlled method winner.",
+        "A modest visual advantage over the older residential 47-48/100 group comes from the more coherent observed house-side views. The smaller supported extent reduces completeness; this is not proof of a better full-street reconstruction.",
+        "Below the 57/100 construction group and 60-63/100 corner group: those reviewed results retain stronger road/facade continuity. Different scenes and review paths prevent a causal algorithm comparison."
+      ],
+      "efficiency": {
+        "acceptedUniqueMetres": null,
+        "coverageAcceptanceFraction": null,
+        "storageMBPer100Metres": null,
+        "pipelineMinutesPer100Metres": null,
+        "humanMinutesPer100Metres": null,
+        "runtimeFrameMsP95": null,
+        "coldLoadSeconds": null,
+        "status": "Not established: metric accepted coverage and controlled cost/performance measurements are missing."
+      }
+    },
+    {
+      "id": "residential-oneside-commoncenter",
+      "title": "One street side: common camera centre",
+      "publicationType": "native-render-preview",
+      "group": "one-side-native",
+      "groupLabel": "One-side: camera-centre pair",
+      "total": null,
+      "rank": 7,
+      "visualTotal": 32.5,
+      "visualScore": 50,
+      "assessedWeight": 65,
+      "assessedCategories": 5,
+      "confidence": "Moderate within matched native pair; limited across different captures/renderers",
+      "verdict": "Recognizable house-side views; tied prototype, not an off-path fix.",
+      "bestFor": "Recognizing the observed houses in this partial diagnostic patch",
+      "mainIssue": "One physical street-side patch across two capture passes; 24s route and three separate 4s lateral sweeps. No completed road or block. Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 0, 12 and 23.97s: the white/grey houses, sidewalk and street direction are readily recognizable. The road, close trees and near-car region still smear during advancement.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native lateral 0, 6 and 11.97s: the observed facade shapes remain readable, while porch, roof and tree boundaries still deform or turn translucent. The common-centre constraint does not remove those defects.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 12s and lateral 11.97s: roof shingles, window outlines and siding show useful prototype detail, but fine porch/branch detail remains soft or doubled. The matched peer is in the same detail grade.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 23.97s shows a dark floating near-road patch; lateral 0 and 6s retain stretched foliage, wire-like streaks and smeared shadows. These large defects survive native rendering.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "The observed house-side strip is connected in the sampled views, but the opposite facade band and a complete road corridor are unsupported. One street side cannot earn the broader patch completeness grade.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": null,
+          "basis": "not scored",
+          "reason": "No interactive model package for this result is published, and accepted unique metres are unmeasured. Native PLY bytes and MP4 size do not establish comparable storage efficiency.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": null,
+          "basis": "not scored",
+          "reason": "The recorded duration covers training plus internal evaluation only. Full pipeline time and accepted unique metres are unknown, so the shorter run earns no efficiency points.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": null,
+          "basis": "not scored",
+          "reason": "Human setup, correction and review time was not logged comparably. No neutral or inferred labor points are awarded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "runtime",
+          "score": null,
+          "basis": "not scored",
+          "reason": "A prerecorded native video cannot measure interactive frame time, stalls or device performance; no controlled live benchmark is available.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "startup",
+          "score": null,
+          "basis": "not scored",
+          "reason": "This result is a native-render preview without a published interactive model or controlled cold-load benchmark. No startup score can be inferred.",
+          "evidenceIds": [
+            "record"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": null,
+        "splats": 500000,
+        "trainingSeconds": 259.9687604904175,
+        "timeScope": "Training plus internal evaluation; preparation, solving, native export and review excluded.",
+        "images": 120,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "No comparable human-effort or accepted-metre measurement; no efficiency points."
+      },
+      "evidence": [
+        {
+          "id": "sheet",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-oneside-commoncenter-review.jpg",
+          "label": "Six timestamped native movement samples",
+          "note": "Three route frames (top) and three lateral frames (bottom), sampled at start/middle/end. Native images reduced without sharpening. Sweeps may contain cuts; frames alone are not a temporal benchmark."
+        },
+        {
+          "id": "poster",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-oneside-commoncenter.jpg",
+          "label": "Native interpolated camera view: anchor 1, back view, halfway between paths",
+          "note": "Actual native interpolated view, not a source photo. No ground-truth image exists here."
+        },
+        {
+          "id": "route",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-oneside-commoncenter-route.mp4",
+          "label": "Road traverse",
+          "note": "24s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "lateral",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-oneside-commoncenter-lateral.mp4",
+          "label": "Lateral movement",
+          "note": "12s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "record",
+          "kind": "json",
+          "url": "ratings/records/residential-oneside-commoncenter.json",
+          "label": "Review scores, native model identity and source hashes",
+          "note": "AI-assisted visual review; original native frames and videos remain in the local archive."
+        }
+      ],
+      "comparisons": [
+        "Tied at 50/100 with One street side: unrigged cameras: visible differences do not support a whole category point or a controlled method winner.",
+        "A modest visual advantage over the older residential 47-48/100 group comes from the more coherent observed house-side views. The smaller supported extent reduces completeness; this is not proof of a better full-street reconstruction.",
+        "Below the 57/100 construction group and 60-63/100 corner group: those reviewed results retain stronger road/facade continuity. Different scenes and review paths prevent a causal algorithm comparison."
+      ],
+      "efficiency": {
+        "acceptedUniqueMetres": null,
+        "coverageAcceptanceFraction": null,
+        "storageMBPer100Metres": null,
+        "pipelineMinutesPer100Metres": null,
+        "humanMinutesPer100Metres": null,
+        "runtimeFrameMsP95": null,
+        "coldLoadSeconds": null,
+        "status": "Not established: metric accepted coverage and controlled cost/performance measurements are missing."
+      }
+    },
+    {
+      "id": "residential-oneside-unrigged",
+      "title": "One street side: unrigged cameras",
+      "publicationType": "native-render-preview",
+      "group": "one-side-native",
+      "groupLabel": "One-side: camera-centre pair",
+      "total": null,
+      "rank": 7,
+      "visualTotal": 32.5,
+      "visualScore": 50,
+      "assessedWeight": 65,
+      "assessedCategories": 5,
+      "confidence": "Moderate within matched native pair; limited across different captures/renderers",
+      "verdict": "Recognizable house-side views; tied prototype, not an off-path fix.",
+      "bestFor": "Recognizing the observed houses in this partial diagnostic patch",
+      "mainIssue": "One physical street-side patch across two capture passes; 24s route and three separate 4s lateral sweeps. No completed road or block. Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 0, 12 and 23.97s: the white/grey houses, sidewalk and street direction are readily recognizable. The road, close trees and near-car region still smear during advancement.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native lateral 0, 6 and 11.97s: the observed facade shapes remain readable, while porch, roof and tree boundaries still deform or turn translucent. Independent camera centres does not remove those defects.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 12s and lateral 11.97s: roof shingles, window outlines and siding show useful prototype detail, but fine porch/branch detail remains soft or doubled. The matched peer is in the same detail grade.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 23.97s shows a dark floating near-road patch; lateral 0 and 6s retain stretched foliage, wire-like streaks and smeared shadows. These large defects survive native rendering.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "The observed house-side strip is connected in the sampled views, but the opposite facade band and a complete road corridor are unsupported. One street side cannot earn the broader patch completeness grade.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": null,
+          "basis": "not scored",
+          "reason": "No interactive model package for this result is published, and accepted unique metres are unmeasured. Native PLY bytes and MP4 size do not establish comparable storage efficiency.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": null,
+          "basis": "not scored",
+          "reason": "The recorded duration covers training plus internal evaluation only. Full pipeline time and accepted unique metres are unknown, so the shorter run earns no efficiency points.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": null,
+          "basis": "not scored",
+          "reason": "Human setup, correction and review time was not logged comparably. No neutral or inferred labor points are awarded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "runtime",
+          "score": null,
+          "basis": "not scored",
+          "reason": "A prerecorded native video cannot measure interactive frame time, stalls or device performance; no controlled live benchmark is available.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "startup",
+          "score": null,
+          "basis": "not scored",
+          "reason": "This result is a native-render preview without a published interactive model or controlled cold-load benchmark. No startup score can be inferred.",
+          "evidenceIds": [
+            "record"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": null,
+        "splats": 500000,
+        "trainingSeconds": 265.9136788845062,
+        "timeScope": "Training plus internal evaluation; preparation, solving, native export and review excluded.",
+        "images": 120,
+        "maxWidth": 1024,
+        "humanHours": null,
+        "effortNote": "No comparable human-effort or accepted-metre measurement; no efficiency points."
+      },
+      "evidence": [
+        {
+          "id": "sheet",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-oneside-unrigged-review.jpg",
+          "label": "Six timestamped native movement samples",
+          "note": "Three route frames (top) and three lateral frames (bottom), sampled at start/middle/end. Native images reduced without sharpening. Sweeps may contain cuts; frames alone are not a temporal benchmark."
+        },
+        {
+          "id": "poster",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-oneside-unrigged.jpg",
+          "label": "Native interpolated camera view: anchor 1, back view, halfway between paths",
+          "note": "Actual native interpolated view, not a source photo. No ground-truth image exists here."
+        },
+        {
+          "id": "route",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-oneside-unrigged-route.mp4",
+          "label": "Road traverse",
+          "note": "24s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "lateral",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-oneside-unrigged-lateral.mp4",
+          "label": "Lateral movement",
+          "note": "12s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "record",
+          "kind": "json",
+          "url": "ratings/records/residential-oneside-unrigged.json",
+          "label": "Review scores, native model identity and source hashes",
+          "note": "AI-assisted visual review; original native frames and videos remain in the local archive."
+        }
+      ],
+      "comparisons": [
+        "Tied at 50/100 with One street side: common camera centre: visible differences do not support a whole category point or a controlled method winner.",
+        "A modest visual advantage over the older residential 47-48/100 group comes from the more coherent observed house-side views. The smaller supported extent reduces completeness; this is not proof of a better full-street reconstruction.",
+        "Below the 57/100 construction group and 60-63/100 corner group: those reviewed results retain stronger road/facade continuity. Different scenes and review paths prevent a causal algorithm comparison."
+      ],
+      "efficiency": {
+        "acceptedUniqueMetres": null,
+        "coverageAcceptanceFraction": null,
+        "storageMBPer100Metres": null,
+        "pipelineMinutesPer100Metres": null,
+        "humanMinutesPer100Metres": null,
+        "runtimeFrameMsP95": null,
+        "coldLoadSeconds": null,
+        "status": "Not established: metric accepted coverage and controlled cost/performance measurements are missing."
+      }
+    },
+    {
+      "id": "residential-perspective-validseeds-2048",
+      "title": "Perspective 2K: valid seeds",
+      "publicationType": "native-render-preview",
+      "group": "validseed-native",
+      "groupLabel": "Projection: matched valid-seed pair",
+      "total": null,
+      "rank": 7,
+      "visualTotal": 32.5,
+      "visualScore": 50,
+      "assessedWeight": 65,
+      "assessedCategories": 5,
+      "confidence": "Moderate within matched native pair; limited across different captures/renderers",
+      "verdict": "Recognizable house-side views; tied prototype, not an off-path fix.",
+      "bestFor": "Recognizing the observed houses in this partial diagnostic patch",
+      "mainIssue": "One physical street-side patch across two capture passes; 24s route and three separate 4s lateral sweeps. No completed road or block. Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 0, 12 and 23.97s: the white/grey houses, sidewalk and street direction are readily recognizable. The road, close trees and near-car region still smear during advancement.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native lateral 0, 6 and 11.97s: the observed facade shapes remain readable, while porch, roof and tree boundaries still deform or turn translucent. Perspective projection with valid seeds does not remove those defects.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 12s and lateral 11.97s: roof shingles, window outlines and siding show useful prototype detail, but fine porch/branch detail remains soft or doubled. The matched peer is in the same detail grade.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 23.97s shows a dark floating near-road patch; lateral 0 and 6s retain stretched foliage, wire-like streaks and smeared shadows. These large defects survive native rendering.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "The observed house-side strip is connected in the sampled views, but the opposite facade band and a complete road corridor are unsupported. One street side cannot earn the broader patch completeness grade.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": null,
+          "basis": "not scored",
+          "reason": "No interactive model package for this result is published, and accepted unique metres are unmeasured. Native PLY bytes and MP4 size do not establish comparable storage efficiency.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": null,
+          "basis": "not scored",
+          "reason": "The recorded duration covers training plus internal evaluation only. Full pipeline time and accepted unique metres are unknown, so the shorter run earns no efficiency points.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": null,
+          "basis": "not scored",
+          "reason": "Human setup, correction and review time was not logged comparably. No neutral or inferred labor points are awarded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "runtime",
+          "score": null,
+          "basis": "not scored",
+          "reason": "A prerecorded native video cannot measure interactive frame time, stalls or device performance; no controlled live benchmark is available.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "startup",
+          "score": null,
+          "basis": "not scored",
+          "reason": "This result is a native-render preview without a published interactive model or controlled cold-load benchmark. No startup score can be inferred.",
+          "evidenceIds": [
+            "record"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": null,
+        "splats": 500000,
+        "trainingSeconds": 734.2867040634155,
+        "timeScope": "Training plus internal evaluation; preparation, solving, native export and review excluded.",
+        "images": 120,
+        "maxWidth": 2048,
+        "humanHours": null,
+        "effortNote": "No comparable human-effort or accepted-metre measurement; no efficiency points."
+      },
+      "evidence": [
+        {
+          "id": "sheet",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-perspective-validseeds-2048-review.jpg",
+          "label": "Six timestamped native movement samples",
+          "note": "Three route frames (top) and three lateral frames (bottom), sampled at start/middle/end. Native images reduced without sharpening. Sweeps may contain cuts; frames alone are not a temporal benchmark."
+        },
+        {
+          "id": "poster",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-perspective-validseeds-2048.jpg",
+          "label": "Native interpolated camera view: anchor 1, back view, halfway between paths",
+          "note": "Actual native interpolated view, not a source photo. No ground-truth image exists here."
+        },
+        {
+          "id": "route",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-perspective-validseeds-2048-route.mp4",
+          "label": "Road traverse",
+          "note": "24s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "lateral",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-perspective-validseeds-2048-lateral.mp4",
+          "label": "Lateral movement",
+          "note": "12s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "record",
+          "kind": "json",
+          "url": "ratings/records/residential-perspective-validseeds-2048.json",
+          "label": "Review scores, native model identity and source hashes",
+          "note": "AI-assisted visual review; original native frames and videos remain in the local archive."
+        }
+      ],
+      "comparisons": [
+        "Tied at 50/100 with Native fisheye 2K: valid seeds: visible differences do not support a whole category point or a controlled method winner.",
+        "A modest visual advantage over the older residential 47-48/100 group comes from the more coherent observed house-side views. The smaller supported extent reduces completeness; this is not proof of a better full-street reconstruction.",
+        "Below the 57/100 construction group and 60-63/100 corner group: those reviewed results retain stronger road/facade continuity. Different scenes and review paths prevent a causal algorithm comparison."
+      ],
+      "efficiency": {
+        "acceptedUniqueMetres": null,
+        "coverageAcceptanceFraction": null,
+        "storageMBPer100Metres": null,
+        "pipelineMinutesPer100Metres": null,
+        "humanMinutesPer100Metres": null,
+        "runtimeFrameMsP95": null,
+        "coldLoadSeconds": null,
+        "status": "Not established: metric accepted coverage and controlled cost/performance measurements are missing."
+      }
+    },
+    {
       "id": "quality-cleaned",
       "title": "Turn & street · cleanup comparison",
       "group": "original-turn",
       "groupLabel": "Original turn: matched cameras",
       "total": null,
-      "rank": 7,
+      "rank": 11,
       "visualTotal": 32.0,
       "confidence": "Limited",
       "verdict": "No clear visual gain from cleanup.",
@@ -1554,7 +2281,7 @@
       "group": "original-turn",
       "groupLabel": "Original turn: matched cameras",
       "total": null,
-      "rank": 7,
+      "rank": 11,
       "visualTotal": 32.0,
       "confidence": "Limited",
       "verdict": "Cleaner than the baseline; sideways smears remain.",
@@ -1745,7 +2472,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 9,
+      "rank": 13,
       "visualTotal": 31.5,
       "confidence": "Moderate within group",
       "verdict": "Very fast training; regularization does not fix lateral blur.",
@@ -1965,7 +2692,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 9,
+      "rank": 13,
       "visualTotal": 31.5,
       "confidence": "Moderate within group",
       "verdict": "Fast control; clear house shapes, unstable nearby detail.",
@@ -2198,7 +2925,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 9,
+      "rank": 13,
       "visualTotal": 31.5,
       "confidence": "Limited",
       "verdict": "A little more detail; 2K does not fix the geometry.",
@@ -2399,12 +3126,192 @@
       }
     },
     {
+      "id": "residential-gut-common-center-2048-share1",
+      "title": "Common centre 2K: shared lens calibration",
+      "publicationType": "native-render-preview",
+      "group": "residential",
+      "groupLabel": "Residential: matched regional views",
+      "total": null,
+      "rank": 13,
+      "visualTotal": 31.5,
+      "visualScore": 48,
+      "assessedWeight": 65,
+      "assessedCategories": 5,
+      "confidence": "Moderate within matched native pair; limited across different captures/renderers",
+      "verdict": "Shared calibration: no clear gain over common-centre 2K.",
+      "bestFor": "Recognizing the observed houses in this partial diagnostic patch",
+      "mainIssue": "Two-pass residential patch; both facade directions were reviewed. Not a completed road or block. Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 0, 12 and 23.97s: the street and houses remain recognizable, but near trees and road shadows soften and smear as the view advances.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 4,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native lateral 0, 12 and 23.97s: porch, roof and foliage boundaries stretch or become translucent. Sharing lens calibration does not visibly stabilize the common-centre 2K control.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native lateral 12 and 23.97s: shingles, windows and siding retain useful coarse detail, with blurred porch and roof boundaries. No consistent extra detail over the 2K control merits a higher grade.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "Native route 12s and lateral 23.97s: the road/driveway smear, floating foliage and dark near-vehicle areas remain conspicuous.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Both facade bands appear across the sampled patch, but road and occluded areas remain incomplete. Connected local views do not establish complete street coverage.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": null,
+          "basis": "not scored",
+          "reason": "No interactive model package for this result is published, and accepted unique metres are unmeasured. Native PLY bytes and MP4 size do not establish comparable storage efficiency.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": null,
+          "basis": "not scored",
+          "reason": "The recorded duration covers training plus internal evaluation only. Full pipeline time and accepted unique metres are unknown, so the shorter run earns no efficiency points.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": null,
+          "basis": "not scored",
+          "reason": "Human setup, correction and review time was not logged comparably. No neutral or inferred labor points are awarded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "runtime",
+          "score": null,
+          "basis": "not scored",
+          "reason": "A prerecorded native video cannot measure interactive frame time, stalls or device performance; no controlled live benchmark is available.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "startup",
+          "score": null,
+          "basis": "not scored",
+          "reason": "This result is a native-render preview without a published interactive model or controlled cold-load benchmark. No startup score can be inferred.",
+          "evidenceIds": [
+            "record"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": null,
+        "splats": 500000,
+        "trainingSeconds": 902.6768763065338,
+        "timeScope": "Training plus internal evaluation; preparation, solving, native export and review excluded.",
+        "images": 240,
+        "maxWidth": 2048,
+        "humanHours": null,
+        "effortNote": "No comparable human-effort or accepted-metre measurement; no efficiency points."
+      },
+      "evidence": [
+        {
+          "id": "sheet",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-gut-common-center-2048-share1-review.jpg",
+          "label": "Six timestamped native movement samples",
+          "note": "Three route frames (top) and three lateral frames (bottom), sampled at start/middle/end. Native images reduced without sharpening. Sweeps may contain cuts; frames alone are not a temporal benchmark."
+        },
+        {
+          "id": "poster",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-gut-common-center-2048-share1.jpg",
+          "label": "Native interpolated camera view: anchor 1, back view, halfway between paths",
+          "note": "Actual native interpolated view, not a source photo. No ground-truth image exists here."
+        },
+        {
+          "id": "route",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-gut-common-center-2048-share1-route.mp4",
+          "label": "Road traverse",
+          "note": "24s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "lateral",
+          "kind": "native",
+          "url": "ratings/native-updates/residential-gut-common-center-2048-share1-lateral.mp4",
+          "label": "Lateral movement",
+          "note": "24s recorded native motion; compact web copy, not live performance. Physical street-side scope is limited as stated."
+        },
+        {
+          "id": "record",
+          "kind": "json",
+          "url": "ratings/records/residential-gut-common-center-2048-share1.json",
+          "label": "Review scores, native model identity and source hashes",
+          "note": "AI-assisted visual review; original native frames and videos remain in the local archive."
+        }
+      ],
+      "comparisons": [
+        "Same selected residential extent as common-centre 2K (48/100). The five visual category grades remain tied: shared calibration is not a visible solution to lateral instability.",
+        "Compared with the older residential group, this retains the same recognizable houses and the same dominant near-road/foliage failure modes."
+      ],
+      "efficiency": {
+        "acceptedUniqueMetres": null,
+        "coverageAcceptanceFraction": null,
+        "storageMBPer100Metres": null,
+        "pipelineMinutesPer100Metres": null,
+        "humanMinutesPer100Metres": null,
+        "runtimeFrameMsP95": null,
+        "coldLoadSeconds": null,
+        "status": "Not established: metric accepted coverage and controlled cost/performance measurements are missing."
+      }
+    },
+    {
       "id": "residential-priors-depth",
       "title": "Residential · depth prior",
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 9,
+      "rank": 13,
       "visualTotal": 31.5,
       "confidence": "Moderate within group",
       "verdict": "Depth prior does not resolve porch/road distortions.",
@@ -2623,7 +3530,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 9,
+      "rank": 13,
       "visualTotal": 31.5,
       "confidence": "Moderate within group",
       "verdict": "Normal prior does not anchor the facades reliably.",
@@ -2842,7 +3749,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 9,
+      "rank": 13,
       "visualTotal": 31.5,
       "confidence": "Moderate within group",
       "verdict": "Useful control; priors variants are not clear fixes.",
@@ -3089,7 +3996,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 15,
+      "rank": 20,
       "visualTotal": 30.5,
       "confidence": "Limited",
       "verdict": "Shared camera center still leaves haze and road holes.",
@@ -3294,7 +4201,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 15,
+      "rank": 20,
       "visualTotal": 30.5,
       "confidence": "Moderate within group",
       "verdict": "Fast baseline with strong sideways smearing.",
@@ -3541,7 +4448,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 15,
+      "rank": 20,
       "visualTotal": 30.5,
       "confidence": "Moderate within group",
       "verdict": "Better source metrics; lateral defects remain.",
@@ -3761,7 +4668,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 15,
+      "rank": 20,
       "visualTotal": 30.5,
       "confidence": "Moderate within group",
       "verdict": "Extra shadow masks show no clear visual payoff.",
@@ -3981,7 +4888,7 @@
       "group": "residential",
       "groupLabel": "Residential: matched regional views",
       "total": null,
-      "rank": 15,
+      "rank": 20,
       "visualTotal": 30.5,
       "confidence": "Moderate within group",
       "verdict": "Both priors still leave conspicuous dark road artifacts.",
@@ -4196,12 +5103,374 @@
       }
     },
     {
+      "id": "residential-perspective-hybrid-12k-2048",
+      "title": "Perspective hybrid: 12K steps",
+      "publicationType": "native-render-preview",
+      "group": "hybrid-native",
+      "groupLabel": "Hybrid: matched 5K / 12K native renders",
+      "total": null,
+      "rank": 25,
+      "visualTotal": 30.0,
+      "visualScore": 46,
+      "assessedWeight": 65,
+      "assessedCategories": 5,
+      "confidence": "Moderate within matched native pair; limited across different captures/renderers",
+      "verdict": "5K and 12K tie: readable facades, large missing road-side regions.",
+      "bestFor": "Recognizing the observed houses in this partial diagnostic patch",
+      "mainIssue": "One physical street-side partial patch. Both route videos expose a large unsupported black region; three independent lateral sweeps have cuts. Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Paired native route 0, 6 and 11.97s: the observed houses and street direction are recognizable, but a large black unsupported region occupies much of the moving view. This is not a clean road traverse.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Paired native lateral 0, 6 and 11.97s: house shapes stay more recognizable than in the older full residential patch, but tree, window and porch boundaries still haze or stretch. The extended profile earns no defensible whole-point stability gain.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "The right-hand 12K native view contains some crisper roof/porch texture than the 5K view, but window and vegetation smearing persists. The difference is too small and inconsistent for another whole detail point.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "Paired lateral samples retain translucent foliage, smeared road shadows and dark near-vehicle holes. More training does not remove the dominant defects; unsupported route views are not treated as recovered facades.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 2,
+          "basis": "native-render reviewer judgment",
+          "reason": "Only one physical facade band and a partial corridor are supported. Large black route regions are an explicit completeness failure for free street exploration; neither run supplies both sides or a completed block.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": null,
+          "basis": "not scored",
+          "reason": "No interactive model package for this result is published, and accepted unique metres are unmeasured. Native PLY bytes and MP4 size do not establish comparable storage efficiency.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": null,
+          "basis": "not scored",
+          "reason": "The recorded duration covers training plus internal evaluation only. Full pipeline time and accepted unique metres are unknown, so the shorter run earns no efficiency points.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": null,
+          "basis": "not scored",
+          "reason": "Human setup, correction and review time was not logged comparably. No neutral or inferred labor points are awarded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "runtime",
+          "score": null,
+          "basis": "not scored",
+          "reason": "A prerecorded native video cannot measure interactive frame time, stalls or device performance; no controlled live benchmark is available.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "startup",
+          "score": null,
+          "basis": "not scored",
+          "reason": "This result is a native-render preview without a published interactive model or controlled cold-load benchmark. No startup score can be inferred.",
+          "evidenceIds": [
+            "record"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": null,
+        "splats": 500000,
+        "trainingSeconds": 1473.5203108787537,
+        "timeScope": "Training plus internal evaluation; preparation, solving, native export and review excluded.",
+        "images": 96,
+        "maxWidth": 2048,
+        "humanHours": null,
+        "effortNote": "No comparable human-effort or accepted-metre measurement; no efficiency points."
+      },
+      "evidence": [
+        {
+          "id": "sheet",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-perspective-hybrid-12k-2048-review.jpg",
+          "label": "Six timestamped native movement samples",
+          "note": "Three route frames (top) and three lateral frames (bottom), sampled at start/middle/end. Native images reduced without sharpening. Sweeps may contain cuts; frames alone are not a temporal benchmark."
+        },
+        {
+          "id": "poster",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-perspective-hybrid-12k-2048.jpg",
+          "label": "Native interpolated camera view: anchor 1, back view, halfway between paths",
+          "note": "Actual native interpolated view, not a source photo. No ground-truth image exists here."
+        },
+        {
+          "id": "route",
+          "kind": "native",
+          "url": "ratings/native-updates/hybrid-5k-vs-12k-route.mp4",
+          "label": "Shared 5K / 12K comparison: Road traverse",
+          "note": "12s recorded native motion; compact web copy, not live performance. Left 5K / right 12K. Lateral video contains three independent sweeps."
+        },
+        {
+          "id": "lateral",
+          "kind": "native",
+          "url": "ratings/native-updates/hybrid-5k-vs-12k-lateral.mp4",
+          "label": "Shared 5K / 12K comparison: Lateral movement",
+          "note": "12s recorded native motion; compact web copy, not live performance. Left 5K / right 12K. Lateral video contains three independent sweeps."
+        },
+        {
+          "id": "record",
+          "kind": "json",
+          "url": "ratings/records/residential-perspective-hybrid-12k-2048.json",
+          "label": "Review scores, native model identity and source hashes",
+          "note": "AI-assisted visual review; original native frames and videos remain in the local archive."
+        }
+      ],
+      "comparisons": [
+        "Direct paired comparison: left 5K, right 12K, with the same numerical path, FOV, frame timing and native render settings. Both receive 46/100; the small texture difference does not justify a quality winner.",
+        "The 12K profile also changes learning-rate/refinement horizons, so this is not an isolated iteration-count experiment.",
+        "Compared with common-centre 2K (48/100), some supported-house views are more coherent, but the much narrower delivered view coverage and black route regions lower the overall visual score."
+      ],
+      "efficiency": {
+        "acceptedUniqueMetres": null,
+        "coverageAcceptanceFraction": null,
+        "storageMBPer100Metres": null,
+        "pipelineMinutesPer100Metres": null,
+        "humanMinutesPer100Metres": null,
+        "runtimeFrameMsP95": null,
+        "coldLoadSeconds": null,
+        "status": "Not established: metric accepted coverage and controlled cost/performance measurements are missing."
+      }
+    },
+    {
+      "id": "residential-perspective-hybrid-parent4-2048",
+      "title": "Perspective hybrid: 5K steps",
+      "publicationType": "native-render-preview",
+      "group": "hybrid-native",
+      "groupLabel": "Hybrid: matched 5K / 12K native renders",
+      "total": null,
+      "rank": 25,
+      "visualTotal": 30.0,
+      "visualScore": 46,
+      "assessedWeight": 65,
+      "assessedCategories": 5,
+      "confidence": "Moderate within matched native pair; limited across different captures/renderers",
+      "verdict": "5K and 12K tie: readable facades, large missing road-side regions.",
+      "bestFor": "Recognizing the observed houses in this partial diagnostic patch",
+      "mainIssue": "One physical street-side partial patch. Both route videos expose a large unsupported black region; three independent lateral sweeps have cuts. Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
+      "scores": [
+        {
+          "category": "along",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Paired native route 0, 6 and 11.97s: the observed houses and street direction are recognizable, but a large black unsupported region occupies much of the moving view. This is not a clean road traverse.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "lateral",
+          "score": 5,
+          "basis": "native-render reviewer judgment",
+          "reason": "Paired native lateral 0, 6 and 11.97s: house shapes stay more recognizable than in the older full residential patch, but tree, window and porch boundaries still haze or stretch. The extended profile earns no defensible whole-point stability gain.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "detail",
+          "score": 6,
+          "basis": "native-render reviewer judgment",
+          "reason": "The left-hand 5K native view preserves roof, window and siding detail at prototype quality; fine porch/vegetation regions blur. Its coarse facade detail remains in the same grade as the 12K result.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "artifacts",
+          "score": 3,
+          "basis": "native-render reviewer judgment",
+          "reason": "Paired lateral samples retain translucent foliage, smeared road shadows and dark near-vehicle holes. More training does not remove the dominant defects; unsupported route views are not treated as recovered facades.",
+          "evidenceIds": [
+            "sheet",
+            "lateral",
+            "record"
+          ]
+        },
+        {
+          "category": "coverage",
+          "score": 2,
+          "basis": "native-render reviewer judgment",
+          "reason": "Only one physical facade band and a partial corridor are supported. Large black route regions are an explicit completeness failure for free street exploration; neither run supplies both sides or a completed block.",
+          "evidenceIds": [
+            "sheet",
+            "route",
+            "record"
+          ]
+        },
+        {
+          "category": "size",
+          "score": null,
+          "basis": "not scored",
+          "reason": "No interactive model package for this result is published, and accepted unique metres are unmeasured. Native PLY bytes and MP4 size do not establish comparable storage efficiency.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "time",
+          "score": null,
+          "basis": "not scored",
+          "reason": "The recorded duration covers training plus internal evaluation only. Full pipeline time and accepted unique metres are unknown, so the shorter run earns no efficiency points.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "effort",
+          "score": null,
+          "basis": "not scored",
+          "reason": "Human setup, correction and review time was not logged comparably. No neutral or inferred labor points are awarded.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "runtime",
+          "score": null,
+          "basis": "not scored",
+          "reason": "A prerecorded native video cannot measure interactive frame time, stalls or device performance; no controlled live benchmark is available.",
+          "evidenceIds": [
+            "record"
+          ]
+        },
+        {
+          "category": "startup",
+          "score": null,
+          "basis": "not scored",
+          "reason": "This result is a native-render preview without a published interactive model or controlled cold-load benchmark. No startup score can be inferred.",
+          "evidenceIds": [
+            "record"
+          ]
+        }
+      ],
+      "facts": {
+        "assetBytes": null,
+        "splats": 500000,
+        "trainingSeconds": 758.3655602931976,
+        "timeScope": "Training plus internal evaluation; preparation, solving, native export and review excluded.",
+        "images": 96,
+        "maxWidth": 2048,
+        "humanHours": null,
+        "effortNote": "No comparable human-effort or accepted-metre measurement; no efficiency points."
+      },
+      "evidence": [
+        {
+          "id": "sheet",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-perspective-hybrid-parent4-2048-review.jpg",
+          "label": "Six timestamped native movement samples",
+          "note": "Three route frames (top) and three lateral frames (bottom), sampled at start/middle/end. Native images reduced without sharpening. Sweeps may contain cuts; frames alone are not a temporal benchmark."
+        },
+        {
+          "id": "poster",
+          "kind": "image",
+          "url": "ratings/native-updates/residential-perspective-hybrid-parent4-2048.jpg",
+          "label": "Native interpolated camera view: anchor 1, back view, halfway between paths",
+          "note": "Actual native interpolated view, not a source photo. No ground-truth image exists here."
+        },
+        {
+          "id": "route",
+          "kind": "native",
+          "url": "ratings/native-updates/hybrid-5k-vs-12k-route.mp4",
+          "label": "Shared 5K / 12K comparison: Road traverse",
+          "note": "12s recorded native motion; compact web copy, not live performance. Left 5K / right 12K. Lateral video contains three independent sweeps."
+        },
+        {
+          "id": "lateral",
+          "kind": "native",
+          "url": "ratings/native-updates/hybrid-5k-vs-12k-lateral.mp4",
+          "label": "Shared 5K / 12K comparison: Lateral movement",
+          "note": "12s recorded native motion; compact web copy, not live performance. Left 5K / right 12K. Lateral video contains three independent sweeps."
+        },
+        {
+          "id": "record",
+          "kind": "json",
+          "url": "ratings/records/residential-perspective-hybrid-parent4-2048.json",
+          "label": "Review scores, native model identity and source hashes",
+          "note": "AI-assisted visual review; original native frames and videos remain in the local archive."
+        }
+      ],
+      "comparisons": [
+        "Direct paired comparison: left 5K, right 12K, with the same numerical path, FOV, frame timing and native render settings. Both receive 46/100; the small texture difference does not justify a quality winner.",
+        "The 12K profile also changes learning-rate/refinement horizons, so this is not an isolated iteration-count experiment.",
+        "Compared with common-centre 2K (48/100), some supported-house views are more coherent, but the much narrower delivered view coverage and black route regions lower the overall visual score."
+      ],
+      "efficiency": {
+        "acceptedUniqueMetres": null,
+        "coverageAcceptanceFraction": null,
+        "storageMBPer100Metres": null,
+        "pipelineMinutesPer100Metres": null,
+        "humanMinutesPer100Metres": null,
+        "runtimeFrameMsP95": null,
+        "coldLoadSeconds": null,
+        "status": "Not established: metric accepted coverage and controlled cost/performance measurements are missing."
+      }
+    },
+    {
       "id": "half-block",
       "title": "New footage · half-block",
       "group": "half-block",
       "groupLabel": "Half-block: separate capture",
       "total": null,
-      "rank": 20,
+      "rank": 27,
       "visualTotal": 24.5,
       "confidence": "Moderate within group",
       "verdict": "Longer coverage, but road and facades break down.",
@@ -4406,7 +5675,7 @@
       "group": "original-turn",
       "groupLabel": "Original turn: matched cameras",
       "total": null,
-      "rank": 20,
+      "rank": 27,
       "visualTotal": 25.0,
       "confidence": "Limited",
       "verdict": "Prominent vehicle ghosts and soft facades.",

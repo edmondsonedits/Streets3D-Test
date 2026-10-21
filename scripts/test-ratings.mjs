@@ -5,8 +5,11 @@ import { resolve, dirname } from 'node:path';
 import { calculateTotal, calculateVisualScore, rankRatings } from '../site/ratings-core.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const read=(name)=>JSON.parse(readFileSync(resolve(root,name),'utf8').replace(/^\uFEFF/,''));
+const page=readFileSync(resolve(root,'site/rankings.html'),'utf8');
+const ui=readFileSync(resolve(root,'site/rankings.js'),'utf8');
 const data=read('site/ratings/ratings.json');
 const scenes=read('site/splats/scenes.json').scenes;
+const native=read('site/ratings/native-updates.json');
 assert.equal(data.rubric.length,10);
 assert.equal(data.rubric.reduce((n,x)=>n+x.weight,0),100);
 assert.equal(data.rubric.slice(0,5).reduce((n,x)=>n+x.weight,0),65);
@@ -20,8 +23,14 @@ assert.throws(()=>calculateTotal(scores.map((x,i)=>i?x:{...x,score:10.5}),data.r
 assert.throws(()=>calculateTotal(scores.map((x,i)=>i?x:{...x,score:NaN}),data.rubric));
 const tied=rankRatings([{id:'b',visualScore:60},{id:'c',visualScore:50},{id:'a',visualScore:60}]);
 assert.deepEqual(tied.map(x=>[x.id,x.rank]),[['a',1],['b',1],['c',3]]);
-assert.equal(new Set(data.ratings.map(x=>x.id)).size,scenes.length);
-assert.deepEqual([...data.ratings.map(x=>x.id)].sort(),scenes.map(x=>x.id).sort());
+assert.equal(new Set(data.ratings.map(x=>x.id)).size,scenes.length+7);
+const nativeIds=native.entries.map(x=>x.id);
+assert.equal(native.status,'ranked-native-renders');
+assert.equal(native.entries.length,7);
+assert.equal(new Set(nativeIds).size,7);
+assert.deepEqual([...data.ratings.map(x=>x.id)].sort(),[...scenes.map(x=>x.id),...nativeIds].sort());
+assert.match(page,/28 ranked results · 21 interactive models and 7 native-render previews/);
+assert.doesNotMatch(page,/nativeUpdatesList|unranked|not yet ranked/i);
 const ranks=rankRatings(data.ratings);
 for(const r of data.ratings){
  assert.equal(r.total,calculateTotal(r.scores,data.rubric),r.id+' complete total must stay null if measurements are missing');
@@ -32,8 +41,20 @@ for(const r of data.ratings){
  assert.equal(r.rank,ranks.find(x=>x.id===r.id).rank,r.id+' published rank');
  assert.equal(r.scores.length,10);
  const scene=scenes.find(x=>x.id===r.id);
- assert.equal(r.facts.assetBytes,scene.assetBytes);
- assert.equal(r.facts.splats,scene.count);
+ const isPreview=r.publicationType==='native-render-preview';
+ if(isPreview){
+  assert.ok(nativeIds.includes(r.id),r.id+' must appear in the native manifest');
+  assert.equal(r.facts.assetBytes,null,'native-only preview has no packaged model size');
+  assert.ok(r.facts.splats===null || Number.isFinite(r.facts.splats));
+  assert.equal(r.scores.filter(x=>x.score!==null).length,5,'native review uses five visual categories');
+  const entry=native.entries.find(x=>x.id===r.id);
+  assert.equal(entry.ratingId,r.id);
+  assert.equal(entry.status,'Ranked native-render preview');
+ } else {
+  assert.ok(scene,r.id+' must be a published interactive model');
+  assert.equal(r.facts.assetBytes,scene.assetBytes);
+  assert.equal(r.facts.splats,scene.count);
+ }
  assert.equal(r.facts.humanHours,null,'unknown labor must not be invented');
  assert.equal(r.scores.find(x=>x.category==='effort').score,null);
  const ev=new Set(r.evidence.map(x=>x.id));
@@ -41,9 +62,19 @@ for(const r of data.ratings){
  for(const score of r.scores){assert.ok(score.reason.length>15);assert.ok(score.evidenceIds.length);for(const id of score.evidenceIds)assert.ok(ev.has(id),r.id+' '+id);}
  for(const e of r.evidence)assert.ok(existsSync(resolve(root,'site',e.url)),r.id+' '+e.url);
  const record=read('site/ratings/records/'+r.id+'.json');
- assert.equal(record.publishedModel.sha256,scene.assetSha256,'rating must describe exact delivered model');
  assert.equal(record.observations.length,5);
- assert.equal(record.reviewArtifacts.length,2);
+ if(isPreview){
+  assert.equal(record.reviewBasis,'native-renders');
+  assert.deepEqual(record.observations.map(x=>[x.category,x.score]),r.scores.slice(0,5).map(x=>[x.category,x.score]),'proof observations must match published grades');
+  assert.equal(record.nativeModel.interactiveModelPublished,false);
+  assert.equal(record.qualityGoalAchieved,false);
+  assert.match(record.nativeModel.sha256,/^[a-f0-9]{64}$/);
+  assert.ok(record.nativeModel.archivePath);
+  assert.ok(record.reviewArtifacts.length>=3);
+ }else{
+  assert.equal(record.publishedModel.sha256,scene.assetSha256,'rating must describe exact delivered model');
+  assert.equal(record.reviewArtifacts.length,2);
+ }
  assert.ok(record.sourceFileHashes.every(x=>x.sha256),'all evidence sources hashed');
 }
 assert.equal(data.ratings.find(x=>x.id==='corner-a').visualTotal,data.ratings.find(x=>x.id==='corner-b').visualTotal,'A/B visual tie is deliberate');
@@ -66,4 +97,4 @@ for(const group of data.costComparisons){
  }
 }
 assert.equal(data.costComparisons.flatMap(g=>g.rows).find(r=>r.id==='corner-mrnf-gut').trainingRatio,null,'different timer boundaries must not be ranked as comparable');
-console.log(JSON.stringify({passed:true,models:data.ratings.length,categories:data.rubric.length,checks:'weighted scale, invalid input, ties, complete registry, unscored unknowns, artifact/evidence contracts'}));
+console.log(JSON.stringify({passed:true,results:data.ratings.length,interactiveModels:scenes.length,categories:data.rubric.length,checks:'weighted scale, invalid input, ties, complete registry, unscored unknowns, artifact/evidence contracts'}));

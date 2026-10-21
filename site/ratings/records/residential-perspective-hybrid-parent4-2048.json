@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "residential-perspective-hybrid-parent4-2048",
+  "reviewedAt": "2026-10-20",
+  "reviewBasis": "native-renders",
+  "nativeModel": {
+    "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/residential-perspective-hybrid-parent4-2048.ply",
+    "sha256": "eca621856c93ad373278422fe1c3d7d4d12eae6cd73d8aa15011d5da45e5cb3e",
+    "bytes": 124001758,
+    "splats": 500000,
+    "projectSha256": "c5db36f46f2b5198f88a454120b7430a1acfea6962dc14e8435ccd91c8f8c527",
+    "interactiveModelPublished": false
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/completion.json",
+      "bytes": 4175,
+      "sha256": "2cf88e87f85983d04d2851864a2899a6a68eab96fd1a365647ac01d4249e1a12"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/training_config.json",
+      "bytes": 5718,
+      "sha256": "58b15550a0d1730dc5a8bf98bfeb7daaf926682a67d32adca97b051307c86342"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/render-manifest.json",
+      "bytes": 6040,
+      "sha256": "5b99d9bc795d8dd0d6a234e2d556109ed7298565ad5d6e66ffcd885c4c551d71"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/comparisons/perspective-hybrid-12k-motion-actual-review.json",
+      "bytes": 1303,
+      "sha256": "c5fa19ecbc49779ae312a0416455d7028c255dd201264534f9104c7bcbffb90f"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/route_frames/0000.png",
+      "sha256": "f77363c371314269657c53071449f2b2191e894c00a027f35f7e896f395d295b"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/route_frames/0180.png",
+      "sha256": "e0ebb0ca4c2a048121a131ed18cf97679d5a6953015feb798cac739fd38fba93"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/route_frames/0359.png",
+      "sha256": "01c57db2b6a7b82f4ce2ce4ddab583722250ebdd11f493ebde44a93fc4733bde"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/lateral_frames/0000.png",
+      "sha256": "d3db943015299a59db42cb9150c97f898034fbf0c149d9b55ca391ba99abd207"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/lateral_frames/0180.png",
+      "sha256": "764def24d76e07153ceea73691b30513af70f5989b247f74ef4cdcba46a1fd18"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/lateral_frames/0359.png",
+      "sha256": "88fd5bba4bb8c412491911f59976ed5beb7719734ef0e2a6394ae30d4ce5b1b2"
+    }
+  ],
+  "reviewProtocol": "Fresh review of six fixed start/middle/end native samples per result, original native motion excerpts, and prior native review records. Compared with MRNF corner, corner A, construction fixed calibration, residential common-centre 1K/2K and FastGS published reviews. Not blinded; not every motion frame scored. Cross-capture and native-versus-browser render differences limit fine ordering.",
+  "scope": "One physical street-side partial patch. Both route videos expose a large unsupported black region; three independent lateral sweeps have cuts.",
+  "observations": [
+    {
+      "category": "along",
+      "score": 5,
+      "observation": "Paired native route 0, 6 and 11.97s: the observed houses and street direction are recognizable, but a large black unsupported region occupies much of the moving view. This is not a clean road traverse."
+    },
+    {
+      "category": "lateral",
+      "score": 5,
+      "observation": "Paired native lateral 0, 6 and 11.97s: house shapes stay more recognizable than in the older full residential patch, but tree, window and porch boundaries still haze or stretch. The extended profile earns no defensible whole-point stability gain."
+    },
+    {
+      "category": "detail",
+      "score": 6,
+      "observation": "The left-hand 5K native view preserves roof, window and siding detail at prototype quality; fine porch/vegetation regions blur. Its coarse facade detail remains in the same grade as the 12K result."
+    },
+    {
+      "category": "artifacts",
+      "score": 3,
+      "observation": "Paired lateral samples retain translucent foliage, smeared road shadows and dark near-vehicle holes. More training does not remove the dominant defects; unsupported route views are not treated as recovered facades."
+    },
+    {
+      "category": "coverage",
+      "score": 2,
+      "observation": "Only one physical facade band and a partial corridor are supported. Large black route regions are an explicit completeness failure for free street exploration; neither run supplies both sides or a completed block."
+    }
+  ],
+  "comparisons": [
+    "Direct paired comparison: left 5K, right 12K, with the same numerical path, FOV, frame timing and native render settings. Both receive 46/100; the small texture difference does not justify a quality winner.",
+    "The 12K profile also changes learning-rate/refinement horizons, so this is not an isolated iteration-count experiment.",
+    "Compared with common-centre 2K (48/100), some supported-house views are more coherent, but the much narrower delivered view coverage and black route regions lower the overall visual score."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/native-updates/residential-perspective-hybrid-parent4-2048-review.jpg",
+      "bytes": 128971,
+      "sha256": "d83562b9f12a9093ee4c593923f399ffbadd3f470b7a0fd5aac3fad02b5053f7"
+    },
+    {
+      "url": "ratings/native-updates/residential-perspective-hybrid-parent4-2048.jpg",
+      "bytes": 91103,
+      "sha256": "a86076da928902be0549aac06eacb9c494f262d452cb4a79a0dabd2761d73ff9"
+    },
+    {
+      "url": "ratings/native-updates/hybrid-5k-vs-12k-route.mp4",
+      "bytes": 881511,
+      "sha256": "c86f259bc791c4bb3bb55efebd999c11f1ee39dbb725ecab9bbb7da5959c6aa9"
+    },
+    {
+      "url": "ratings/native-updates/hybrid-5k-vs-12k-lateral.mp4",
+      "bytes": 959069,
+      "sha256": "714372d501832f96bc7ae22226268d398b4f3f18bd1531755a7386563439bdba"
+    }
+  ],
+  "reviewFrameSamples": [
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/route_frames/0000.png",
+      "sha256": "f77363c371314269657c53071449f2b2191e894c00a027f35f7e896f395d295b",
+      "frame": 0,
+      "timeSeconds": 0.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/route_frames/0180.png",
+      "sha256": "e0ebb0ca4c2a048121a131ed18cf97679d5a6953015feb798cac739fd38fba93",
+      "frame": 180,
+      "timeSeconds": 6.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/route_frames/0359.png",
+      "sha256": "01c57db2b6a7b82f4ce2ce4ddab583722250ebdd11f493ebde44a93fc4733bde",
+      "frame": 359,
+      "timeSeconds": 11.966666666666667
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/lateral_frames/0000.png",
+      "sha256": "d3db943015299a59db42cb9150c97f898034fbf0c149d9b55ca391ba99abd207",
+      "frame": 0,
+      "timeSeconds": 0.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/lateral_frames/0180.png",
+      "sha256": "764def24d76e07153ceea73691b30513af70f5989b247f74ef4cdcba46a1fd18",
+      "frame": 180,
+      "timeSeconds": 6.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-perspective-hybrid-parent4-2048/native-comparison/lateral_frames/0359.png",
+      "sha256": "88fd5bba4bb8c412491911f59976ed5beb7719734ef0e2a6394ae30d4ce5b1b2",
+      "frame": 359,
+      "timeSeconds": 11.966666666666667
+    }
+  ],
+  "qualityGoalAchieved": false,
+  "novelViewGroundTruthExists": false,
+  "efficiencyMeasurementStatus": "Unknown; five nonvisual categories remain null."
+}

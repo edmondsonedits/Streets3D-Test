@@ -92,10 +92,24 @@ node scripts/test-rating-efficiency.mjs
 
 For changes to the shared 3D viewer, also run `node scripts/test-splat-navigation.mjs` and its navigation checks. Rating-page checks cover collapsed summaries, all ten category explanations, filters, links, cost-table arithmetic, evidence playback, keyboard access and phone-width overflow. After Pages deployment, repeat relevant live checks and compare changed data/script hashes.
 
-## Later native-render previews
+## Seven later results ranked by native render evidence
 
-The rankings page now plays native MP4 evidence on demand, alongside the existing browser review clips. Four missing 24-second route/lateral web copies were added for the ranked residential common-centre 1K and 2K entries. Source hashes, conversion details and scene associations are recorded in the render/provenance registries. All scores and ordering remain unchanged.
+The integrated ranking now contains **28 results: 21 interactive models and seven native-render previews**. The new results use the same five visual categories and weights; the original 21 category grades are preserved and ordinal ranks are recalculated. The five nonvisual categories remain null for all results. Render-only entries have no Explore link or invented model-download size. Their native PLY identity is hashed in each review record; the model itself is not newly published.
 
-Seven later diagnostic variants appear in a separate **unranked** section, using `site/ratings/native-updates.json`: shared lens calibration; one-side unrigged/common-centre; valid-seed perspective/native-fisheye; hybrid 5K/12K. Their seven still previews and twelve distinct motion videos come from actual saved native outputs. The two hybrid entries share the same paired clips (left 5K, right 12K); the extended run also changes learning-rate/refinement horizons. No new numerical scores, interactive model links, full-block completion or quality success are implied.
+| Later result | Rank among 28 | Visual /100 | Along / lateral / detail / artifacts / completeness |
+|---|---:|---:|---|
+| One-side unrigged | =7 | 50 | 6 / 5 / 6 / 3 / 3 |
+| One-side common centre | =7 | 50 | 6 / 5 / 6 / 3 / 3 |
+| Perspective valid seeds 2K | =7 | 50 | 6 / 5 / 6 / 3 / 3 |
+| Native fisheye valid seeds 2K | =7 | 50 | 6 / 5 / 6 / 3 / 3 |
+| Shared lens calibration 2K | =13 | 48 | 6 / 4 / 6 / 3 / 5 |
+| Hybrid 5K | =25 | 46 | 5 / 5 / 6 / 3 / 2 |
+| Hybrid 12K | =25 | 46 | 5 / 5 / 6 / 3 / 2 |
 
-Web copies preserve duration, frame count, frame rate and aspect ratio, with lower resolution/bitrate and no audio. Source archive paths/hashes and exact output dimensions/hashes are in the manifest. Full-resolution originals remain local. Native interpolated views have no measured ground-truth image; do not infer novel-view PSNR or geographic accuracy.
+The four one-side tests retain slightly more coherent observed facades than the earlier residential 47-48 group, but omit the opposite facade band and retain dark road holes, smeared shadows and translucent foliage. Differences inside each matched pair do not justify whole-point winners. Shared calibration remains tied with common-centre 2K. Hybrid 12K has some crisper textures than 5K, but no defensible category-level gain: both expose large unsupported black route regions and lack a complete corridor. Sharper selected-house views do not make them the best freely explorable street.
+
+The corner MRNF result remains first at 63/100, A/B tie second at 60, and the construction group ties fourth at 57. Those are different captures and review paths: the ranking describes delivered visual results, not a controlled algorithm contest. A score is an editorial rubric value, not a percentage of geometric accuracy or a measured success probability.
+
+Each new `ratings/records/<id>.json` contains five timestamped category observations, original native model/config/source hashes, and public artifact hashes. Seven added contact sheets show start/middle/end route and lateral frames from the original 1152x648 PNG sequences without sharpening. Existing 21 reviews use the preserved 960x540 browser review paths. New scores also consult original native motion excerpts and prior motion-review records; not every frame is individually scored. Native/browser rasterization, timing, field of view and capture extent may differ, so fine cross-group differences have limited confidence.
+
+`ratings/native-updates.json` preserves the seven-source provenance and twelve unique compact motion files, linked to their actual rating IDs. The paired hybrid clips show left 5K / right 12K using the same numerical path/settings; the extended profile also changes learning-rate/refinement horizons. No off-path ground-truth PSNR, surveyed metres, full-block completion or quality-goal success is claimed. All original media remain unchanged.

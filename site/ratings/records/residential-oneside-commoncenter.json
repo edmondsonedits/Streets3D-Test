@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "residential-oneside-commoncenter",
+  "reviewedAt": "2026-10-20",
+  "reviewBasis": "native-renders",
+  "nativeModel": {
+    "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/residential-oneside-commoncenter.ply",
+    "sha256": "1d4f314dfc9f73da6011d3102497767c99dfcd3e34161e71aeb907097d01e666",
+    "bytes": 124001758,
+    "splats": 500000,
+    "projectSha256": "7c6b99e213abd8d24c9dfa510bd585d3b20cb94dad98c97d5e52bc21c2e60a1a",
+    "interactiveModelPublished": false
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/completion.json",
+      "bytes": 7182,
+      "sha256": "f5e41c007b8cf8229eb95b4ba0ebedbf9142968f770ca919bc0c1e6014c46302"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/training_config.json",
+      "bytes": 5707,
+      "sha256": "6b426a9a1b65d96a6d86fe1beb20f29fad79d2225dd5503bafa3e55e72f03054"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/render-manifest.json",
+      "bytes": 5600,
+      "sha256": "3370fd51bc1e2e164ca95e7e9ea6eade98781ed8f1ab290425e81a94aaeb94da"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/comparisons/one-side-motion/actual-review.json",
+      "bytes": 1049,
+      "sha256": "9a7a8131a897782bf4ca646d0f86c132db856daa89f8014d0de532c5285a720f"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/route_frames/0000.png",
+      "sha256": "c18f53dcd7bb3f1e32e7d7dede06db4708783488f546962bdcba6add934b5eb1"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/route_frames/0360.png",
+      "sha256": "bc9fc65e61f19fb0105018666f1a2d0bcb2afb676a1470082015a554487156b0"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/route_frames/0719.png",
+      "sha256": "190db7033842313693fa4904162844a132b59c94074263a9d34dfabb7dcd9483"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/lateral_frames/0000.png",
+      "sha256": "39932e0db191b9ed558d5f364b43e5b06b2198566baf5100fe36cbf6920ae341"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/lateral_frames/0180.png",
+      "sha256": "dee04959a92d2f62365a14d8adb88f674b779ed07dc3c09bb1d47a99ff45fccc"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/lateral_frames/0359.png",
+      "sha256": "8a0986e4efb631e39132ad4dd37afb0a7ab394c623f6fc6f9d5cbeef66a5e29c"
+    }
+  ],
+  "reviewProtocol": "Fresh review of six fixed start/middle/end native samples per result, original native motion excerpts, and prior native review records. Compared with MRNF corner, corner A, construction fixed calibration, residential common-centre 1K/2K and FastGS published reviews. Not blinded; not every motion frame scored. Cross-capture and native-versus-browser render differences limit fine ordering.",
+  "scope": "One physical street-side patch across two capture passes; 24s route and three separate 4s lateral sweeps. No completed road or block.",
+  "observations": [
+    {
+      "category": "along",
+      "score": 6,
+      "observation": "Native route 0, 12 and 23.97s: the white/grey houses, sidewalk and street direction are readily recognizable. The road, close trees and near-car region still smear during advancement."
+    },
+    {
+      "category": "lateral",
+      "score": 5,
+      "observation": "Native lateral 0, 6 and 11.97s: the observed facade shapes remain readable, while porch, roof and tree boundaries still deform or turn translucent. The common-centre constraint does not remove those defects."
+    },
+    {
+      "category": "detail",
+      "score": 6,
+      "observation": "Native route 12s and lateral 11.97s: roof shingles, window outlines and siding show useful prototype detail, but fine porch/branch detail remains soft or doubled. The matched peer is in the same detail grade."
+    },
+    {
+      "category": "artifacts",
+      "score": 3,
+      "observation": "Native route 23.97s shows a dark floating near-road patch; lateral 0 and 6s retain stretched foliage, wire-like streaks and smeared shadows. These large defects survive native rendering."
+    },
+    {
+      "category": "coverage",
+      "score": 3,
+      "observation": "The observed house-side strip is connected in the sampled views, but the opposite facade band and a complete road corridor are unsupported. One street side cannot earn the broader patch completeness grade."
+    }
+  ],
+  "comparisons": [
+    "Tied at 50/100 with One street side: unrigged cameras: visible differences do not support a whole category point or a controlled method winner.",
+    "A modest visual advantage over the older residential 47-48/100 group comes from the more coherent observed house-side views. The smaller supported extent reduces completeness; this is not proof of a better full-street reconstruction.",
+    "Below the 57/100 construction group and 60-63/100 corner group: those reviewed results retain stronger road/facade continuity. Different scenes and review paths prevent a causal algorithm comparison."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/native-updates/residential-oneside-commoncenter-review.jpg",
+      "bytes": 167267,
+      "sha256": "e033ef0a5601d2539f2db346713986395c5ccd71f75f892ce1ee72427cfe9c96"
+    },
+    {
+      "url": "ratings/native-updates/residential-oneside-commoncenter.jpg",
+      "bytes": 98986,
+      "sha256": "818c63bc9ab5744f74efe7f04b312d22f2f4721763fcccd8e0db16cfed3388ea"
+    },
+    {
+      "url": "ratings/native-updates/residential-oneside-commoncenter-route.mp4",
+      "bytes": 998215,
+      "sha256": "e6f4b6410d5d2840a466b509375aae0ab77ad3103db60568dbcc35fdb07133d3"
+    },
+    {
+      "url": "ratings/native-updates/residential-oneside-commoncenter-lateral.mp4",
+      "bytes": 508391,
+      "sha256": "364481a4a750c8fa2a281c888b904556addfbb58bfe5863ad3a6bfdd2ade0954"
+    }
+  ],
+  "reviewFrameSamples": [
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/route_frames/0000.png",
+      "sha256": "c18f53dcd7bb3f1e32e7d7dede06db4708783488f546962bdcba6add934b5eb1",
+      "frame": 0,
+      "timeSeconds": 0.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/route_frames/0360.png",
+      "sha256": "bc9fc65e61f19fb0105018666f1a2d0bcb2afb676a1470082015a554487156b0",
+      "frame": 360,
+      "timeSeconds": 12.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/route_frames/0719.png",
+      "sha256": "190db7033842313693fa4904162844a132b59c94074263a9d34dfabb7dcd9483",
+      "frame": 719,
+      "timeSeconds": 23.966666666666665
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/lateral_frames/0000.png",
+      "sha256": "39932e0db191b9ed558d5f364b43e5b06b2198566baf5100fe36cbf6920ae341",
+      "frame": 0,
+      "timeSeconds": 0.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/lateral_frames/0180.png",
+      "sha256": "dee04959a92d2f62365a14d8adb88f674b779ed07dc3c09bb1d47a99ff45fccc",
+      "frame": 180,
+      "timeSeconds": 6.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-oneside-commoncenter/native-comparison/lateral_frames/0359.png",
+      "sha256": "8a0986e4efb631e39132ad4dd37afb0a7ab394c623f6fc6f9d5cbeef66a5e29c",
+      "frame": 359,
+      "timeSeconds": 11.966666666666667
+    }
+  ],
+  "qualityGoalAchieved": false,
+  "novelViewGroundTruthExists": false,
+  "efficiencyMeasurementStatus": "Unknown; five nonvisual categories remain null."
+}

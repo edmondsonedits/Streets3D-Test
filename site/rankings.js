@@ -105,11 +105,12 @@ function addCostComparisons(data) {
 
 function makeFacts(rating) {
   const facts = rating.facts || {};
+  const isPreview = rating.publicationType === 'native-render-preview';
   const section = node('section', 'detail-block');
   section.append(node('h3', '', 'Recorded facts'));
   const dl = node('dl', 'facts');
   const entries = [
-    ['Packaged model', bytes(facts.assetBytes)],
+    ['Packaged model', isPreview ? 'Not published' : bytes(facts.assetBytes)],
     ['Splats', Number.isFinite(facts.splats) ? number.format(facts.splats) : 'Not recorded'],
     ['Training time', duration(facts.trainingSeconds, facts.timeScope)],
     ['Training images', Number.isFinite(facts.images) ? number.format(facts.images) : 'Not recorded'],
@@ -212,6 +213,7 @@ function makeEvidence(rating) {
   return section;
 }
 function makeRating(rating, rubric) {
+  const isPreview = rating.publicationType === 'native-render-preview';
   const details = node('details', 'ranking');
   details.id = rating.id;
   details.dataset.group = rating.group;
@@ -219,10 +221,10 @@ function makeRating(rating, rubric) {
   const rank = node('span', 'rank', `#${rating.rank}`);
   const name = node('span');
   name.append(node('span', 'scene-title', rating.title));
-  name.append(node('span', 'scene-group', rating.groupLabel || rating.group || 'Unmatched cohort'));
+  name.append(node('span', 'scene-group', isPreview ? 'Native-render review · interactive model not published' : (rating.groupLabel || rating.group || 'Unmatched cohort')));
   const total = node('span', 'total');
   total.append(document.createTextNode(String(rating.visualScore)), node('small', '', ' / 100'), node('small', 'score-type', 'visual only'));
-  const size = node('span', 'size', `Size · ${bytes(rating.facts?.assetBytes)}`);
+  const size = node('span', 'size', isPreview ? 'Model · not published' : `Size · ${bytes(rating.facts?.assetBytes)}`);
   const verdict = node('span', 'verdict', safe(rating.verdict, 'No concise verdict recorded.'));
   const chevron = node('span', 'chevron', '›');
   chevron.setAttribute('aria-hidden', 'true');
@@ -260,9 +262,11 @@ function makeRating(rating, rubric) {
   left.append(makeFacts(rating));
   const right = node('div');
   right.append(makeEvidence(rating));
-  const explore = node('a', 'explore', 'Explore this scene ↗');
-  explore.href = `demos/splat-explorer-v1/?scene=${encodeURIComponent(rating.id)}`;
-  right.append(explore);
+  if (!isPreview) {
+    const explore = node('a', 'explore', 'Explore this scene ↗');
+    explore.href = `demos/splat-explorer-v1/?scene=${encodeURIComponent(rating.id)}`;
+    right.append(explore);
+  }
   detail.append(left, right);
   details.append(detail);
   return details;
@@ -283,7 +287,7 @@ function installFilters(ratings) {
       if (!card.hidden) visible += 1;
     }
     for (const button of groups.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.group === selected));
-    byId('filterCount').textContent = `${visible} of ${ratings.length} scenes`;
+    byId('filterCount').textContent = `${visible} of ${ratings.length} results`;
   };
   groups.addEventListener('click', (event) => {
     const button = event.target.closest('button[data-group]');
@@ -305,11 +309,13 @@ async function main() {
     const openHashRating = () => {
       const id = decodeURIComponent(location.hash.slice(1));
       const target = id ? document.getElementById(id) : null;
-      if (target?.matches('.ranking, .native-update')) { if(target.hidden)groups.querySelector('button[data-group=all]').click(); target.open = true; target.scrollIntoView({ block: 'start' }); }
+      if (target?.matches('.ranking')) { if(target.hidden)groups.querySelector('button[data-group=all]').click(); target.open = true; target.scrollIntoView({ block: 'start' }); }
     };
     window.addEventListener('hashchange', openHashRating);
     openHashRating();
-    byId('pageSummary').replaceChildren(node('span', 'dot'), node('span', '', `${ranked.length} scenes · reviewed ${safe(data.reviewedAt, 'date not recorded')} · visual ranking only · 5 of 10 categories assessed · efficiency pending`));
+    const interactiveCount = ranked.filter((rating) => rating.publicationType !== 'native-render-preview').length;
+    const previewCount = ranked.length - interactiveCount;
+    byId('pageSummary').replaceChildren(node('span', 'dot'), node('span', '', `${ranked.length} ranked results · ${interactiveCount} interactive models + ${previewCount} native-render previews · reviewed ${safe(data.reviewedAt, 'date not recorded')} · visual ranking only · 5 of 10 categories assessed · efficiency pending`));
 
   } catch (error) {
     errorBox.hidden = false;
@@ -319,41 +325,3 @@ async function main() {
   }
 }
 main();
-
-async function loadNativeUpdates() {
-  const status = byId('nativeUpdatesStatus');
-  try {
-    const response = await fetch(new URL('./ratings/native-updates.json', import.meta.url));
-    if (!response.ok) throw new Error(`Native previews could not load (${response.status}).`);
-    const data = await response.json();
-    if (data.schemaVersion !== 1 || !Array.isArray(data.entries) || !Array.isArray(data.clips)) throw new Error('Unsupported native-preview manifest.');
-    const clips = new Map(data.clips.map((clip) => [clip.id, clip]));
-    const cards = data.entries.map((entry) => {
-      const card = node('details', 'native-update');
-      card.id = entry.id;
-      const summary = node('summary');
-      const name = node('span');
-      name.append(node('span', 'scene-title', entry.title), node('span', 'scene-group', `${number.format(entry.iterations)} training steps · native render · no score`));
-      summary.append(name, node('span', 'preview-badge', 'Preview ↓'));
-      const body = node('div', 'native-update-body');
-      body.append(node('p', '', entry.scope), node('p', 'small-note', entry.limitation), node('p', 'small-note', entry.comparisonNote));
-      const evidence = [{ kind: 'image', url: entry.poster.url, label: entry.poster.label, note: 'Actual native halfway-between-paths view. JPEG preview; no measured ground truth exists at this interpolated camera.' }];
-      for (const id of entry.clipIds) {
-        const clip = clips.get(id);
-        if (!clip) throw new Error(`Missing native preview ${id}.`);
-        evidence.push({ id: clip.id, kind: 'native', url: clip.url, label: clip.label, note: `${clip.durationSeconds}s · ${clip.width} × ${clip.height} · ${bytes(clip.bytes)} · compact native-render web copy${clip.paired ? ' · left 5K / right 12K' : ''}` });
-      }
-      body.append(makeEvidence({ title: entry.title, evidence }));
-      card.append(summary, body);
-      return card;
-    });
-    byId('nativeUpdatesList').replaceChildren(...cards);
-    status.textContent = `${data.entries.length} unranked results · ${data.clips.length} distinct motion clips · load a video only when you want to play it`;
-    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (target?.classList.contains('native-update')) { target.open = true; target.scrollIntoView({ block: 'start' }); }
-  } catch (error) {
-    status.className = 'error';
-    status.textContent = error instanceof Error ? error.message : 'Native previews could not load.';
-  }
-}
-loadNativeUpdates();

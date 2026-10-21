@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-10-20T22:32:20.270701+00:00",
-  "status": "supplemental-native-renders-unranked",
+  "status": "ranked-native-renders",
   "qualityGoalAchieved": false,
-  "notice": "Seven later diagnostic results, shown as native-render web previews. They have no new ranking scores or interactive model publication. The existing 21 ranked models and scores are unchanged. Original full-resolution native renders remain in the local experiment archive.",
-  "compressionNotice": "Compact H.264 web copies preserve original frame count, timing and aspect ratio; JPEG stills come from actual native off-path PNGs. Compression can hide fine defects. These previews are not new quantitative rating evidence.",
+  "notice": "Seven later native-render results are scored in the integrated visual ranking using the same five visual categories. They do not add interactive 3D assets. The original 21 category scores remain unchanged; ordinal ranks are recalculated over 28 results.",
+  "compressionNotice": "Compact motion copies retain original frame timing. Scores also use original native start/middle/end samples and native motion review, not compressed clips alone. All seven still fail the requested free-exploration quality target.",
   "entries": [
     {
       "id": "residential-gut-common-center-2048-share1",
       "title": "Common centre 2K: shared lens calibration",
       "iterations": 5000,
-      "status": "Unranked diagnostic preview",
+      "status": "Ranked native-render preview",
       "scope": "Two-pass residential diagnostic corridor; shared lens calibration variant.",
       "qualityGoalAchieved": false,
       "limitation": "Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
@@ -31,13 +31,19 @@
         "residential-gut-common-center-2048-share1-lateral"
       ],
       "reviewArchivePath": "Experiments/offpath-ten-tests-20261020-112451/comparisons/commoncenter-motion/actual-review.json",
-      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark."
+      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark.",
+      "ratingId": "residential-gut-common-center-2048-share1",
+      "reviewSheet": {
+        "sheetUrl": "ratings/native-updates/residential-gut-common-center-2048-share1-review.jpg",
+        "bytes": 140696,
+        "sha256": "7595647441c8ff3e88292f960a93ac1a26d41e91b40387674109289e43603186"
+      }
     },
     {
       "id": "residential-oneside-unrigged",
       "title": "One street side: unrigged cameras",
       "iterations": 5000,
-      "status": "Unranked diagnostic preview",
+      "status": "Ranked native-render preview",
       "scope": "One physical street-side subset; independent camera centres.",
       "qualityGoalAchieved": false,
       "limitation": "Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
@@ -58,13 +64,19 @@
         "residential-oneside-unrigged-lateral"
       ],
       "reviewArchivePath": "Experiments/offpath-ten-tests-20261020-112451/comparisons/one-side-motion/actual-review.json",
-      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark."
+      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark.",
+      "ratingId": "residential-oneside-unrigged",
+      "reviewSheet": {
+        "sheetUrl": "ratings/native-updates/residential-oneside-unrigged-review.jpg",
+        "bytes": 167743,
+        "sha256": "8c1ce37bfbee223dd8080f9906ca895aa992037972d4076a52623caa1b702ae6"
+      }
     },
     {
       "id": "residential-oneside-commoncenter",
       "title": "One street side: common camera centre",
       "iterations": 5000,
-      "status": "Unranked diagnostic preview",
+      "status": "Ranked native-render preview",
       "scope": "One physical street-side subset; common-centre camera constraint.",
       "qualityGoalAchieved": false,
       "limitation": "Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
@@ -85,13 +97,19 @@
         "residential-oneside-commoncenter-lateral"
       ],
       "reviewArchivePath": "Experiments/offpath-ten-tests-20261020-112451/comparisons/one-side-motion/actual-review.json",
-      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark."
+      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark.",
+      "ratingId": "residential-oneside-commoncenter",
+      "reviewSheet": {
+        "sheetUrl": "ratings/native-updates/residential-oneside-commoncenter-review.jpg",
+        "bytes": 167267,
+        "sha256": "e033ef0a5601d2539f2db346713986395c5ccd71f75f892ce1ee72427cfe9c96"
+      }
     },
     {
       "id": "residential-perspective-validseeds-2048",
       "title": "Perspective 2K: valid seeds",
       "iterations": 5000,
-      "status": "Unranked diagnostic preview",
+      "status": "Ranked native-render preview",
       "scope": "Matched valid-seed camera-model comparison; perspective projection.",
       "qualityGoalAchieved": false,
       "limitation": "Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
@@ -112,13 +130,19 @@
         "residential-perspective-validseeds-2048-lateral"
       ],
       "reviewArchivePath": "Experiments/offpath-ten-tests-20261020-112451/comparisons/native-pair-v4-motion/actual-review.json",
-      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark."
+      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark.",
+      "ratingId": "residential-perspective-validseeds-2048",
+      "reviewSheet": {
+        "sheetUrl": "ratings/native-updates/residential-perspective-validseeds-2048-review.jpg",
+        "bytes": 164708,
+        "sha256": "41a694059715550ea3041f7e90c562cfd708e7d716b33e7ba435ecf8346da51a"
+      }
     },
     {
       "id": "residential-nativefisheye-validseeds-2048",
       "title": "Native fisheye 2K: valid seeds",
       "iterations": 5000,
-      "status": "Unranked diagnostic preview",
+      "status": "Ranked native-render preview",
       "scope": "Matched valid-seed camera-model comparison; native fisheye projection.",
       "qualityGoalAchieved": false,
       "limitation": "Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
@@ -139,13 +163,19 @@
         "residential-nativefisheye-validseeds-2048-lateral"
       ],
       "reviewArchivePath": "Experiments/offpath-ten-tests-20261020-112451/comparisons/native-pair-v4-motion/actual-review.json",
-      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark."
+      "comparisonNote": "These clips record reconstruction movement, not source-video replay. Different subsets are not a pixel-matched benchmark.",
+      "ratingId": "residential-nativefisheye-validseeds-2048",
+      "reviewSheet": {
+        "sheetUrl": "ratings/native-updates/residential-nativefisheye-validseeds-2048-review.jpg",
+        "bytes": 173994,
+        "sha256": "99b867fac71a1788806872eb27c5d6ce8035982fd03dfbceaf209ab46c4b42e8"
+      }
     },
     {
       "id": "residential-perspective-hybrid-parent4-2048",
       "title": "Perspective hybrid: 5K steps",
       "iterations": 5000,
-      "status": "Unranked diagnostic preview",
+      "status": "Ranked native-render preview",
       "scope": "Partial corridor on one physical street side. Paired motion: LEFT 5K, RIGHT 12K.",
       "qualityGoalAchieved": false,
       "limitation": "Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
@@ -166,13 +196,19 @@
         "hybrid-5k-vs-12k-lateral"
       ],
       "reviewArchivePath": "Experiments/offpath-ten-tests-20261020-112451/comparisons/perspective-hybrid-12k-motion-actual-review.json",
-      "comparisonNote": "The 12K run also changes learning-rate and refinement horizons. Route look-away views leave supported facade coverage; lateral video contains three separate sweeps with cuts."
+      "comparisonNote": "The 12K run also changes learning-rate and refinement horizons. Route look-away views leave supported facade coverage; lateral video contains three separate sweeps with cuts.",
+      "ratingId": "residential-perspective-hybrid-parent4-2048",
+      "reviewSheet": {
+        "sheetUrl": "ratings/native-updates/residential-perspective-hybrid-parent4-2048-review.jpg",
+        "bytes": 128971,
+        "sha256": "d83562b9f12a9093ee4c593923f399ffbadd3f470b7a0fd5aac3fad02b5053f7"
+      }
     },
     {
       "id": "residential-perspective-hybrid-12k-2048",
       "title": "Perspective hybrid: 12K steps",
       "iterations": 12000,
-      "status": "Unranked diagnostic preview",
+      "status": "Ranked native-render preview",
       "scope": "Partial corridor on one physical street side. Paired motion: LEFT 5K, RIGHT 12K.",
       "qualityGoalAchieved": false,
       "limitation": "Streaks, floaters and unstable surfaces remain. No full-block or quality-target success is claimed.",
@@ -193,7 +229,13 @@
         "hybrid-5k-vs-12k-lateral"
       ],
       "reviewArchivePath": "Experiments/offpath-ten-tests-20261020-112451/comparisons/perspective-hybrid-12k-motion-actual-review.json",
-      "comparisonNote": "The 12K run also changes learning-rate and refinement horizons. Route look-away views leave supported facade coverage; lateral video contains three separate sweeps with cuts."
+      "comparisonNote": "The 12K run also changes learning-rate and refinement horizons. Route look-away views leave supported facade coverage; lateral video contains three separate sweeps with cuts.",
+      "ratingId": "residential-perspective-hybrid-12k-2048",
+      "reviewSheet": {
+        "sheetUrl": "ratings/native-updates/residential-perspective-hybrid-12k-2048-review.jpg",
+        "bytes": 131583,
+        "sha256": "21f4b84aff8d226b4cb6a58eb0629c136307d859039c489cbdee2f141121ac6f"
+      }
     }
   ],
   "clips": [

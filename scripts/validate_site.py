@@ -115,34 +115,53 @@ if scene_file.exists():
         for render in item['renders']:check(render['url'] in urls,f'Unregistered render in {item["id"]}')
 # Ratings must cover the exact delivered models; all linked evidence is published.
 ratings_path=ROOT/'ratings/ratings.json'
+updates_path=ROOT/'ratings/native-updates.json'
+updates=json.loads(updates_path.read_text(encoding='utf-8')) if updates_path.exists() else {'entries':[],'clips':[]}
+native_ids={x['id'] for x in updates.get('entries',[])}
 if ratings_path.exists():
     rating_data=json.loads(ratings_path.read_text(encoding='utf-8'))
     check(rating_data.get('schemaVersion')==2,'Unknown ratings schema')
     rubric=rating_data['rubric'];rows=rating_data['ratings']
     check(len(rubric)==10 and sum(x['weight'] for x in rubric)==100,'Ratings must have 10 categories totalling 100')
-    check(len(rows)==len(scene_ids) and {x['id'] for x in rows}==scene_ids,'Ratings must cover each published splat once')
+    check(len(rows)==len(scene_ids)+7 and {x['id'] for x in rows}==scene_ids|native_ids,'Ratings must cover 21 published splats and seven native-render previews')
     for row in rows:
-        ident=row['id'];scene=next(x for x in data['scenes'] if x['id']==ident)
-        check(row['facts']['assetBytes']==scene['assetBytes'],'Stale rated model size '+ident)
+        ident=row['id'];is_preview=row.get('publicationType')=='native-render-preview'
+        scene=next((x for x in data['scenes'] if x['id']==ident),None)
+        if is_preview:
+            check(ident in native_ids,'Native preview rating missing from manifest '+ident)
+            check(row['facts']['assetBytes'] is None,'Native preview must not invent a packaged model size '+ident)
+            check(scene is None,'Native preview must not masquerade as an interactive scene '+ident)
+            check(row.get('facts',{}).get('splats') is None or isinstance(row['facts']['splats'],int),'Invalid native splat count '+ident)
+        else:
+            check(scene is not None,'Interactive rating missing its published scene '+ident)
+            if scene:check(row['facts']['assetBytes']==scene['assetBytes'],'Stale rated model size '+ident)
         check(len(row['scores'])==10 and {x['category'] for x in row['scores']}=={x['id'] for x in rubric},'Incomplete scores '+ident)
+        if is_preview:check(sum(x['score'] is not None for x in row['scores'])==5,'Native preview must use the five visual scores only '+ident)
         check(all(x['score'] is None or (isinstance(x['score'],(int,float)) and math.isfinite(x['score']) and 0<=x['score']<=10) for x in row['scores']),'Invalid category score '+ident)
         check(not any(x['score'] is None for x in row['scores']) or row['total'] is None,'Incomplete rubric must not get a total '+ident)
         for link in row['evidence']:ref(ROOT,link['url'])
         proof=json.loads((ROOT/'ratings/records'/f'{ident}.json').read_text(encoding='utf-8'))
-        check(proof['publishedModel']['sha256']==scene['assetSha256'],'Stale rating provenance '+ident)
+        if is_preview:
+            check(proof.get('reviewBasis')=='native-renders','Native review basis missing '+ident)
+            check(bool(re.fullmatch(r'[a-f0-9]{64}',proof.get('nativeModel',{}).get('sha256',''))),'Native model hash missing '+ident)
+            check(bool(proof.get('nativeModel',{}).get('archivePath')),'Native model archive path missing '+ident)
+            check(len(proof['reviewArtifacts'])>=3,'Native preview needs poster and two motion artifacts '+ident)
+            entry=next((x for x in updates['entries'] if x['id']==ident),{})
+            check(entry.get('ratingId')==ident and entry.get('status')=='Ranked native-render preview','Native manifest rating link/status mismatch '+ident)
+        elif scene:
+            check(proof['publishedModel']['sha256']==scene['assetSha256'],'Stale rating provenance '+ident)
         for item in proof['reviewArtifacts']:artifact((ROOT/item['url']).resolve(),item['bytes'],item['sha256'])
-# Supplemental native previews are evidence only: never silently assign model ranks.
-updates_path=ROOT/'ratings/native-updates.json'
+# Native manifest remains provenance for ranked render previews; score details live in ratings.json.
 if updates_path.exists():
     updates=json.loads(updates_path.read_text(encoding='utf-8'))
-    check(updates.get('schemaVersion')==1 and updates.get('qualityGoalAchieved') is False,'Invalid supplemental preview status')
+    check(updates.get('schemaVersion')==1 and updates.get('qualityGoalAchieved') is False and updates.get('status')=='ranked-native-renders','Invalid native preview manifest status')
     entries=updates['entries'];clips=updates['clips'];entry_ids=[x['id'] for x in entries];clip_ids=[x['id'] for x in clips]
-    check(len(entries)==7 and len(set(entry_ids))==7,'Expected seven distinct unranked previews')
-    check(not set(entry_ids)&scene_ids,'Supplemental preview duplicates a ranked model')
+    check(len(entries)==7 and len(set(entry_ids))==7,'Expected seven distinct native-render previews')
+    check(not set(entry_ids)&scene_ids,'Native preview duplicates a published interactive model')
     check(len(clip_ids)==len(set(clip_ids))==12,'Expected twelve unique supplemental videos')
     used=set()
     for entry in entries:
-        check(entry.get('qualityGoalAchieved') is False and 'scores' not in entry and 'rank' not in entry,'Unranked preview acquired a score')
+        check(entry.get('qualityGoalAchieved') is False and entry.get('status')=='Ranked native-render preview' and entry.get('ratingId')==entry['id'] and 'scores' not in entry and 'rank' not in entry,'Native manifest must link to a rating without duplicating scores '+entry['id'])
         ref(ROOT,entry['poster']['url']);artifact((ROOT/entry['poster']['url']).resolve(),entry['poster']['bytes'],entry['poster']['sha256'])
         check(len(entry['clipIds'])==2 and set(entry['clipIds']).issubset(clip_ids),'Missing route/lateral preview '+entry['id'])
         used.update(entry['clipIds'])

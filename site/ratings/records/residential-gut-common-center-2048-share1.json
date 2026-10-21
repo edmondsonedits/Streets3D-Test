@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "residential-gut-common-center-2048-share1",
+  "reviewedAt": "2026-10-20",
+  "reviewBasis": "native-renders",
+  "nativeModel": {
+    "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/residential-gut-common-center-2048-share1.ply",
+    "sha256": "c8ae463a0a54337dfc13ca2d3b4a283c5d41410efccb5dff70d124d847504880",
+    "bytes": 124001758,
+    "splats": 500000,
+    "projectSha256": "fe4c70a2cbbdbda77ab175e2392675ebd6515a5bdaecc7c9edd2bc516f6e5b63",
+    "interactiveModelPublished": false
+  },
+  "sourceFileHashes": [
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/completion.json",
+      "bytes": 4169,
+      "sha256": "4164be7a2666368718dc42a28f1fe8e66ef017b41f4c0cc26ddc55c52dc5f45f"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/training_config.json",
+      "bytes": 5728,
+      "sha256": "d51957543c1543c5d40b75d59b69609df5d392587366b69d70ff3d6af60a992b"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/render-manifest.json",
+      "bytes": 9224,
+      "sha256": "442c3bb59c4ad1ddabdc77e396a578b633b7500a977d804ce36f7fea5a1040c6"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/comparisons/commoncenter-motion/actual-review.json",
+      "bytes": 1116,
+      "sha256": "4706d5017a9834737d1affa7b64999a55db099efc1562f169d0f5fa0607a7094"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/route_frames/0000.png",
+      "sha256": "6de1e62250c844896725c1e9fbf9f732571089f8469c92eda595e98ad2d5feba"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/route_frames/0360.png",
+      "sha256": "cf3510ed92746219048ad3baacb09372e27e602fd8ef74c4e27565cd53b326cc"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/route_frames/0719.png",
+      "sha256": "a2764eeef5c25dbcbb8969d4033ac9631d7162a37004811f5083123d9f395371"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/lateral_frames/0000.png",
+      "sha256": "9adb8bd135c0b8ae44f69da9cc20560f68cd254bbf6409cfc665a84f7b68d28e"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/lateral_frames/0360.png",
+      "sha256": "e94ca3db4667ded7bf9d6aad03c423dc34bf0c7dc132e43b703ed46cc556a162"
+    },
+    {
+      "pathRelativeToCaptureArchive": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/lateral_frames/0719.png",
+      "sha256": "cf36c11c6bccabf9e03db28bb4a949c1b4d2acc68a619ffd729155e5813162d7"
+    }
+  ],
+  "reviewProtocol": "Fresh review of six fixed start/middle/end native samples per result, original native motion excerpts, and prior native review records. Compared with MRNF corner, corner A, construction fixed calibration, residential common-centre 1K/2K and FastGS published reviews. Not blinded; not every motion frame scored. Cross-capture and native-versus-browser render differences limit fine ordering.",
+  "scope": "Two-pass residential patch; both facade directions were reviewed. Not a completed road or block.",
+  "observations": [
+    {
+      "category": "along",
+      "score": 6,
+      "observation": "Native route 0, 12 and 23.97s: the street and houses remain recognizable, but near trees and road shadows soften and smear as the view advances."
+    },
+    {
+      "category": "lateral",
+      "score": 4,
+      "observation": "Native lateral 0, 12 and 23.97s: porch, roof and foliage boundaries stretch or become translucent. Sharing lens calibration does not visibly stabilize the common-centre 2K control."
+    },
+    {
+      "category": "detail",
+      "score": 6,
+      "observation": "Native lateral 12 and 23.97s: shingles, windows and siding retain useful coarse detail, with blurred porch and roof boundaries. No consistent extra detail over the 2K control merits a higher grade."
+    },
+    {
+      "category": "artifacts",
+      "score": 3,
+      "observation": "Native route 12s and lateral 23.97s: the road/driveway smear, floating foliage and dark near-vehicle areas remain conspicuous."
+    },
+    {
+      "category": "coverage",
+      "score": 5,
+      "observation": "Both facade bands appear across the sampled patch, but road and occluded areas remain incomplete. Connected local views do not establish complete street coverage."
+    }
+  ],
+  "comparisons": [
+    "Same selected residential extent as common-centre 2K (48/100). The five visual category grades remain tied: shared calibration is not a visible solution to lateral instability.",
+    "Compared with the older residential group, this retains the same recognizable houses and the same dominant near-road/foliage failure modes."
+  ],
+  "reviewArtifacts": [
+    {
+      "url": "ratings/native-updates/residential-gut-common-center-2048-share1-review.jpg",
+      "bytes": 140696,
+      "sha256": "7595647441c8ff3e88292f960a93ac1a26d41e91b40387674109289e43603186"
+    },
+    {
+      "url": "ratings/native-updates/residential-gut-common-center-2048-share1.jpg",
+      "bytes": 80776,
+      "sha256": "cbdf5df84192e4905b6d57af88688e6c4032831f21bcbefcae67ddf5b840ae3f"
+    },
+    {
+      "url": "ratings/native-updates/residential-gut-common-center-2048-share1-route.mp4",
+      "bytes": 1001120,
+      "sha256": "47500ddb114fac7df26ad45d6c73cb7c03a1f49205bd145fc713e78600be87af"
+    },
+    {
+      "url": "ratings/native-updates/residential-gut-common-center-2048-share1-lateral.mp4",
+      "bytes": 962305,
+      "sha256": "dbfea5051a4103772c5eb2238d08a239fac66d89bcb88d01f978725d3082c7d3"
+    }
+  ],
+  "reviewFrameSamples": [
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/route_frames/0000.png",
+      "sha256": "6de1e62250c844896725c1e9fbf9f732571089f8469c92eda595e98ad2d5feba",
+      "frame": 0,
+      "timeSeconds": 0.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/route_frames/0360.png",
+      "sha256": "cf3510ed92746219048ad3baacb09372e27e602fd8ef74c4e27565cd53b326cc",
+      "frame": 360,
+      "timeSeconds": 12.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/route_frames/0719.png",
+      "sha256": "a2764eeef5c25dbcbb8969d4033ac9631d7162a37004811f5083123d9f395371",
+      "frame": 719,
+      "timeSeconds": 23.966666666666665
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/lateral_frames/0000.png",
+      "sha256": "9adb8bd135c0b8ae44f69da9cc20560f68cd254bbf6409cfc665a84f7b68d28e",
+      "frame": 0,
+      "timeSeconds": 0.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/lateral_frames/0360.png",
+      "sha256": "e94ca3db4667ded7bf9d6aad03c423dc34bf0c7dc132e43b703ed46cc556a162",
+      "frame": 360,
+      "timeSeconds": 12.0
+    },
+    {
+      "archivePath": "Experiments/offpath-ten-tests-20261020-112451/arms/native/residential-gut-common-center-2048-share1/native-comparison/lateral_frames/0719.png",
+      "sha256": "cf36c11c6bccabf9e03db28bb4a949c1b4d2acc68a619ffd729155e5813162d7",
+      "frame": 719,
+      "timeSeconds": 23.966666666666665
+    }
+  ],
+  "qualityGoalAchieved": false,
+  "novelViewGroundTruthExists": false,
+  "efficiencyMeasurementStatus": "Unknown; five nonvisual categories remain null."
+}
