@@ -11,3 +11,7 @@ See [alignment-evidence.json](alignment-evidence.json) for observations, uncerta
 The next reconstruction must correct camera/scale drift using independently identified landmarks at both turns before training; shifting or deforming the map would conceal the mismatch. This release does not claim realistic final scenery, surveyed positions, or completed block reconstruction.
 
 [Map/trajectory diagnostic](alignment-plan.png) shows the two camera paths under this local placement. Roads and footprints are unchanged. The wider turn discrepancy remains visible.
+
+## Distributed-landmark reconstruction review
+
+The new review identifies the numbered houses 771 Brown Street and 776 New Romaine Street. A capped pose-only diagnostic used both wall corners and the original 30,652 feature observations. It is **not an accepted reconstruction correction**: sparse geometry stayed fixed and there are no independent landmark checks. The uncertain 772 porch was excluded. See the `latestReconstructionAttempt` section of [the evidence record](alignment-evidence.json) for measured pixel residuals and limitations. No new scenery or Gaussian model was substituted, and the failed-alignment warning remains.

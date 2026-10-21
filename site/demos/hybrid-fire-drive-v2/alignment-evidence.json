@@ -145,5 +145,112 @@
     }
   },
   "currentLocalPlacementRouteDiagnosticsNote": "Nearest polyline approach, not a known exact surveyed camera position; both passes are evaluated, neither provides novel-view ground truth.",
-  "reviewPlot": "alignment-plan.png"
+  "reviewPlot": "alignment-plan.png",
+  "latestReconstructionAttempt": {
+    "date": "2026-10-21",
+    "status": "NOT_ACCEPTED_FOR_SCENERY_REBUILD",
+    "identifiedBuildings": [
+      {
+        "sourceNumber": "771 Brown Street",
+        "osmWay": "999229729",
+        "cornerIndex": 7,
+        "targetXZMetres": [
+          -105.283,
+          -77.693
+        ],
+        "manualPixelUncertainty": 8
+      },
+      {
+        "sourceNumber": "776 New Romaine Street",
+        "osmWay": "999229708",
+        "cornerIndex": 2,
+        "targetXZMetres": [
+          -71.074,
+          55.368
+        ],
+        "manualPixelUncertainty": 10
+      }
+    ],
+    "identityEvidence": "House numbers legible in original footage; municipal address labels used privately for identity only; OSM outline and facade-side association independently reviewed. No municipal address dataset or source images are included.",
+    "rejectedCandidate": "The 772 New Romaine porch could not be assigned confidently to a footprint vertex; excluded.",
+    "method": "Capped pose-only sparse least-squares diagnostic, fixed native sparse points, rig baseline and fisheye intrinsics; original matched-feature reprojections and two vertical wall-line ties with per-image free bounded heights. This is not joint camera-and-point bundle adjustment.",
+    "frames": 90,
+    "trackObservations": 30652,
+    "fixedSparsePoints": 7669,
+    "evaluations": 10,
+    "optimizerReportedConvergence": false,
+    "elapsedSeconds": 185.031,
+    "initialLensPixelErrors": {
+      "1": {
+        "model": "OPENCV_FISHEYE",
+        "observations": 13032,
+        "median_px": 1.2398564783053843,
+        "p95_px": 2.877726945583069,
+        "max_px": 3.989741158237097
+      },
+      "2": {
+        "model": "OPENCV_FISHEYE",
+        "observations": 17620,
+        "median_px": 1.2024102321010621,
+        "p95_px": 2.888265626808313,
+        "max_px": 3.995690425647111
+      }
+    },
+    "finalLensPixelErrors": {
+      "1": {
+        "model": "OPENCV_FISHEYE",
+        "observations": 13032,
+        "median_px": 1.222792335889567,
+        "p95_px": 2.8571019938548092,
+        "max_px": 4.33923010338186
+      },
+      "2": {
+        "model": "OPENCV_FISHEYE",
+        "observations": 17620,
+        "median_px": 1.1913318378692141,
+        "p95_px": 2.8949378204485336,
+        "max_px": 4.402576989850707
+      }
+    },
+    "wallLineReprojectionErrorsPixels": [
+      0.42723778280458896,
+      0.399854108463425,
+      0.948681089258952,
+      0.14055209769405141
+    ],
+    "independentLandmarkChecks": 0,
+    "placementValidated": false,
+    "limits": [
+      "Two fit buildings do not meet the three-fit/two-withheld validation gate.",
+      "OSM corner targets are fixed in this diagnostic; their actual horizontal accuracy is unmeasured.",
+      "Smaller feature pixel residuals do not validate road topology or off-path geometry.",
+      "No corrected native camera model, retraining, new splat or improved scenery is accepted.",
+      "The existing playable preview, model, roads and solid building geometry are unchanged."
+    ],
+    "nextRequiredWork": "Jointly refine rig poses and sparse geometry with uncertainty-weighted distributed controls and separate withheld building checks; pass both-turn road topology checks before retraining.",
+    "solverScriptSha256": "1cb81d2aa6b75cc9178c48dbf2f7b47228fd65a1f8f098082be0af542463bb13",
+    "roadNodeDiagnostics": {
+      "measurement": "nearest approach of each diagnostic camera polyline to named OSM intersection node; not exact capture GPS error",
+      "distancesMetres": {
+        "pass1": {
+          "BrownFord": 33.976,
+          "DuffusFord": 0.203,
+          "NewRomaineFord": 15.447
+        },
+        "pass2": {
+          "BrownFord": 26.405,
+          "DuffusFord": 7.984,
+          "NewRomaineFord": 11.127
+        }
+      },
+      "accepted": false,
+      "reason": "Independent corner checks unavailable; pose-only optimization did not establish full-route registration."
+    },
+    "diagnosticArtifactHashes": {
+      "executed_script_sha256": "1cb81d2aa6b75cc9178c48dbf2f7b47228fd65a1f8f098082be0af542463bb13",
+      "saved_opt_x_sha256": "1de6e38718ee1ef2903aa16c81adbfaf5055bee01abb306229ebd75bd676114a",
+      "source_images_bin_sha256": "d7f4b2d507ad0cda160213a59385ef724cc7fad2b6ca9cd3f7eeb4b357ae3302",
+      "source_points3D_bin_sha256": "08765a1467ecea74169bf76a4af0cbabb33141283d173fac901d0da90cc514b6"
+    }
+  }
 }
