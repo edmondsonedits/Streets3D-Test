@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "description": "Browser-ready geographic sandbox assets; no raw footage",
+  "artifacts": [
+    {
+      "path": "block.json.gz",
+      "bytes": 164710,
+      "sha256": "378f2a1e31c457194f309dec9fe33dd7ede8041c1e99ca35caf7d3ef5e4decfa"
+    },
+    {
+      "path": "map-extract.geojson",
+      "bytes": 106440,
+      "sha256": "3375786e7d9558e7e901ddde950c18c458609d5ef67b0ffd6ce75ea6b2d978a0"
+    },
+    {
+      "path": "app.js",
+      "bytes": 22598,
+      "sha256": "2e8c658157eabc7e40be5806ef8ccfc18bf6b7d3e6b34ba7fda503f28751ba43"
+    },
+    {
+      "path": "navigation.mjs",
+      "bytes": 4295,
+      "sha256": "010fbf5122927972b1b0e090c2d4a9e65d374be9d745566f4f52389ce4a660a5"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3320,
+      "sha256": "b00bddf8f5bb0118f72e2596171d2c5192d8bf48d7c2f28c386c00e8ca1554d2"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 4470,
+      "sha256": "25a9533c639dea8b71fec212a0f8c7131decb1181037c7b62c7ba729da9e6d2d"
+    },
+    {
+      "path": "building-archetypes.js",
+      "bytes": 5619,
+      "sha256": "b27acdee311f35a708316199425f9863465f645e38e98c41a3a4e32d7582e171"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 2443,
+      "sha256": "2fefdced430f2e5f7627c05fafbc75d40c65b238d471fdb57386d62fae937df0"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    }
+  ]
+}

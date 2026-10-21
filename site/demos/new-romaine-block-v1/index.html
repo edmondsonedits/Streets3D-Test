@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#d9e4e2">
+  <title>New Romaine Street · Block walk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="stage" aria-label="Interactive geographic street block viewer">
+    <div id="loading" role="status">Loading mapped block…</div>
+    <section class="topbar">
+      <a class="back" href="../../index.html" aria-label="Back to gallery">← Gallery</a>
+      <div class="title"><strong id="block-title">New Romaine Street</strong><span id="place-label">Peterborough · estimated 3D scaffold</span></div>
+      <button id="overview" type="button" title="Show overhead overview">Overview</button>
+    </section>
+    <div class="crosshair" aria-hidden="true"></div>
+    <div class="hint" id="hint">WASD / arrows move · drag to look · Q / E change height</div>
+    <section class="tools" aria-label="View controls">
+      <label class="select-label" for="street-select">Street</label>
+      <select id="street-select" aria-label="Jump to street"></select>
+      <button id="height-lock" type="button" aria-pressed="true">Walk height</button>
+      <button id="tour" type="button" aria-pressed="false">Perimeter tour</button>
+      <button id="reset" type="button">Reset</button>
+    </section>
+    <section class="map-card" aria-label="Block minimap">
+      <canvas id="minimap" width="240" height="180"></canvas>
+      <span id="map-caption">Mapped block · route</span>
+    </section>
+    <nav class="touch-pad" aria-label="Touch movement controls">
+      <button data-move="forward" aria-label="Move forward">▲</button>
+      <button data-move="left" aria-label="Move left">◀</button>
+      <button data-move="back" aria-label="Move backward">▼</button>
+      <button data-move="right" aria-label="Move right">▶</button>
+    </nav>
+    <div class="flight-controls" id="flight-controls" aria-label="Touch height controls" hidden>
+      <button data-height="up" aria-label="Gain flight height">＋</button>
+      <button data-height="down" aria-label="Lower flight height">−</button>
+    </div>
+    <div class="webgl-error" id="error" role="alert" hidden></div>
+    <details class="notes">
+      <summary>Data and limits</summary>
+      <p>Roads and building outlines are derived from OpenStreetMap contributors. Terrain uses Ontario digital terrain data. Building heights and roof forms are approximate. Window and door positions are generic, inferred facade details, not observations or photograph-based reconstruction. This block view is for exploration, not survey or dispatch use.</p>
+      <p><a href="map-extract.geojson" download>Download map extract</a> · <a href="provenance.json">Provenance</a> · <a href="LICENSE.txt">Code licence</a></p>
+      <p>Map data © OpenStreetMap contributors · Ontario DTM</p>
+      <p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap attribution</a> · <a href="https://www.ontario.ca/page/open-government-licence-ontario" target="_blank" rel="noreferrer">Ontario Open Government Licence</a></p>
+    </details>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
