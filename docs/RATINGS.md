@@ -113,3 +113,9 @@ The corner MRNF result remains first at 63/100, A/B tie second at 60, and the co
 Each new `ratings/records/<id>.json` contains five timestamped category observations, original native model/config/source hashes, and public artifact hashes. Seven added contact sheets show start/middle/end route and lateral frames from the original 1152x648 PNG sequences without sharpening. Existing 21 reviews use the preserved 960x540 browser review paths. New scores also consult original native motion excerpts and prior motion-review records; not every frame is individually scored. Native/browser rasterization, timing, field of view and capture extent may differ, so fine cross-group differences have limited confidence.
 
 `ratings/native-updates.json` preserves the seven-source provenance and twelve unique compact motion files, linked to their actual rating IDs. The paired hybrid clips show left 5K / right 12K using the same numerical path/settings; the extended profile also changes learning-rate/refinement horizons. No off-path ground-truth PSNR, surveyed metres, full-block completion or quality-goal success is claimed. All original media remain unchanged.
+
+## Compact ranking controls
+
+Each result shows its overall visual score and all ten category values without opening the result. An em dash means unmeasured, not zero. Click a category score to expand only its weight, explanation and evidence links; keyboard Enter/Space also toggles it. A separate Renders & facts disclosure holds the recorded previews, comparisons and detailed facts.
+
+For the 21 published interactive models, **Play live Gaussian free view** is directly below the version title and opens the existing explorer. The seven native-render-only results explicitly say their live free view is not published; their recorded renders remain available. No link substitutes a video for a live 3D model. This layout change does not alter any scores or model assets.

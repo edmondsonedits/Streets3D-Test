@@ -130,35 +130,38 @@ function makeFacts(rating) {
   return section;
 }
 function makeScores(rating, rubric) {
-  const section = node('section', 'detail-block');
-  section.append(node('h3', '', 'Category scores and reasons'));
-  const byCategory = new Map(rating.scores.map((item) => [item.category, item]));
-  const scoreList = node('div', 'score-list');
+  const section = node('section', 'score-grid');
+  section.setAttribute('aria-label', 'Visible category scores; expand any score for its explanation');
+  const byCategory = new Map((rating.scores || []).map((item) => [item.category, item]));
+  const evidenceById = new Map((rating.evidence || []).map((item) => [item.id, item]));
+  const shortLabels = { along: 'Along road', lateral: 'Sideways', detail: 'Detail', artifacts: 'Artifacts', coverage: 'Coverage', size: 'Storage', time: 'Process', effort: 'Effort', runtime: 'Motion', startup: 'Startup' };
   for (const item of rubric) {
     const score = byCategory.get(item.id);
-    const row = node('div', 'score');
-    const label = node('div', 'score-label');
-    label.append(document.createTextNode(item.label));
-    const basisText = score?.score === null ? 'not measured comparably' : (score?.basis || 'judgment');
-    label.append(node('span', 'score-basis', `${item.weight}% weight · ${basisText}`));
-    const displayedScore = score.score === null ? 'Not scored' : `${score.score}/10`;
-    const reason = node('div', 'score-reason', score.reason);
-    const evidenceById = new Map((rating.evidence || []).map((item) => [item.id, item]));
-    const evidenceLinks = node('span', 'score-evidence');
-    for (const evidenceId of score.evidenceIds || []) {
+    const disclosure = node('details', 'score-disclosure');
+    const summary = node('summary');
+    summary.setAttribute('aria-label', `${item.label}: ${score?.score == null ? 'unmeasured' : score.score + ' out of 10'}. Show explanation`);
+    summary.append(node('span', 'score-label', shortLabels[item.id] || item.label));
+    summary.append(node('span', 'score-value', score?.score == null ? '—' : `${score.score}/10`));
+    const chevron = node('span', 'score-chevron', '›');
+    chevron.setAttribute('aria-hidden', 'true');
+    summary.append(chevron);
+    const content = node('div', 'score-content');
+    const basisText = score?.score == null ? 'not measured comparably' : (score.basis || 'judgment');
+    content.append(node('b', 'score-full-label', item.label));
+    content.append(node('span', 'score-basis', `${item.weight}% weight · ${basisText}`));
+    content.append(node('p', 'score-reason', score?.reason || 'No explanation recorded.'));
+    for (const evidenceId of score?.evidenceIds || []) {
       const itemEvidence = evidenceById.get(evidenceId);
       if (!itemEvidence?.url) continue;
       const link = node('a', '', itemEvidence.label || evidenceId);
       link.href = itemEvidence.url;
       link.target = '_blank';
       link.rel = 'noopener';
-      evidenceLinks.append(link);
+      content.append(link);
     }
-    if (evidenceLinks.childElementCount) reason.append(evidenceLinks);
-    row.append(label, node('div', 'score-value', displayedScore), reason);
-    scoreList.append(row);
+    disclosure.append(summary, content);
+    section.append(disclosure);
   }
-  section.append(scoreList);
   return section;
 }
 function makeEvidence(rating) {
@@ -214,30 +217,36 @@ function makeEvidence(rating) {
 }
 function makeRating(rating, rubric) {
   const isPreview = rating.publicationType === 'native-render-preview';
-  const details = node('details', 'ranking');
-  details.id = rating.id;
-  details.dataset.group = rating.group;
-  const summary = node('summary');
-  const rank = node('span', 'rank', `#${rating.rank}`);
-  const name = node('span');
+  const article = node('article', 'ranking');
+  article.id = rating.id;
+  article.dataset.group = rating.group;
+  const header = node('header', 'ranking-header');
+  header.append(node('span', 'rank', `#${rating.rank}`));
+  const name = node('div', 'ranking-name');
   name.append(node('span', 'scene-title', rating.title));
-  name.append(node('span', 'scene-group', isPreview ? 'Native-render review · interactive model not published' : (rating.groupLabel || rating.group || 'Unmatched cohort')));
-  const total = node('span', 'total');
+  if (isPreview) {
+    name.append(node('span', 'play-status', 'Live free view not published'));
+  } else {
+    const play = node('a', 'play-live', 'Play live Gaussian free view ↗');
+    play.href = `demos/splat-explorer-v1/?scene=${encodeURIComponent(rating.id)}`;
+    play.target = '_blank';
+    play.rel = 'noopener';
+    name.append(play);
+  }
+  const total = node('div', 'total');
   total.append(document.createTextNode(String(rating.visualScore)), node('small', '', ' / 100'), node('small', 'score-type', 'visual only'));
-  const size = node('span', 'size', isPreview ? 'Model · not published' : `Size · ${bytes(rating.facts?.assetBytes)}`);
-  const verdict = node('span', 'verdict', safe(rating.verdict, 'No concise verdict recorded.'));
-  const chevron = node('span', 'chevron', '›');
-  chevron.setAttribute('aria-hidden', 'true');
-  summary.append(rank, name, total, size, verdict, chevron);
-  details.append(summary);
+  header.append(name, total);
+  article.append(header, makeScores(rating, rubric));
 
+  const more = node('details', 'more-details');
+  const moreSummary = node('summary', '', 'Renders & facts');
   const detail = node('div', 'detail');
   const left = node('div');
   const visualSummary = node('p', 'visual-summary');
   visualSummary.append(node('b', '', `Visual subtotal · ${Number(rating.visualTotal).toFixed(1)} / 65`));
   visualSummary.append(node('span', '', 'Overall quality + efficiency: pending'));
   visualSummary.append(node('small', '', 'Five visual categories assessed. Cost and performance need useful-coverage measurements; no placeholder points are included.'));
-  left.append(visualSummary, makeScores(rating, rubric));
+  left.append(node('p', 'detail-group', rating.groupLabel || rating.group || (isPreview ? 'Native-render review' : 'Unmatched cohort')), visualSummary);
   const notes = node('div', 'detail-grid');
   const best = node('section', 'detail-block');
   best.append(node('h3', '', 'Best suited to'), node('p', '', safe(rating.bestFor)));
@@ -258,18 +267,13 @@ function makeRating(rating, rubric) {
     confidence.append(node('h3', '', 'Confidence'), node('p', '', rating.confidence));
     notes.append(confidence);
   }
-  left.append(notes);
-  left.append(makeFacts(rating));
+  left.append(notes, makeFacts(rating));
   const right = node('div');
   right.append(makeEvidence(rating));
-  if (!isPreview) {
-    const explore = node('a', 'explore', 'Explore this scene ↗');
-    explore.href = `demos/splat-explorer-v1/?scene=${encodeURIComponent(rating.id)}`;
-    right.append(explore);
-  }
   detail.append(left, right);
-  details.append(detail);
-  return details;
+  more.append(moreSummary, detail);
+  article.append(more);
+  return article;
 }
 function installFilters(ratings) {
   const distinct = [...new Set(ratings.map((rating) => rating.group).filter(Boolean))];
@@ -309,7 +313,7 @@ async function main() {
     const openHashRating = () => {
       const id = decodeURIComponent(location.hash.slice(1));
       const target = id ? document.getElementById(id) : null;
-      if (target?.matches('.ranking')) { if(target.hidden)groups.querySelector('button[data-group=all]').click(); target.open = true; target.scrollIntoView({ block: 'start' }); }
+      if (target?.matches('.ranking')) { if(target.hidden)groups.querySelector('button[data-group=all]').click(); target.scrollIntoView({ block: 'start' }); }
     };
     window.addEventListener('hashchange', openHashRating);
     openHashRating();
