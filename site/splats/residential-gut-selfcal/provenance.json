@@ -199,24 +199,14 @@
   "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
   "renders": [
     {
-      "title": "residential gut k0 vs selfcal lateral",
+      "title": "GUT k0 control vs GUT self-calibration · lateral (side-by-side) · this model: right",
       "url": "../../renders/residential-gut-k0-vs-selfcal-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
     },
     {
-      "title": "residential gut k0 vs selfcal route",
+      "title": "GUT k0 control vs GUT self-calibration · route (side-by-side) · this model: right",
       "url": "../../renders/residential-gut-k0-vs-selfcal-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-    },
-    {
-      "title": "residential gut selfcal lateral",
-      "url": "../../renders/residential-gut-selfcal-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-    },
-    {
-      "title": "residential gut selfcal route",
-      "url": "../../renders/residential-gut-selfcal-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
     }
   ],
   "state": "prototype",

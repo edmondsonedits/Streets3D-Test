@@ -1981,24 +1981,14 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential fastgs erank lateral",
-          "url": "../../renders/residential-fastgs-erank-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential fastgs erank route",
-          "url": "../../renders/residential-fastgs-erank-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential fastgs zero versus residential fastgs erank lateral",
+          "title": "FastGS zero effective-rank penalty vs FastGS effective-rank penalty · lateral (side-by-side) · this model: right",
           "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: FastGS zero effective-rank penalty; right: FastGS effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         },
         {
-          "title": "residential fastgs zero versus residential fastgs erank route",
+          "title": "FastGS zero effective-rank penalty vs FastGS effective-rank penalty · route (side-by-side) · this model: right",
           "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: FastGS zero effective-rank penalty; right: FastGS effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         }
       ],
       "state": "prototype",
@@ -2220,34 +2210,24 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential fastgs zero lateral",
-          "url": "../../renders/residential-fastgs-zero-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential fastgs zero route",
-          "url": "../../renders/residential-fastgs-zero-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential fastgs zero versus residential fastgs erank lateral",
+          "title": "FastGS zero effective-rank penalty vs FastGS effective-rank penalty · lateral (side-by-side) · this model: left",
           "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: FastGS zero effective-rank penalty; right: FastGS effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential fastgs zero versus residential fastgs erank route",
+          "title": "FastGS zero effective-rank penalty vs FastGS effective-rank penalty · route (side-by-side) · this model: left",
           "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: FastGS zero effective-rank penalty; right: FastGS effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential gut k0 versus residential fastgs zero lateral",
+          "title": "GUT k0 control vs FastGS zero effective-rank penalty · lateral (side-by-side) · this model: right",
           "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: FastGS zero effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         },
         {
-          "title": "residential gut k0 versus residential fastgs zero route",
+          "title": "GUT k0 control vs FastGS zero effective-rank penalty · route (side-by-side) · this model: right",
           "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: FastGS zero effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         }
       ],
       "state": "prototype",
@@ -2933,34 +2913,34 @@
           "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
         },
         {
-          "title": "residential gut k0 vs selfcal lateral",
+          "title": "GUT k0 control vs GUT self-calibration · lateral (side-by-side) · this model: left",
           "url": "../../renders/residential-gut-k0-vs-selfcal-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential gut k0 vs selfcal route",
+          "title": "GUT k0 control vs GUT self-calibration · route (side-by-side) · this model: left",
           "url": "../../renders/residential-gut-k0-vs-selfcal-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential gut k0 versus residential fastgs zero lateral",
+          "title": "GUT k0 control vs FastGS zero effective-rank penalty · lateral (side-by-side) · this model: left",
           "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: FastGS zero effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential gut k0 versus residential fastgs zero route",
+          "title": "GUT k0 control vs FastGS zero effective-rank penalty · route (side-by-side) · this model: left",
           "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: FastGS zero effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential gut k0 versus residential gut shadow lateral",
+          "title": "GUT k0 control vs GUT + vehicle shadow mask · lateral (side-by-side) · this model: left",
           "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT + vehicle shadow mask. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential gut k0 versus residential gut shadow route",
+          "title": "GUT k0 control vs GUT + vehicle shadow mask · route (side-by-side) · this model: left",
           "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT + vehicle shadow mask. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         }
       ],
       "state": "prototype",
@@ -3182,24 +3162,14 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential gut k0 vs selfcal lateral",
+          "title": "GUT k0 control vs GUT self-calibration · lateral (side-by-side) · this model: right",
           "url": "../../renders/residential-gut-k0-vs-selfcal-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         },
         {
-          "title": "residential gut k0 vs selfcal route",
+          "title": "GUT k0 control vs GUT self-calibration · route (side-by-side) · this model: right",
           "url": "../../renders/residential-gut-k0-vs-selfcal-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential gut selfcal lateral",
-          "url": "../../renders/residential-gut-selfcal-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential gut selfcal route",
-          "url": "../../renders/residential-gut-selfcal-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         }
       ],
       "state": "prototype",
@@ -3421,24 +3391,14 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential gut k0 versus residential gut shadow lateral",
+          "title": "GUT k0 control vs GUT + vehicle shadow mask · lateral (side-by-side) · this model: right",
           "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT + vehicle shadow mask. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         },
         {
-          "title": "residential gut k0 versus residential gut shadow route",
+          "title": "GUT k0 control vs GUT + vehicle shadow mask · route (side-by-side) · this model: right",
           "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential gut shadow lateral",
-          "url": "../../renders/residential-gut-shadow-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential gut shadow route",
-          "url": "../../renders/residential-gut-shadow-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT + vehicle shadow mask. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         }
       ],
       "state": "prototype",
@@ -3660,24 +3620,14 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential priors both lateral",
-          "url": "../../renders/residential-priors-both-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors both route",
-          "url": "../../renders/residential-priors-both-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors off versus residential priors both lateral",
+          "title": "Priors OFF control vs Depth + normal priors · lateral (side-by-side) · this model: right",
           "url": "../../renders/residential-priors-off__vs__residential-priors-both-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth + normal priors. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         },
         {
-          "title": "residential priors off versus residential priors both route",
+          "title": "Priors OFF control vs Depth + normal priors · route (side-by-side) · this model: right",
           "url": "../../renders/residential-priors-off__vs__residential-priors-both-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth + normal priors. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         }
       ],
       "state": "prototype",
@@ -3899,24 +3849,14 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential priors depth lateral",
-          "url": "../../renders/residential-priors-depth-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors depth route",
-          "url": "../../renders/residential-priors-depth-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors off versus residential priors depth lateral",
+          "title": "Priors OFF control vs Depth prior · lateral (side-by-side) · this model: right",
           "url": "../../renders/residential-priors-off__vs__residential-priors-depth-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         },
         {
-          "title": "residential priors off versus residential priors depth route",
+          "title": "Priors OFF control vs Depth prior · route (side-by-side) · this model: right",
           "url": "../../renders/residential-priors-off__vs__residential-priors-depth-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         }
       ],
       "state": "prototype",
@@ -4138,24 +4078,14 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential priors normal lateral",
-          "url": "../../renders/residential-priors-normal-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors normal route",
-          "url": "../../renders/residential-priors-normal-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors off versus residential priors normal lateral",
+          "title": "Priors OFF control vs Normal prior · lateral (side-by-side) · this model: right",
           "url": "../../renders/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Normal prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         },
         {
-          "title": "residential priors off versus residential priors normal route",
+          "title": "Priors OFF control vs Normal prior · route (side-by-side) · this model: right",
           "url": "../../renders/residential-priors-off__vs__residential-priors-normal-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Normal prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
         }
       ],
       "state": "prototype",
@@ -4377,44 +4307,34 @@
       "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
       "renders": [
         {
-          "title": "residential priors off lateral",
-          "url": "../../renders/residential-priors-off-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors off route",
-          "url": "../../renders/residential-priors-off-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-        },
-        {
-          "title": "residential priors off versus residential priors both lateral",
+          "title": "Priors OFF control vs Depth + normal priors · lateral (side-by-side) · this model: left",
           "url": "../../renders/residential-priors-off__vs__residential-priors-both-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth + normal priors. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential priors off versus residential priors both route",
+          "title": "Priors OFF control vs Depth + normal priors · route (side-by-side) · this model: left",
           "url": "../../renders/residential-priors-off__vs__residential-priors-both-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth + normal priors. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential priors off versus residential priors depth lateral",
+          "title": "Priors OFF control vs Depth prior · lateral (side-by-side) · this model: left",
           "url": "../../renders/residential-priors-off__vs__residential-priors-depth-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential priors off versus residential priors depth route",
+          "title": "Priors OFF control vs Depth prior · route (side-by-side) · this model: left",
           "url": "../../renders/residential-priors-off__vs__residential-priors-depth-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential priors off versus residential priors normal lateral",
+          "title": "Priors OFF control vs Normal prior · lateral (side-by-side) · this model: left",
           "url": "../../renders/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Normal prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         },
         {
-          "title": "residential priors off versus residential priors normal route",
+          "title": "Priors OFF control vs Normal prior · route (side-by-side) · this model: left",
           "url": "../../renders/residential-priors-off__vs__residential-priors-normal-route.mp4",
-          "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+          "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Normal prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
         }
       ],
       "state": "prototype",

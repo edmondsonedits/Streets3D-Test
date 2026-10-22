@@ -199,24 +199,14 @@
   "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
   "renders": [
     {
-      "title": "residential fastgs erank lateral",
-      "url": "../../renders/residential-fastgs-erank-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-    },
-    {
-      "title": "residential fastgs erank route",
-      "url": "../../renders/residential-fastgs-erank-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-    },
-    {
-      "title": "residential fastgs zero versus residential fastgs erank lateral",
+      "title": "FastGS zero effective-rank penalty vs FastGS effective-rank penalty · lateral (side-by-side) · this model: right",
       "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: FastGS zero effective-rank penalty; right: FastGS effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
     },
     {
-      "title": "residential fastgs zero versus residential fastgs erank route",
+      "title": "FastGS zero effective-rank penalty vs FastGS effective-rank penalty · route (side-by-side) · this model: right",
       "url": "../../renders/residential-fastgs-zero__vs__residential-fastgs-erank-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: FastGS zero effective-rank penalty; right: FastGS effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the right panel."
     }
   ],
   "state": "prototype",

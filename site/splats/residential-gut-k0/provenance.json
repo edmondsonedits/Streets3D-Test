@@ -209,34 +209,34 @@
       "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
     },
     {
-      "title": "residential gut k0 vs selfcal lateral",
+      "title": "GUT k0 control vs GUT self-calibration · lateral (side-by-side) · this model: left",
       "url": "../../renders/residential-gut-k0-vs-selfcal-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential gut k0 vs selfcal route",
+      "title": "GUT k0 control vs GUT self-calibration · route (side-by-side) · this model: left",
       "url": "../../renders/residential-gut-k0-vs-selfcal-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT self-calibration. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential gut k0 versus residential fastgs zero lateral",
+      "title": "GUT k0 control vs FastGS zero effective-rank penalty · lateral (side-by-side) · this model: left",
       "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: FastGS zero effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential gut k0 versus residential fastgs zero route",
+      "title": "GUT k0 control vs FastGS zero effective-rank penalty · route (side-by-side) · this model: left",
       "url": "../../renders/residential-gut-k0__vs__residential-fastgs-zero-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: FastGS zero effective-rank penalty. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential gut k0 versus residential gut shadow lateral",
+      "title": "GUT k0 control vs GUT + vehicle shadow mask · lateral (side-by-side) · this model: left",
       "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT + vehicle shadow mask. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential gut k0 versus residential gut shadow route",
+      "title": "GUT k0 control vs GUT + vehicle shadow mask · route (side-by-side) · this model: left",
       "url": "../../renders/residential-gut-k0__vs__residential-gut-shadow-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: GUT k0 control; right: GUT + vehicle shadow mask. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     }
   ],
   "state": "prototype",

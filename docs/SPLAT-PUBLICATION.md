@@ -1,8 +1,10 @@
 # Gaussian test publication
 
-This release adds 21 distinct models and 48 distinct saved render videos to the existing two driving demos. It is an inventory snapshot, not a claim that the ongoing off-path study has passed its quality targets. Originals were read, never overwritten or deleted. The production simulators are unchanged.
+The initial release added 21 distinct models and 48 distinct saved render videos to the existing two driving demos. It is an inventory snapshot, not a claim that the ongoing off-path study has passed its quality targets. Originals were read, never overwritten or deleted. The production simulators are unchanged.
 
-## What is included
+Current retained inventory: **21 models and 32 saved native videos**, plus the 12 supplemental previews. [Sixteen redundant standalone previews were retired](MEDIA-RETIREMENT-2026-10-22.md); paired native motion and a higher-resolution residential control remain. No model or rating was removed.
+
+## Original publication inventory
 
 | Group | Interactive models | Saved videos |
 | --- | ---: | ---: |
@@ -42,7 +44,7 @@ This is a fixed capture-level plane in arbitrary reconstruction units, not a cal
 
 ## Storage and future additions
 
-The site is about 0.84 GB including both existing driving demos. Every individual artifact is below GitHub's 100 MiB file limit. The validator enforces a 900,000,000-byte site ceiling. Existing tests must not be silently removed to make space. Before adding many more models, assess a free asset-delivery plan with verified browser/range/CORS behavior; do not assume releases or Git LFS act as a streaming CDN, and do not enable paid hosting without authorization.
+The cleaned current site is approximately 0.829 GB, leaving about 71 MB under the conservative site ceiling. Every individual artifact is below GitHub's 100 MiB file limit. The validator enforces a 900,000,000-byte site ceiling. Existing tests must not be silently removed to make space. Before adding many more models, assess a free asset-delivery plan with verified browser/range/CORS behavior; do not assume releases or Git LFS act as a streaming CDN, and do not enable paid hosting without authorization.
 
 Give a materially different reconstruction a new scene ID/version. Never overwrite source files to produce an export. Preserve exact source/output hashes, software versions, camera transform history, experiment status, and prior public versions. Adding a screenshot or MP4 alone does not satisfy the interactive-model contract.
 

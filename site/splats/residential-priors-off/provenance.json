@@ -199,44 +199,34 @@
   "heightReference": "Actual recorded source-camera center with robust local capture-up. Lock fixes that plane while moving; not metres and not terrain following.",
   "renders": [
     {
-      "title": "residential priors off lateral",
-      "url": "../../renders/residential-priors-off-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-    },
-    {
-      "title": "residential priors off route",
-      "url": "../../renders/residential-priors-off-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
-    },
-    {
-      "title": "residential priors off versus residential priors both lateral",
+      "title": "Priors OFF control vs Depth + normal priors · lateral (side-by-side) · this model: left",
       "url": "../../renders/residential-priors-off__vs__residential-priors-both-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth + normal priors. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential priors off versus residential priors both route",
+      "title": "Priors OFF control vs Depth + normal priors · route (side-by-side) · this model: left",
       "url": "../../renders/residential-priors-off__vs__residential-priors-both-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth + normal priors. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential priors off versus residential priors depth lateral",
+      "title": "Priors OFF control vs Depth prior · lateral (side-by-side) · this model: left",
       "url": "../../renders/residential-priors-off__vs__residential-priors-depth-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential priors off versus residential priors depth route",
+      "title": "Priors OFF control vs Depth prior · route (side-by-side) · this model: left",
       "url": "../../renders/residential-priors-off__vs__residential-priors-depth-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Depth prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential priors off versus residential priors normal lateral",
+      "title": "Priors OFF control vs Normal prior · lateral (side-by-side) · this model: left",
       "url": "../../renders/residential-priors-off__vs__residential-priors-normal-lateral.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Normal prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     },
     {
-      "title": "residential priors off versus residential priors normal route",
+      "title": "Priors OFF control vs Normal prior · route (side-by-side) · this model: left",
       "url": "../../renders/residential-priors-off__vs__residential-priors-normal-route.mp4",
-      "note": "Recorded native render. This web copy is compressed to fit free hosting; original resolution and bitrate are preserved locally. It is a video, not the interactive view."
+      "note": "Side-by-side recorded native render. Left: Priors OFF control; right: Normal prior. Each panel is 800 × 450; original 24-second timing is retained. These panels have less fine detail than the retired 1152 × 648 standalone previews. Original-resolution source locations and hashes remain documented; retired web copies are recoverable from Git. This is a video, not the interactive view. This model is in the left panel."
     }
   ],
   "state": "prototype",

@@ -21,7 +21,9 @@ jobs:
       - name: Check out tests
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Validate playable site
-        run: python3 scripts/validate_site.py
+        run: |
+          python3 scripts/validate_site.py
+          python3 scripts/test-media-retirement.py
       - name: Check capture-height navigation
         run: node scripts/test-splat-navigation.mjs
       - name: Check ratings and evidence contracts
